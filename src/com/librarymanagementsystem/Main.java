@@ -1,5 +1,11 @@
 package com.librarymanagementsystem;
 
+/**
+ * @author Adrian Adewunmi
+ * @date 03/01/2022
+ * @version 1.0.0
+ * @brief Library Management System Project.
+ */
 public class Main {
 
     public static void main(String[] args) {
