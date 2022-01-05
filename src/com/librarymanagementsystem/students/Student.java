@@ -1,11 +1,11 @@
 package com.librarymanagementsystem.students;
 
-public class student {
+public class Student {
     private final String studentId;
     private final String name;
     private final String email;
 
-    public student(String studentId, String name, String email) {
+    public Student(String studentId, String name, String email) {
         this.studentId = studentId;
         this.name = name;
         this.email = email;

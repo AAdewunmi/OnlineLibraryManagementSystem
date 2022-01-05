@@ -1,5 +1,7 @@
 # Project: A Library Management System Project in Java 
 ## WORK-IN-PROGRESS!
+## Architecture:
+Model Controller View (MVC)
 ## Tech Stack:
 1. Java 8
 2. Java Swing GUI Components 

@@ -1,6 +1,6 @@
 package com.librarymanagementsystem.books;
 
-public class book {
+public class Book {
     private final String bookId;
     private final String bookName;
     private final String author;
@@ -9,7 +9,7 @@ public class book {
     private final String category;
     private int quantity;
 
-    public book(String bookId, String bookName, String author, String publisher, String edition, String category, int quantity) {
+    public Book(String bookId, String bookName, String author, String publisher, String edition, String category, int quantity) {
         this.bookId = bookId;
         this.bookName = bookName;
         this.author = author;
