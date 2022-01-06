@@ -1,5 +1,10 @@
 package com.librarymanagementsystem.books;
 
+/**
+ * @author Adrian Adewunmi
+ * @date 06/01/2022
+ * This class is used to create a book object
+ */
 public class Book {
     private final String bookId;
     private final String bookName;

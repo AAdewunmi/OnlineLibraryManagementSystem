@@ -1,5 +1,10 @@
 package com.librarymanagementsystem.students;
 
+/**
+ * @author Adrian Adewunmi
+ * @date 06/01/2020
+ * This class is used to create a student object
+ */
 public class Student {
     private final String studentId;
     private final String name;
