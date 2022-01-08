@@ -1,39 +1,37 @@
 package com.librarymanagementsystem.books;
 
+import com.sun.org.apache.xpath.internal.functions.FuncSubstring;
+
 /**
  * @author Adrian Adewunmi
  * @date 06/01/2022
  * This class is used to create a book object
  */
 public class Book {
-    private final String bookId;
-    private final String bookName;
-    private final String author;
+    private final String ISBN;
+    private final String bookTitle;
     private final String publisher;
     private final String edition;
-    private final String category;
-    private int quantity;
+    private final String subject;
+    private final int numberOfPages;
+    private final String publicationDate;
 
-    public Book(String bookId, String bookName, String author, String publisher, String edition, String category, int quantity) {
-        this.bookId = bookId;
-        this.bookName = bookName;
-        this.author = author;
+    public Book(String ISBN, String bookTitle, String publisher, String edition, String subject, int numberOfPages, String publicationDate) {
+        this.ISBN = ISBN;
+        this.bookTitle = bookTitle;
         this.publisher = publisher;
         this.edition = edition;
-        this.category = category;
-        this.quantity = 0;
+        this.subject = subject;
+        this.numberOfPages = 0;
+        this.publicationDate = publicationDate;
     }
 
-    public String getBookId() {
-        return bookId;
+    public String getISBN() {
+        return ISBN;
     }
 
-    public String getBookName() {
-        return bookName;
-    }
-
-    public String getAuthor() {
-        return author;
+    public String getBookTitle() {
+        return bookTitle;
     }
 
     public String getPublisher() {
@@ -44,15 +42,25 @@ public class Book {
         return edition;
     }
 
-    public String getCategory() {
-        return category;
+    public String getSubject() {
+        return subject;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getNumberOfPages() {
+        return numberOfPages;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public String getPublicationDate() {
+        return publicationDate;
+    }
+
+    public String toString(){
+        return "\nISBN: " + this.ISBN + "\n"
+                + "Book Title: " + this.bookTitle + "\n"
+                + "Publisher: " + this.publisher + "\n"
+                + "Edition: " + this.edition + "\n"
+                + "Subject: " + this.subject + "\n"
+                + "Number of Pages: " + this.numberOfPages + "\n"
+                + "Publication Date: " + this.publicationDate + "\n";
     }
 }
