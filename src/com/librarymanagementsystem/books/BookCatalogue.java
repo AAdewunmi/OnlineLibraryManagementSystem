@@ -10,13 +10,18 @@ import java.util.Map;
  * This class is used to create a book catalogue object
  */
 public class BookCatalogue {
-    private String creationDate;
-    private int totalBookAuthors;
-    private ArrayList<BookAuthor> sciences;
-    private HashMap<String, ArrayList<BookAuthor>> science;
-    private HashMap<String, ArrayList<BookAuthor>> technology;
-    private HashMap<String, ArrayList<BookAuthor>> engineering;
-    private HashMap<String, ArrayList<BookAuthor>> mathematics;
+
+    private Map<String, Book> scienceCatalogue;
+    private Map<String, Book> technologyCatalogue;
+    private Map<String, Book> engineeringCatalogue;
+    private Map<String, Book> mathematicsCatalogue;
+
+    //    private ArrayList<Book> sciences;
+    //    private HashMap<String, ArrayList<Book>> science;
+    //    private HashMap<String, ArrayList<Book>> technology;
+    //    private HashMap<String, ArrayList<Book>> engineering;
+    //    private HashMap<String, ArrayList<Book>> mathematics;
+    // private int totalNumberOfBooks;
     // TODO: 08/01/2022: Update the book catalogue.
     // 1. Insert a new book into a category
     // 2. Search for a book in a category
