@@ -1,7 +1,5 @@
 package com.librarymanagementsystem.books;
 
-import java.util.Date;
-
 /**
  * @author Adrian Adewunmi
  * @date 19/01/2022
@@ -14,7 +12,8 @@ public class BookItem extends Book{
     private final BookFormat bookFormat;
     private final BookStatus bookStatus;
 
-    public BookItem(String ISBN, String author, String bookTitle, String publisher, String edition, String subject, int numberOfPages, Date publicationDate, double bookPrice, Date purchaseDate, String bookShelfId, int bookQuantity, BookFormat bookFormat, BookStatus bookStatus) {
+    public BookItem(String ISBN, String author, String bookTitle, String publisher, String edition, String subject, int numberOfPages, String publicationDate,
+                    double bookPrice, String purchaseDate, String bookShelfId, int bookQuantity, BookFormat bookFormat, BookStatus bookStatus) {
         super(ISBN, author, bookTitle, publisher, edition, subject, numberOfPages, publicationDate, bookPrice, purchaseDate);
         this.bookShelfId = bookShelfId;
         this.bookQuantity = bookQuantity;

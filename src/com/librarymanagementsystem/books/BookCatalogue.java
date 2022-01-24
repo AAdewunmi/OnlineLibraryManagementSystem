@@ -2,6 +2,7 @@ package com.librarymanagementsystem.books;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -11,10 +12,11 @@ import java.util.Map;
  */
 public class BookCatalogue {
 
-    private Map<String, Book> scienceCatalogue;
-    private Map<String, Book> technologyCatalogue;
-    private Map<String, Book> engineeringCatalogue;
-    private Map<String, Book> mathematicsCatalogue;
+        private Map<String, List<BookItem>> books;
+
+        public BookCatalogue(Map<String, List<BookItem>> books) {
+            this.books = books;
+        }
 
     //    private ArrayList<Book> sciences;
     //    private HashMap<String, ArrayList<Book>> science;

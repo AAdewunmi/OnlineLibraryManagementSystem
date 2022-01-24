@@ -15,12 +15,12 @@ public class Book {
     private final String edition;
     private final String subject;
     private final int numberOfPages;
-    private final Date publicationDate;
-    private final Date purchaseDate;
+    private final String publicationDate;
+    private final String purchaseDate;
     private final double bookPrice;
 
     public Book(String ISBN, String author, String bookTitle, String publisher, String edition,
-                String subject, int numberOfPages, Date publicationDate, double bookPrice, Date purchaseDate) {
+                String subject, int numberOfPages, String publicationDate, double bookPrice, String purchaseDate) {
         this.ISBN = ISBN;
         this.author = author;
         this.bookTitle = bookTitle;
@@ -62,7 +62,7 @@ public class Book {
         return numberOfPages;
     }
 
-    public Date getPublicationDate() {
+    public String getPublicationDate() {
         return publicationDate;
     }
 
@@ -70,7 +70,7 @@ public class Book {
         return bookPrice;
     }
 
-    public Date getPurchaseDate() {
+    public String getPurchaseDate() {
         return purchaseDate;
     }
 
