@@ -1,7 +1,5 @@
 package com.librarymanagementsystem.books;
 
-import java.util.Date;
-
 /**
  * @author Adrian Adewunmi
  * @date 06/01/2022
