@@ -56,4 +56,30 @@ public class BookItem extends Book{
         }
     }
 
+    public void bookFormat(){
+        switch (bookFormat){
+            case Hardcover:
+                System.out.println("Book is hardcover");
+                break;
+            case Paperback:
+                System.out.println("Book is paperback");
+                break;
+            case Audiobook:
+                System.out.println("Book is audiobook");
+                break;
+            case Ebook:
+                System.out.println("Book is ebook");
+                break;
+            case Newspaper:
+                System.out.println("Book is newspaper");
+                break;
+            case Magazine:
+                System.out.println("Book status is magazine");
+                break;
+            case Journal:
+                System.out.println("Book status is journal");
+                break;
+        }
+    }
+
 }
