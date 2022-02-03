@@ -6,16 +6,16 @@ package com.librarymanagementsystem.books;
  * This class is used to create a book object
  */
 public class Book {
-    private final String ISBN;
-    private final String author;
+    private String ISBN;
+    private String author;
     private final String bookTitle;
-    private final String publisher;
-    private final String edition;
-    private final String subject;
-    private final int numberOfPages;
-    private final String publicationDate;
-    private final String purchaseDate;
-    private final double bookPrice;
+    private String publisher;
+    private String edition;
+    private String subject;
+    private int numberOfPages;
+    private String publicationDate;
+    private String purchaseDate;
+    private double bookPrice;
 
     public Book(String ISBN, String author, String bookTitle, String publisher, String edition,
                 String subject, int numberOfPages, String publicationDate, double bookPrice, String purchaseDate) {
@@ -30,6 +30,11 @@ public class Book {
         this.purchaseDate = purchaseDate;
         this.bookPrice = bookPrice;
 
+    }
+
+    public Book(String author, String bookTitle){
+        this.author = author;
+        this.bookTitle = bookTitle;
     }
 
     public String getISBN() {

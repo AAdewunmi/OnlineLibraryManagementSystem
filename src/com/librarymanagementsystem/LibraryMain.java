@@ -1,9 +1,6 @@
 package com.librarymanagementsystem;
 
-import com.librarymanagementsystem.books.BookCatalogue;
-import com.librarymanagementsystem.books.BookFormat;
-import com.librarymanagementsystem.books.BookItem;
-import com.librarymanagementsystem.books.BookStatus;
+import com.librarymanagementsystem.books.*;
 
 /**
  * @author Adrian Adewunmi
@@ -16,7 +13,5 @@ public class LibraryMain {
         Library library = new Library("A.K. Adewunmi Memorial Library",
                 "Ilaro, Ogun State, Nigeria");
        // Create a new book
-
-
     }
 }
