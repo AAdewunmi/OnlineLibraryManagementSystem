@@ -12,6 +12,25 @@ public class LibraryMain {
         // Create a new library
         Library library = new Library("A.K. Adewunmi Memorial Library",
                 "Ilaro, Ogun State, Nigeria");
+        System.out.println(library.getLibraryName() + "\n" + library.getLibraryAddress() + "\n");
        // Create a new book
+        Book book1 = new Book("Java Programming", "Adewunmi");
+        Book book2 = new Book("C++ Programming", "Adewunmi");
+        Book book3 = new Book("C Programming", "Adewunmi");
+        Book book4 = new Book("Python Programming", "Adewunmi");
+        // Add book to list of books
+        BookList programmingBookList = new BookList();
+        programmingBookList.addBook(book1);
+        programmingBookList.addBook(book2);
+        programmingBookList.addBook(book3);
+        programmingBookList.addBook(book4);
+        // Add list of books to bookshelf
+        BookShelf programmingBookShelf = new BookShelf();
+        programmingBookShelf.addBookList("Programming Books ", programmingBookList);
+        // Add bookshelf to catalogue
+        BookCatalogue programmingBookCatalog = new BookCatalogue();
+        programmingBookCatalog.addBookShelf("Book Shelf 1 ", programmingBookShelf);
+        programmingBookCatalog.printAllBooks();
+
     }
 }
