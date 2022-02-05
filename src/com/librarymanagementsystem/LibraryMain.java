@@ -14,10 +14,10 @@ public class LibraryMain {
                 "Ilaro, Ogun State, Nigeria");
         System.out.println(library.getLibraryName() + "\n" + library.getLibraryAddress() + "\n");
        // Create a new book
-        Book book1 = new Book("Java Programming", "Adewunmi");
-        Book book2 = new Book("C++ Programming", "Adewunmi");
-        Book book3 = new Book("C Programming", "Adewunmi");
-        Book book4 = new Book("Python Programming", "Adewunmi");
+        Book book1 = new Book("Morelli", "Java Programming");
+        Book book2 = new Book("Dietel", "C++ Programming");
+        Book book3 = new Book("Walls", "C Programming");
+        Book book4 = new Book("Deepu", "Python Programming");
         // Add book to list of books
         BookList programmingBookList = new BookList();
         programmingBookList.addBook(book1);
@@ -31,6 +31,8 @@ public class LibraryMain {
         BookCatalogue programmingBookCatalog = new BookCatalogue();
         programmingBookCatalog.addBookShelf("Book Shelf 1 ", programmingBookShelf);
         programmingBookCatalog.printAllBooks();
+        // Search for a book
+        programmingBookShelf.findBookByTitle("Java Programming");
 
     }
 }

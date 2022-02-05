@@ -1,6 +1,8 @@
 package com.librarymanagementsystem.books;
 
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class BookShelf {
@@ -19,5 +21,15 @@ public class BookShelf {
             System.out.println("Category: " + entry.getKey());
             entry.getValue().printAllBooks();
         }
+    }
+
+    public List<Book> findBookByTitle(String title) {
+        for (Map.Entry<String, BookList> entry : bookShelf.entrySet()) {
+            if (entry.getValue().findBookByTitle(title))  {
+                System.out.println("Category: " + entry.getKey());
+                System.out.println("Book Title: " + entry.getValue());
+            }
+        }
+        return null;
     }
 }
