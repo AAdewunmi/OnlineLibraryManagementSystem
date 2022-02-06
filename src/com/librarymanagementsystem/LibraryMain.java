@@ -36,13 +36,13 @@ public class LibraryMain {
         // Add bookshelf to catalogue
         BookCatalogue programmingBookCatalog = new BookCatalogue();
         programmingBookCatalog.addBookShelf("Book Shelf 1 ", programmingBookShelf);
-        programmingBookCatalog.printABook("Dan Morelli");
-        System.out.println("----------");
-        programmingBookCatalog.printAllBooks();
+        //programmingBookCatalog.printABook("Dan Morelli");
+        //System.out.println("----------");
+        //programmingBookCatalog.printAllBooks();
         // Search for a book
         //programmingBookList.searchBookByAuthor("Dan Morelli");
         //programmingBookShelf.searchBookByAuthor("Dan Morelli");
-        //programmingBookCatalog.searchByAuthor("Dan Morelli");
+        programmingBookCatalog.searchByAuthor("Dan Morelli");
 
     }
 }

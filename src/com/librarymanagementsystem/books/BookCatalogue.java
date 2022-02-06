@@ -38,15 +38,11 @@ public class BookCatalogue implements Search {
 
     @Override
     public List<Book> searchByAuthor(String author) {
-        // Check if the author exists
         for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()) {
             if (entry.getValue().searchBookByAuthor(author)) {
                 System.out.println("Book has been found!\nBook Details: ");
-                // Print Shelf no
                 System.out.println(entry.getKey());
-                // Print Category
-                System.out.println(entry.getValue().toString());
-                // Print Book -> Author & Title!
+                entry.getValue().printABook(author);
             }else{
                 System.out.println("Book cannot be found!");
             }
