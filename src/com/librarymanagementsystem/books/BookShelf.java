@@ -1,11 +1,9 @@
 package com.librarymanagementsystem.books;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class BookShelf {
+
     private Map<String, BookList> bookShelf;
 
     public BookShelf() {
@@ -16,6 +14,13 @@ public class BookShelf {
         bookShelf.put(category, bookList);
     }
 
+    public void printABook(String string){
+        for (Map.Entry<String, BookList> entry : bookShelf.entrySet()) {
+            System.out.println("Category: " + entry.getKey());
+            entry.getValue().printABook(string);
+        }
+    }
+
     public void printAllBooks() {
         for (Map.Entry<String, BookList> entry : bookShelf.entrySet()) {
             System.out.println("Category: " + entry.getKey());
@@ -23,13 +28,13 @@ public class BookShelf {
         }
     }
 
-    public List<Book> findBookByTitle(String title) {
+    public boolean searchBookByAuthor(String author) {
         for (Map.Entry<String, BookList> entry : bookShelf.entrySet()) {
-            if (entry.getValue().findBookByTitle(title))  {
-                System.out.println("Category: " + entry.getKey());
-                System.out.println("Book Title: " + entry.getValue());
+            if (entry.getValue().searchBookByAuthor(author)) {
+                return true;
             }
         }
-        return null;
+        return false;
     }
+
 }

@@ -1,10 +1,13 @@
 package com.librarymanagementsystem.books;
 
+import com.librarymanagementsystem.transactions.Search;
+
+import javax.sound.midi.SoundbankResource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BookCatalogue {
+public class BookCatalogue implements Search {
     private Map<String, BookShelf> bookCatalogue;
 
     public BookCatalogue() {
@@ -15,6 +18,17 @@ public class BookCatalogue {
         bookCatalogue.put(shelfName, bookShelf);
     }
 
+    public void printABook(String string){
+        for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()){
+            if (entry.getValue().searchBookByAuthor(string)) {
+                System.out.println(entry.getKey());
+                entry.getValue().printABook(string);
+            }else{
+                System.out.println("Book Cannot Be Found!");
+            }
+        }
+    }
+
     public void printAllBooks() {
         for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()) {
             System.out.println(entry.getKey());
@@ -22,23 +36,38 @@ public class BookCatalogue {
         }
     }
 
-    // TODO: Add method to search for book by title
-    public List<Book> searchBookByTitle(String title) {
+    @Override
+    public List<Book> searchByAuthor(String author) {
+        // Check if the author exists
         for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()) {
-            List<Book> book = entry.getValue().findBookByTitle(title);
-            if (book != null) {
-                return book;
+            if (entry.getValue().searchBookByAuthor(author)) {
+                System.out.println("Book has been found!\nBook Details: ");
+                // Print Shelf no
+                System.out.println(entry.getKey());
+                // Print Category
+                System.out.println(entry.getValue().toString());
+                // Print Book -> Author & Title!
+            }else{
+                System.out.println("Book cannot be found!");
             }
         }
         return null;
     }
 
-    // TODO: Add method to search for book by author
-    public List<Book> searchBookByAuthor(String author) {
+    @Override
+    public List<Book> searchByTitle(String title) {
         return null;
     }
-    // TODO: Add method to search for book by ISBN
-    public List<Book> searchBookByISBN(String ISBN) {
+
+    @Override
+    public List<Book> searchByISBN(String ISBN) {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        return "BookCatalogue{" +
+                "bookCatalogue=" + bookCatalogue +
+                '}';
     }
 }
