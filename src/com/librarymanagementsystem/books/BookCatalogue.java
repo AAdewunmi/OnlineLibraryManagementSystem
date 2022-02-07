@@ -19,12 +19,8 @@ public class BookCatalogue implements Search {
 
     public void printABook(String string){
         for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()){
-            if (entry.getValue().searchBookByAuthor(string)) {
                 System.out.println(entry.getKey());
                 entry.getValue().printABook(string);
-            }else{
-                System.out.println("Book Cannot Be Found!");
-            }
         }
     }
 
@@ -51,6 +47,15 @@ public class BookCatalogue implements Search {
 
     @Override
     public List<Book> searchByTitle(String title) {
+        for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()) {
+            if (entry.getValue().searchBookByTitle(title)) {
+                System.out.println("Book has been found!\nBook Details: ");
+                System.out.println(entry.getKey());
+                entry.getValue().printABook(title);
+            }else{
+                System.out.println("Book cannot be found!");
+            }
+        }
         return null;
     }
 

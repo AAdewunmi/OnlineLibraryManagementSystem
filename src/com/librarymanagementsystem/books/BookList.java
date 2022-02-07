@@ -23,6 +23,9 @@ public class BookList {
             if (book.getAuthor().equals(string)) {
                 System.out.println(book);
             }
+            if (book.getBookTitle().equals(string)) {
+                System.out.println(book);
+            }
         }
     }
     public void printAllBooks() {

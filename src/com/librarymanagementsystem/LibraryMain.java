@@ -27,6 +27,9 @@ public class LibraryMain {
         //programmingBookList.printABook("Dan Morelli");
         //System.out.println("----------");
         //programmingBookList.printAllBooks();
+        //programmingBookList.printABook("C++ Programming");
+        //System.out.println("----------");
+        //programmingBookList.printAllBooks();
         // Add list of books to bookshelf
         BookShelf programmingBookShelf = new BookShelf();
         programmingBookShelf.addBookList("Programming Books ", programmingBookList);
@@ -42,7 +45,10 @@ public class LibraryMain {
         // Search for a book
         //programmingBookList.searchBookByAuthor("Dan Morelli");
         //programmingBookShelf.searchBookByAuthor("Dan Morelli");
-        programmingBookCatalog.searchByAuthor("Dan Morelli");
-
+        //programmingBookCatalog.searchByAuthor("Dan Morelli");
+        // =====================================================
+        //programmingBookList.searchBookByTitle("C++ Programming");
+        //programmingBookShelf.searchBookByTitle("C++ Programming");
+        programmingBookCatalog.searchByTitle("C++ Programming");
     }
 }
