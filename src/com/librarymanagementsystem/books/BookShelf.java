@@ -37,4 +37,13 @@ public class BookShelf {
         return false;
     }
 
+    public boolean searchBookByTitle(String title) {
+        for (Map.Entry<String, BookList> entry : bookShelf.entrySet()) {
+            if (entry.getValue().searchBookByTitle(title)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
