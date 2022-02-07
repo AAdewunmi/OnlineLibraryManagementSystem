@@ -7,7 +7,7 @@ package com.librarymanagementsystem.books;
  */
 public class Book {
     private String ISBN;
-    private String author;
+    private final String author;
     private final String bookTitle;
     private String publisher;
     private String edition;

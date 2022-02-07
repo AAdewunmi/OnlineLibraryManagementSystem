@@ -2,13 +2,12 @@ package com.librarymanagementsystem.books;
 
 import com.librarymanagementsystem.transactions.Search;
 
-import javax.sound.midi.SoundbankResource;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class BookCatalogue implements Search {
-    private Map<String, BookShelf> bookCatalogue;
+    private final Map<String, BookShelf> bookCatalogue;
 
     public BookCatalogue() {
         bookCatalogue = new HashMap<>();
@@ -60,10 +59,4 @@ public class BookCatalogue implements Search {
         return null;
     }
 
-    @Override
-    public String toString() {
-        return "BookCatalogue{" +
-                "bookCatalogue=" + bookCatalogue +
-                '}';
-    }
 }

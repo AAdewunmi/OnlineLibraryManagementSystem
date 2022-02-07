@@ -4,7 +4,7 @@ import java.util.*;
 
 public class BookShelf {
 
-    private Map<String, BookList> bookShelf;
+    private final Map<String, BookList> bookShelf;
 
     public BookShelf() {
         bookShelf = new HashMap<>();

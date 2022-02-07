@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookList {
-    private List<Book> bookList;
+    private final List<Book> bookList;
 
     public BookList() {
         this.bookList = new ArrayList<>();
@@ -34,6 +34,15 @@ public class BookList {
     public boolean searchBookByAuthor(String author) {
         for (Book book : bookList) {
             if (book.getAuthor().equals(author)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean searchBookByTitle(String title) {
+        for (Book book : bookList) {
+            if (book.getBookTitle().equals(title)) {
                 return true;
             }
         }
