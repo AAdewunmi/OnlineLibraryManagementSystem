@@ -14,10 +14,10 @@ public class LibraryMain {
                 "Ilaro, Ogun State, Nigeria");
         System.out.println(library.getLibraryName() + "\n" + library.getLibraryAddress() + "\n");
        // Create a new book
-        Book book1 = new Book("Dan Morelli", "Java Programming");
-        Book book2 = new Book("James Dietel", "C++ Programming");
-        Book book3 = new Book("John Walls", "C Programming");
-        Book book4 = new Book("Johnas Deepu", "Python Programming");
+        Book book1 = new Book("123", "Dan Morelli", "Java Programming");
+        Book book2 = new Book("456", "James Dietel", "C++ Programming");
+        Book book3 = new Book("789", "John Walls", "C Programming");
+        Book book4 = new Book("101", "Johnas Deepu", "Python Programming");
         // Add book to list of books
         BookList programmingBookList = new BookList();
         programmingBookList.addBook(book1);
@@ -49,6 +49,10 @@ public class LibraryMain {
         // =====================================================
         //programmingBookList.searchBookByTitle("C++ Programming");
         //programmingBookShelf.searchBookByTitle("C++ Programming");
-        programmingBookCatalog.searchByTitle("C++ Programming");
+        //programmingBookCatalog.searchByTitle("C++ Programming");
+        // =====================================================
+        programmingBookList.searchBookByISBN("78");
+        //programmingBookShelf.searchBookByISBN("789");
+        //programmingBookCatalog.searchByISBN("789");
     }
 }

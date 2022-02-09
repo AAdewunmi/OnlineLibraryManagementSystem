@@ -32,9 +32,10 @@ public class Book {
 
     }
 
-    public Book(String author, String bookTitle){
+    public Book(String ISBN, String author, String bookTitle){
         this.author = author;
         this.bookTitle = bookTitle;
+        this.ISBN = ISBN;
     }
 
     public String getISBN() {

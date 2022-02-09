@@ -52,4 +52,13 @@ public class BookList {
         return false;
     }
 
+    public boolean searchBookByISBN(String ISBN) {
+        for (Book book : bookList) {
+            if (book.getISBN().equals(ISBN)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
