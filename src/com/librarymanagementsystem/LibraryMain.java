@@ -51,8 +51,8 @@ public class LibraryMain {
         //programmingBookShelf.searchBookByTitle("C++ Programming");
         //programmingBookCatalog.searchByTitle("C++ Programming");
         // =====================================================
-        programmingBookList.searchBookByISBN("78");
-        //programmingBookShelf.searchBookByISBN("789");
+        //programmingBookList.searchBookByISBN("789");
+        programmingBookShelf.searchBookByISBN("789");
         //programmingBookCatalog.searchByISBN("789");
     }
 }

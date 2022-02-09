@@ -46,4 +46,13 @@ public class BookShelf {
         return false;
     }
 
+
+    public boolean searchBookByISBN(String ISBN) {
+        for (Map.Entry<String, BookList> entry : bookShelf.entrySet()){
+            if (entry.getValue().searchBookByISBN(ISBN)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

@@ -26,6 +26,9 @@ public class BookList {
             if (book.getBookTitle().equals(string)) {
                 System.out.println(book);
             }
+            if(book.getISBN().equals(string)){
+                System.out.println(book);
+            }
         }
     }
     public void printAllBooks() {
