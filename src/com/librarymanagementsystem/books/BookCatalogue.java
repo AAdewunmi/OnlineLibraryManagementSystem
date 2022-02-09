@@ -36,10 +36,10 @@ public class BookCatalogue implements Search {
         for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()) {
             if (entry.getValue().searchBookByAuthor(author)) {
                 System.out.println("Book has been found!\nBook Details: ");
-                System.out.println(entry.getKey());
+                System.out.println("Location: " + entry.getKey());
                 entry.getValue().printABook(author);
             }else{
-                System.out.println("Book cannot be found!");
+                System.out.println("No Book found with Author: " + author);
             }
         }
         return null;
@@ -50,10 +50,10 @@ public class BookCatalogue implements Search {
         for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()) {
             if (entry.getValue().searchBookByTitle(title)) {
                 System.out.println("Book has been found!\nBook Details: ");
-                System.out.println(entry.getKey());
+                System.out.println("Location: " + entry.getKey());
                 entry.getValue().printABook(title);
             }else{
-                System.out.println("Book cannot be found!");
+                System.out.println("No Book found with Title: " + title);
             }
         }
         return null;
@@ -61,7 +61,15 @@ public class BookCatalogue implements Search {
 
     @Override
     public List<Book> searchByISBN(String ISBN) {
+        for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()) {
+            if (entry.getValue().searchBookByISBN(ISBN)) {
+                System.out.println("Book has been found!\nBook Details: ");
+                System.out.println("Location: " + entry.getKey());
+                entry.getValue().printABook(ISBN);
+            } else {
+                System.out.println("No Book found with ISBN: " + ISBN);
+            }
+        }
         return null;
     }
-
 }
