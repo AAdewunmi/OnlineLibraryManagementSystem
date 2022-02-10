@@ -29,7 +29,13 @@ public class BookShelf {
     }
 
     // Total number of books on the shelf
-
+    public int totalBooksOnShelf() {
+        int total = 0;
+        for (Map.Entry<String, BookList> entry : bookShelf.entrySet()) {
+            total += entry.getValue().getTotalBooks();
+        }
+        return total;
+    }
 
     public boolean searchBookByAuthor(String author) {
         for (Map.Entry<String, BookList> entry : bookShelf.entrySet()) {
