@@ -28,6 +28,9 @@ public class BookShelf {
         }
     }
 
+    // Total number of books on the shelf
+
+
     public boolean searchBookByAuthor(String author) {
         for (Map.Entry<String, BookList> entry : bookShelf.entrySet()) {
             if (entry.getValue().searchBookByAuthor(author)) {

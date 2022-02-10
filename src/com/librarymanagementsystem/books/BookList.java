@@ -37,6 +37,11 @@ public class BookList {
         }
     }
 
+    // Total number of books
+    public int getTotalBooks() {
+        return bookList.size();
+    }
+
     public boolean searchBookByAuthor(String author) {
         for (Book book : bookList) {
             if (book.getAuthor().equals(author)) {

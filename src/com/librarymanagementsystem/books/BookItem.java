@@ -7,30 +7,23 @@ package com.librarymanagementsystem.books;
  * because there could be multiple copies of a book.
  */
 public class BookItem extends Book{
-    private final String bookShelfId;
-    private int bookQuantity;
+
     private final BookFormat bookFormat;
     private final BookStatus bookStatus;
 
     public BookItem(String ISBN, String author, String bookTitle, String publisher, String edition, String subject, int numberOfPages, String publicationDate,
                     double bookPrice, String purchaseDate, String bookShelfId, int bookQuantity, BookFormat bookFormat, BookStatus bookStatus) {
         super(ISBN, author, bookTitle, publisher, edition, subject, numberOfPages, publicationDate, bookPrice, purchaseDate);
-        this.bookShelfId = bookShelfId;
-        this.bookQuantity = bookQuantity;
         this.bookFormat = bookFormat;
         this.bookStatus = bookStatus;
     }
 
-    public String getBookShelfId() {
-        return bookShelfId;
+    public BookFormat getBookFormat() {
+        return bookFormat;
     }
 
-    public void setBookQuantity(int bookQuantity) {
-        this.bookQuantity = bookQuantity;
-    }
-
-    public int getBookQuantity() {
-        return bookQuantity;
+    public BookStatus getBookStatus() {
+        return bookStatus;
     }
 
     public void bookStatus(){

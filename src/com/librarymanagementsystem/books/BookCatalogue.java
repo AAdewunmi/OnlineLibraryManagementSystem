@@ -45,6 +45,8 @@ public class BookCatalogue implements Search {
         return null;
     }
 
+
+
     @Override
     public List<Book> searchByTitle(String title) {
         for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()) {
@@ -72,4 +74,6 @@ public class BookCatalogue implements Search {
         }
         return null;
     }
+
+
 }
