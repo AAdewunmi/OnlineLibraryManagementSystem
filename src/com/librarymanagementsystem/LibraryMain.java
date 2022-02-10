@@ -71,6 +71,7 @@ public class LibraryMain {
         //System.out.println("Total number of Software Engineering books on shelf: " + softwareEngineeringBookShelf.totalBooksOnShelf());
 
         // Add bookshelf to catalogue
+        // Shelf 1
         BookCatalogue shelfOneCatalog = new BookCatalogue();
         shelfOneCatalog.addBookShelf("Book Shelf 1 ", programmingBookShelf);
         //programmingBookCatalog.printABook("Dan Morelli");
@@ -88,6 +89,13 @@ public class LibraryMain {
         //programmingBookList.searchBookByISBN("789");
         //programmingBookShelf.searchBookByISBN("789");
         //programmingBookCatalog.searchByISBN("789");
+        shelfOneCatalog.countBooks();
+        // =====================================================
+        System.out.println("===========");
+        // Shelf 2
+        BookCatalogue shelfTwoCatalog = new BookCatalogue();
+        shelfTwoCatalog.addBookShelf("Book Shelf 2", softwareEngineeringBookShelf);
+        shelfTwoCatalog.countBooks();
 
     }
 }

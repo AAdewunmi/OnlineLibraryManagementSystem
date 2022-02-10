@@ -33,6 +33,8 @@ public class BookShelf {
         int total = 0;
         for (Map.Entry<String, BookList> entry : bookShelf.entrySet()) {
             total += entry.getValue().getTotalBooks();
+            System.out.println("Subject Category: " + entry.getKey() +
+                    "\nTotal Number Of Books: " + total);
         }
         return total;
     }

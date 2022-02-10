@@ -45,7 +45,13 @@ public class BookCatalogue implements Search {
         return null;
     }
 
-
+    // Count number of books in each shelf
+    public void countBooks() {
+        for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()) {
+            System.out.println(entry.getKey());
+            entry.getValue().totalBooksOnShelf();
+        }
+    }
 
     @Override
     public List<Book> searchByTitle(String title) {
