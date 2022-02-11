@@ -16,9 +16,11 @@ public class Book {
     private String publicationDate;
     private String purchaseDate;
     private double bookPrice;
+    private int bookQuantity;
 
     public Book(String ISBN, String author, String bookTitle, String publisher, String edition,
-                String subject, int numberOfPages, String publicationDate, double bookPrice, String purchaseDate) {
+                String subject, int numberOfPages, String publicationDate, double bookPrice, String purchaseDate,
+                int bookQuantity) {
         this.ISBN = ISBN;
         this.author = author;
         this.bookTitle = bookTitle;
@@ -29,13 +31,14 @@ public class Book {
         this.publicationDate = publicationDate;
         this.purchaseDate = purchaseDate;
         this.bookPrice = bookPrice;
-
+        this.bookQuantity = 0;
     }
 
-    public Book(String ISBN, String author, String bookTitle){
+    public Book(String ISBN, String author, String bookTitle, int bookQuantity){
         this.author = author;
         this.bookTitle = bookTitle;
         this.ISBN = ISBN;
+        this.bookQuantity = 0;
     }
 
     public String getISBN() {
@@ -76,6 +79,14 @@ public class Book {
 
     public String getPurchaseDate() {
         return purchaseDate;
+    }
+
+    public int getBookQuantity() {
+        return bookQuantity;
+    }
+
+    public void setBookQuantity(int bookQuantity) {
+        this.bookQuantity = bookQuantity;
     }
 
     public String toString(){

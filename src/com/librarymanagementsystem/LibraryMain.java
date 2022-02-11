@@ -1,6 +1,7 @@
 package com.librarymanagementsystem;
 
 import com.librarymanagementsystem.books.*;
+import com.librarymanagementsystem.librarian.Librarian;
 
 /**
  * @author Adrian Adewunmi
@@ -13,18 +14,19 @@ public class LibraryMain {
         Library library = new Library("A.K. Adewunmi Memorial Library",
                 "Ilaro, Ogun State, Nigeria");
         System.out.println(library.getLibraryName() + "\n" + library.getLibraryAddress() + "\n");
-
+        Librarian librarian = new Librarian();
+        //librarian.countAllBooksInCatalogue();
        // Create a new book (Programming Books)
-        Book book1 = new Book("123", "Dan Morelli", "Java Programming");
-        Book book2 = new Book("456", "James Dietel", "C++ Programming");
-        Book book3 = new Book("789", "John Walls", "C Programming");
-        Book book4 = new Book("101", "Johnas Deepu", "Python Programming");
+        Book book1 = new Book("123", "Dan Morelli", "Java Programming", 1);
+        Book book2 = new Book("456", "James Dietel", "C++ Programming", 1);
+        Book book3 = new Book("789", "John Walls", "C Programming", 1);
+        Book book4 = new Book("101", "Johnas Deepu", "Python Programming", 1);
 
         // Create a new book (Software Engineering Books)
-        Book book5 = new Book("102", "Richard Thor", "Systems Engineering");
-        Book book6 = new Book("103", "Billy Kay", "Software Methodology");
-        Book book7 = new Book("104", "Edward Bally", "Software Architecture");
-        Book book8 = new Book("105", "James Korbin", "Engineering Management");
+        Book book5 = new Book("102", "Richard Thor", "Systems Engineering", 1);
+        Book book6 = new Book("103", "Billy Kay", "Software Methodology", 1);
+        Book book7 = new Book("104", "Edward Bally", "Software Architecture", 1);
+        Book book8 = new Book("105", "James Korbin", "Engineering Management", 1);
 
         // Add book to list of programming books
         BookList programmingBookList = new BookList();
@@ -53,7 +55,6 @@ public class LibraryMain {
 //        System.out.println("----------");
 //        softwareEngineeringList.printAllBooks();
 //        System.out.println("Total number of Software Engineering books: " + softwareEngineeringList.getTotalBooks());
-
         // Add list of programming books to bookshelf
         BookShelf programmingBookShelf = new BookShelf();
         programmingBookShelf.addBookList("Programming Books ", programmingBookList);
@@ -96,6 +97,8 @@ public class LibraryMain {
         BookCatalogue shelfTwoCatalog = new BookCatalogue();
         shelfTwoCatalog.addBookShelf("Book Shelf 2", softwareEngineeringBookShelf);
         shelfTwoCatalog.countBooks();
+        // =====================================================
+        // Compute total number of books in catalogue
 
     }
 }

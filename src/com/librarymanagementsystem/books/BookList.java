@@ -11,11 +11,15 @@ public class BookList {
     }
 
     public void addBook(Book book) {
-        this.bookList.add(book);
+            bookList.add(book);
     }
 
     public void removeBook(Book book) {
-        this.bookList.remove(book);
+        bookList.remove(book);
+    }
+
+    public List<Book> getBookList() {
+        return bookList;
     }
 
     public void printABook(String string){
@@ -31,15 +35,11 @@ public class BookList {
             }
         }
     }
+
     public void printAllBooks() {
         for (Book book : bookList) {
             System.out.println(book);
         }
-    }
-
-    // Total number of books
-    public int getTotalBooks() {
-        return bookList.size();
     }
 
     public boolean searchBookByAuthor(String author) {
@@ -69,4 +69,7 @@ public class BookList {
         return false;
     }
 
+    public int getTotalBooks() {
+        return bookList.size();
+    }
 }
