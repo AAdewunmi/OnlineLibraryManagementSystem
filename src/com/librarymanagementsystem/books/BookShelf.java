@@ -66,4 +66,11 @@ public class BookShelf {
         }
         return false;
     }
+
+    // Update Books
+    public void updateBook(String category, String ISBN, String title, String author, String publisher, String year, String edition, String status) {
+        bookShelf.get(category).updateBook(ISBN, title, author, publisher, year, edition, status);
+    }
+    public void updateBook(Book book) {
+    }
 }

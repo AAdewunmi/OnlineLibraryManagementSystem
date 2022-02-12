@@ -7,8 +7,8 @@ package com.librarymanagementsystem.books;
  */
 public class Book {
     private String ISBN;
-    private final String author;
-    private final String bookTitle;
+    private String author;
+    private String bookTitle;
     private String publisher;
     private String edition;
     private String subject;
@@ -39,6 +39,51 @@ public class Book {
         this.bookTitle = bookTitle;
         this.ISBN = ISBN;
         this.bookQuantity = 0;
+    }
+
+    // set year of publication
+    public void setPublicationDate(String publicationDate) {
+        this.publicationDate = publicationDate;
+    }
+
+    public void setBookTitle(String bookTitle) {
+        this.bookTitle = bookTitle;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
+    public void setEdition(String edition) {
+        this.edition = edition;
+    }
+
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+
+    public void setNumberOfPages(int numberOfPages) {
+        this.numberOfPages = numberOfPages;
+    }
+
+    public void setPublicationDate(String publicationDate) {
+        this.publicationDate = publicationDate;
+    }
+
+    public void setPurchaseDate(String purchaseDate) {
+        this.purchaseDate = purchaseDate;
+    }
+
+    public void setBookPrice(double bookPrice) {
+        this.bookPrice = bookPrice;
     }
 
     public String getISBN() {
@@ -99,4 +144,5 @@ public class Book {
                 + "Number of Pages: " + this.numberOfPages + "\n"
                 + "Publication Date: " + this.publicationDate + "\n";
     }
+
 }

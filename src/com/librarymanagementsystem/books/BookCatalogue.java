@@ -81,4 +81,9 @@ public class BookCatalogue implements Search {
         return null;
     }
 
+    // Update Catalogue
+    public void updateCatalogue(String shelfName, Book book) {
+        bookCatalogue.get(shelfName).updateBook(book);
+    }
+
 }
