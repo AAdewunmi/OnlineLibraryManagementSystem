@@ -74,7 +74,7 @@ public class LibraryMain {
         // Add bookshelf to catalogue
         // Shelf 1
         BookCatalogue shelfOneCatalog = new BookCatalogue();
-        shelfOneCatalog.addBookShelf("Book Shelf 1 ", programmingBookShelf);
+        shelfOneCatalog.addBookShelf("Book Shelf 1", programmingBookShelf);
         //programmingBookCatalog.printABook("Dan Morelli");
         //System.out.println("----------");
         //programmingBookCatalog.printAllBooks();
@@ -91,12 +91,19 @@ public class LibraryMain {
         //programmingBookShelf.searchBookByISBN("789");
         //programmingBookCatalog.searchByISBN("789");
         shelfOneCatalog.countBooks();
+        //shelfOneCatalog.printAllBooks();
+        /*Book book9 = new Book("106", "Robert Kimbal", "C# Programming", 1);
+        programmingBookList.addBook(book9);
+        programmingBookShelf.addBookList("Programming Books ", programmingBookList);
+        shelfOneCatalog.addBookShelf("Book Shelf 1", programmingBookShelf);*/
+        // shelfOneCatalog.updateCatalogue("Book Shelf 1");
         // =====================================================
-        System.out.println("===========");
+        System.out.println("=====Dividing Shelves======");
         // Shelf 2
         BookCatalogue shelfTwoCatalog = new BookCatalogue();
         shelfTwoCatalog.addBookShelf("Book Shelf 2", softwareEngineeringBookShelf);
         shelfTwoCatalog.countBooks();
+        //shelfTwoCatalog.printAllBooks();
         // =====================================================
         // Compute total number of books in catalogue
 
