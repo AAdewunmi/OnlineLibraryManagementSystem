@@ -1,9 +1,12 @@
 package com.librarymanagementsystem.books;
 
-import javafx.css.StyleableStringProperty;
-
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.Temporal;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Formatter;
 
 /**
  * @author Adrian Adewunmi
@@ -86,22 +89,34 @@ public class BookItem extends Book{
         }
     }
 
-    public String bookBorrowedDate(){
+    public Date bookBorrowedDate(){
         Date date = new Date();
+        Formatter formatter = new Formatter();
         Calendar calendar = Calendar.getInstance();
+        formatter.format("%tc", calendar, calendar, calendar, calendar, calendar, calendar);
         calendar.setTime(date);
-        String borrowedDate = calendar.getTime().toString();
-        System.out.println("Book borrowed date is: " + borrowedDate);
-        return borrowedDate;
+        System.out.println("Book borrowed date is: " + formatter);
+        return calendar.getTime();
     }
 
-    public String bookReturnedDate(){
+    public Date bookReturnedDate(){
         Date date = new Date();
+        Formatter formatter = new Formatter();
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
         calendar.roll(Calendar.DAY_OF_MONTH, 14);
-        String returnedDate = calendar.getTime().toString();
-        System.out.println("Book return date is: " + returnedDate);
-        return returnedDate;
+        calendar.getTime().toString();
+        formatter.format("%tc", calendar, calendar, calendar, calendar, calendar, calendar);
+        System.out.println("Book return date is: " + formatter);
+        return calendar.getTime();
     }
+
+    public long bookBorrowedDays(){
+        Date date1 = bookBorrowedDate();
+        Date date2 = bookReturnedDate();
+        long daysBetween = ChronoUnit.DAYS.between(date1.toInstant(), date2.toInstant());
+        System.out.println("Book borrowed days is: " + daysBetween);
+        return daysBetween;
+    }
+
 }

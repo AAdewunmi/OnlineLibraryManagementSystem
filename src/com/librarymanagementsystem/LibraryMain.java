@@ -107,7 +107,9 @@ public class LibraryMain {
         // =====================================================
         System.out.println("=====Test Dates======");
         BookItem bookItem1 = new BookItem("123", "Dan Morelli", "Java Programming", 1);
+        BookItem bookItem2 = new BookItem("456", "Richard Thor", "Software Architecture", 1);
         bookItem1.bookBorrowedDate();
         bookItem1.bookReturnedDate();
+        bookItem1.bookBorrowedDays();
     }
 }
