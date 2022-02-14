@@ -70,7 +70,7 @@ public class LibraryMain {
 //        System.out.println("------------");
 //        softwareEngineeringBookShelf.printAllBooks();
         //System.out.println("Total number of Software Engineering books on shelf: " + softwareEngineeringBookShelf.totalBooksOnShelf());
-
+        System.out.println("=====Test Catalogue======");
         // Add bookshelf to catalogue
         // Shelf 1
         BookCatalogue shelfOneCatalog = new BookCatalogue();
@@ -98,14 +98,16 @@ public class LibraryMain {
         shelfOneCatalog.addBookShelf("Book Shelf 1", programmingBookShelf);*/
         // shelfOneCatalog.updateCatalogue("Book Shelf 1");
         // =====================================================
-        System.out.println("=====Dividing Shelves======");
+        System.out.println("-------------------------");
         // Shelf 2
         BookCatalogue shelfTwoCatalog = new BookCatalogue();
         shelfTwoCatalog.addBookShelf("Book Shelf 2", softwareEngineeringBookShelf);
         shelfTwoCatalog.countBooks();
         //shelfTwoCatalog.printAllBooks();
         // =====================================================
-        // Compute total number of books in catalogue
-
+        System.out.println("=====Test Dates======");
+        BookItem bookItem1 = new BookItem("123", "Dan Morelli", "Java Programming", 1);
+        bookItem1.bookBorrowedDate();
+        bookItem1.bookReturnedDate();
     }
 }

@@ -1,5 +1,10 @@
 package com.librarymanagementsystem.books;
 
+import javafx.css.StyleableStringProperty;
+
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * @author Adrian Adewunmi
  * @date 19/01/2022
@@ -16,6 +21,12 @@ public class BookItem extends Book{
         super(ISBN, author, bookTitle, publisher, edition, subject, numberOfPages, publicationDate, bookPrice, purchaseDate, bookQuantity);
         this.bookFormat = bookFormat;
         this.bookStatus = bookStatus;
+    }
+
+    public BookItem(String ISBN, String author, String bookTitle, int bookQuantity) {
+        super(ISBN, author, bookTitle, bookQuantity);
+        this.bookFormat = BookFormat.Hardcover;
+        this.bookStatus = BookStatus.Unknown;
     }
 
     public BookFormat getBookFormat() {
@@ -75,4 +86,22 @@ public class BookItem extends Book{
         }
     }
 
+    public String bookBorrowedDate(){
+        Date date = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        String borrowedDate = calendar.getTime().toString();
+        System.out.println("Book borrowed date is: " + borrowedDate);
+        return borrowedDate;
+    }
+
+    public String bookReturnedDate(){
+        Date date = new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.roll(Calendar.DAY_OF_MONTH, 14);
+        String returnedDate = calendar.getTime().toString();
+        System.out.println("Book return date is: " + returnedDate);
+        return returnedDate;
+    }
 }
