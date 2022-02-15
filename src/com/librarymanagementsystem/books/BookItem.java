@@ -81,10 +81,10 @@ public class BookItem extends Book{
                 System.out.println("Book is newspaper");
                 break;
             case Magazine:
-                System.out.println("Book status is magazine");
+                System.out.println("Book is magazine");
                 break;
             case Journal:
-                System.out.println("Book status is journal");
+                System.out.println("Book is journal");
                 break;
         }
     }
@@ -118,5 +118,14 @@ public class BookItem extends Book{
         System.out.println("Book borrowed days is: " + daysBetween);
         return daysBetween;
     }
+
+    // TODO: Boolean Book CheckedIn()
+    public Boolean bookCheckedIn(){
+        System.out.println("Book is checked in");
+        return false;
+    }
+
+    // TODO: Boolean Book CheckedOut()
+
 
 }
