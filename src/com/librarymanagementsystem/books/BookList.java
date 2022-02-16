@@ -73,4 +73,13 @@ public class BookList {
         return bookList.size();
     }
 
+    // Calculate total number of book copies
+    public int getTotalBookCopies() {
+        int totalCopies = 0;
+        for (Book book : bookList) {
+            totalCopies += book.getNumberOfBookCopies();
+        }
+        return totalCopies;
+    }
+
 }
