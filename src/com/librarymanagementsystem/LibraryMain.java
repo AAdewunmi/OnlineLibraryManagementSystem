@@ -21,7 +21,8 @@ public class LibraryMain {
         Book book2 = new Book("456", "James Dietel", "C++ Programming", 5);
         Book book3 = new Book("789", "John Walls", "C Programming", 5);
         Book book4 = new Book("101", "Johnas Deepu", "Python Programming", 5);
-
+        book1.bookBorrowedDate();
+        book1.bookReturnedDate();
         // Create a new book (Software Engineering Books)
         Book book5 = new Book("102", "Richard Thor", "Systems Engineering", 5);
         Book book6 = new Book("103", "Billy Kay", "Software Methodology", 5);
@@ -55,13 +56,13 @@ public class LibraryMain {
         // Shelf 1
         BookCatalogue shelfOneCatalog = new BookCatalogue();
         shelfOneCatalog.addBookShelf("Book Shelf 1", programmingBookShelf);
-        shelfOneCatalog.countBooks();
+        //shelfOneCatalog.countBooks();
         //shelfOneCatalog.printAllBooks();
         System.out.println("-------------------------");
         // Shelf 2
         BookCatalogue shelfTwoCatalog = new BookCatalogue();
         shelfTwoCatalog.addBookShelf("Book Shelf 2", softwareEngineeringBookShelf);
-        shelfTwoCatalog.countBooks();
+        //shelfTwoCatalog.countBooks();
         //shelfTwoCatalog.printAllBooks();
     }
 }

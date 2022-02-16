@@ -1,6 +1,9 @@
 package com.librarymanagementsystem.books;
 
 import java.io.PrintStream;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Formatter;
 
 /**
  * @author Adrian Adewunmi
@@ -35,6 +38,27 @@ public class Book {
     // Gets the number of book copies
     public int getNumberOfBookCopies() {
         return numberOfBookCopies;
+    }
+
+    public Date bookBorrowedDate(){
+        Date date = new Date();
+        Formatter formatter = new Formatter();
+        Calendar calendar = Calendar.getInstance();
+        formatter.format("%tc", calendar, calendar, calendar, calendar, calendar, calendar);
+        System.out.println("Book borrowed date is: " + formatter);
+        return calendar.getTime();
+    }
+
+    public Date bookReturnedDate(){
+        Date date = new Date();
+        Formatter formatter = new Formatter();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.DATE, 14);
+        calendar.getTime().toString();
+        formatter.format("%tc", calendar, calendar, calendar, calendar, calendar, calendar);
+        System.out.println("Book returned date is: " + formatter);
+        return calendar.getTime();
     }
 
     public String toString(){
