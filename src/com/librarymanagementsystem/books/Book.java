@@ -1,6 +1,5 @@
 package com.librarymanagementsystem.books;
 
-import java.io.PrintStream;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Formatter;
@@ -10,12 +9,20 @@ import java.util.Formatter;
  * @date 06/01/2022
  * This class is used to create a book object
  */
+
 public class Book {
     private final String ISBN;
     private final String author;
     private final String bookTitle;
     private int numberOfBookCopies;
 
+    /**
+     * This is the constructor for the Book class
+     * @param ISBN
+     * @param author
+     * @param bookTitle
+     * @param numberOfBookCopies
+     */
     public Book(String ISBN, String author, String bookTitle, int numberOfBookCopies) {
         this.author = author;
         this.bookTitle = bookTitle;
@@ -35,7 +42,6 @@ public class Book {
         return bookTitle;
     }
 
-    // Gets the number of book copies
     public int getNumberOfBookCopies() {
         return numberOfBookCopies;
     }

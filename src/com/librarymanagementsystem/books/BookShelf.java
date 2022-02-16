@@ -1,5 +1,11 @@
 package com.librarymanagementsystem.books;
 
+/**
+ * @author Adrian Adewunmi
+ * @date 16/02/2022
+ * This class is used to create a bookshelf object
+ */
+
 import java.util.*;
 
 public class BookShelf {
@@ -28,7 +34,6 @@ public class BookShelf {
         }
     }
 
-    // Total number of books on the shelf
     public int totalBooksOnShelf() {
         int total = 0;
         for (Map.Entry<String, BookList> entry : bookShelf.entrySet()) {

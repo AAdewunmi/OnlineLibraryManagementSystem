@@ -1,6 +1,10 @@
 package com.librarymanagementsystem.books;
 
-import com.sun.org.apache.bcel.internal.classfile.Unknown;
+/**
+ * @author Adrian Adewunmi
+ * @date 16/02/2022
+ * This class is used to define the status of a book
+ */
 
 public enum BookStatus {
     Available,

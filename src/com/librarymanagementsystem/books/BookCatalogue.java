@@ -2,6 +2,12 @@ package com.librarymanagementsystem.books;
 
 import com.librarymanagementsystem.transactions.Search;
 
+/**
+ * @author Adrian Adewunmi
+ * @date 16/02/2022
+ * This class is used to create a book catalogue object
+ */
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,6 +17,10 @@ public class BookCatalogue implements Search {
 
     public BookCatalogue() {
         bookCatalogue = new HashMap<>();
+    }
+
+    public Map<String, BookShelf> getBookCatalogue() {
+        return bookCatalogue;
     }
 
     public void addBookShelf(String shelfName, BookShelf bookShelf) {
@@ -45,7 +55,6 @@ public class BookCatalogue implements Search {
         return null;
     }
 
-    // Count number of books in each shelf
     public void countBooks() {
         for (Map.Entry<String, BookShelf> entry : bookCatalogue.entrySet()) {
             System.out.println(entry.getKey());

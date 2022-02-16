@@ -1,5 +1,11 @@
 package com.librarymanagementsystem.books;
 
+/**
+ * @author Adrian Adewunmi
+ * @date 16/02/2022
+ * This class is used to create a book list object
+ */
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -73,7 +79,6 @@ public class BookList {
         return bookList.size();
     }
 
-    // Calculate total number of book copies
     public int getTotalBookCopies() {
         int totalCopies = 0;
         for (Book book : bookList) {

@@ -1,7 +1,6 @@
 package com.librarymanagementsystem.librarian;
 
 import com.librarymanagementsystem.books.Book;
-import com.librarymanagementsystem.books.BookCatalogue;
 
 /**
  * @author Adrian Adewunmi
@@ -9,13 +8,43 @@ import com.librarymanagementsystem.books.BookCatalogue;
  * This class is used to create a librarian object
  */
 public class Librarian {
+    private String librarianName;
+    private String librarianIDNumber;
+    private String librarianEmail;
 
-    // TODO: 24/01/2022
-    // 1. Implement Librarian Class
-    // 2. Move code from LibraryMain class to the Librarian class
-    // 3. Create a method to add books to the book catalogue (.size!=0)
-    // 4. Books -> BookShelf -> BookCatalogue
-    // 5. BookItem: Dealing with multiple copies of the same book
+    /**
+     * This is a constructor for the librarian class
+     * @param librarianName
+     * @param librarianIDNumber
+     * @param librarianEmail
+     */
+    public Librarian(String librarianName, String librarianIDNumber, String librarianEmail) {
+        this.librarianName = librarianName;
+        this.librarianIDNumber = librarianIDNumber;
+        this.librarianEmail = librarianEmail;
+    }
 
+    public String getLibrarianName() {
+        return librarianName;
+    }
 
+    public String getLibrarianIDNumber() {
+        return librarianIDNumber;
+    }
+
+    public String getLibrarianEmail() {
+        return librarianEmail;
+    }
+
+    // TODO:
+    // Create a new book (Programming Books)
+    // Create a new book (Software Engineering Books)
+    // Add book to list of programming books
+    // Add book to list of software engineering books
+    // Add list of programming books to bookshelf
+    // Add list of software engineering to bookshelf
+    // Add bookshelf to catalogue
+    // Shelf 1
+    // Shelf 2
+    // Search for book!
 }
