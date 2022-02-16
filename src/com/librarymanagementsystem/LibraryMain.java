@@ -17,16 +17,16 @@ public class LibraryMain {
         Librarian librarian = new Librarian();
         //librarian.countAllBooksInCatalogue();
        // Create a new book (Programming Books)
-        Book book1 = new Book("123", "Dan Morelli", "Java Programming", 1);
-        Book book2 = new Book("456", "James Dietel", "C++ Programming", 1);
-        Book book3 = new Book("789", "John Walls", "C Programming", 1);
-        Book book4 = new Book("101", "Johnas Deepu", "Python Programming", 1);
+        Book book1 = new Book("123", "Dan Morelli", "Java Programming");
+        Book book2 = new Book("456", "James Dietel", "C++ Programming");
+        Book book3 = new Book("789", "John Walls", "C Programming");
+        Book book4 = new Book("101", "Johnas Deepu", "Python Programming");
 
         // Create a new book (Software Engineering Books)
-        Book book5 = new Book("102", "Richard Thor", "Systems Engineering", 1);
-        Book book6 = new Book("103", "Billy Kay", "Software Methodology", 1);
-        Book book7 = new Book("104", "Edward Bally", "Software Architecture", 1);
-        Book book8 = new Book("105", "James Korbin", "Engineering Management", 1);
+        Book book5 = new Book("102", "Richard Thor", "Systems Engineering");
+        Book book6 = new Book("103", "Billy Kay", "Software Methodology");
+        Book book7 = new Book("104", "Edward Bally", "Software Architecture");
+        Book book8 = new Book("105", "James Korbin", "Engineering Management");
 
         // Add book to list of programming books
         BookList programmingBookList = new BookList();
@@ -106,10 +106,10 @@ public class LibraryMain {
         //shelfTwoCatalog.printAllBooks();
         // =====================================================
         System.out.println("=====Test Dates======");
-        BookItem bookItem1 = new BookItem("123", "Dan Morelli", "Java Programming", 1);
-        BookItem bookItem2 = new BookItem("456", "Richard Thor", "Software Architecture", 1);
+        /*BookItem bookItem1 = new BookItem("123", "Richard Thor","Software Architecture",5) ;
+        BookItem bookItem2 = new BookItem("456", "Richard Thor","Software Architecture",5) ;
         bookItem1.bookBorrowedDate();
         bookItem1.bookReturnedDate();
-        bookItem1.bookBorrowedDays();
+        bookItem1.bookBorrowedDays();*/
     }
 }
