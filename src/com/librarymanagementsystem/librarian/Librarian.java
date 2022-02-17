@@ -1,7 +1,9 @@
 package com.librarymanagementsystem.librarian;
 
 import com.librarymanagementsystem.books.Book;
+import com.librarymanagementsystem.books.BookCatalogue;
 import com.librarymanagementsystem.books.BookList;
+import com.librarymanagementsystem.books.BookShelf;
 
 /**
  * @author Adrian Adewunmi
@@ -42,25 +44,22 @@ public class Librarian {
         System.out.println("Searching for a book...");
     }
 
-    // Create A New Book
-    public Book createNewBook(String ISBN, String author, String bookTitle, int numberOfBookCopies) {
-        System.out.println("Creating a new book...");
-        Book book = new Book(ISBN, author, bookTitle, numberOfBookCopies);
-        System.out.println(book.toString());
-        return book;
-    }
-
-    // Create A List Of Books
-    public void createListOfBooks() {
-        System.out.println("Creating a list of books...");
-        BookList bookList = new BookList();
-
-    }
-
     // Add A Book To The Catalogue
-    public void addBookToCatalogue() {
+    public void addBookToCatalogue(String ISBN, String author, String bookTitle,
+                                  int numberOfBookCopies, String bookCategory, String shelfName) {
         System.out.println("Adding a book to the catalogue...");
-
+        // Create A Book
+        Book book = new Book(ISBN, author, bookTitle, numberOfBookCopies);
+        // Create A BookList Of Books
+        BookList bookList = new BookList();
+        bookList.addBook(book);
+        // Create A Category Of Books
+        BookShelf bookShelf = new BookShelf();
+        bookShelf.addBookList(bookCategory, bookList);
+        // Create A Shelf Of Books
+        BookCatalogue bookCatalogue = new BookCatalogue();
+        bookCatalogue.addBookShelf(shelfName, bookShelf);
+        bookCatalogue.printAllBooks();
     }
 
     // Remove A Book From The Catalogue
