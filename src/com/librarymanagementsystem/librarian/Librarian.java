@@ -1,6 +1,7 @@
 package com.librarymanagementsystem.librarian;
 
 import com.librarymanagementsystem.books.Book;
+import com.librarymanagementsystem.books.BookList;
 
 /**
  * @author Adrian Adewunmi
@@ -36,15 +37,34 @@ public class Librarian {
         return librarianEmail;
     }
 
-    // TODO:
-    // Create a new book (Programming Books)
-    // Create a new book (Software Engineering Books)
-    // Add book to list of programming books
-    // Add book to list of software engineering books
-    // Add list of programming books to bookshelf
-    // Add list of software engineering to bookshelf
-    // Add bookshelf to catalogue
-    // Shelf 1
-    // Shelf 2
-    // Search for book!
+    // Search Catalogue For A Book
+    public void searchCatalogue() {
+        System.out.println("Searching for a book...");
+    }
+
+    // Create A New Book
+    public Book createNewBook(String ISBN, String author, String bookTitle, int numberOfBookCopies) {
+        System.out.println("Creating a new book...");
+        Book book = new Book(ISBN, author, bookTitle, numberOfBookCopies);
+        System.out.println(book.toString());
+        return book;
+    }
+
+    // Create A List Of Books
+    public void createListOfBooks() {
+        System.out.println("Creating a list of books...");
+        BookList bookList = new BookList();
+
+    }
+
+    // Add A Book To The Catalogue
+    public void addBookToCatalogue() {
+        System.out.println("Adding a book to the catalogue...");
+
+    }
+
+    // Remove A Book From The Catalogue
+    public void removeBookFromCatalogue() {
+        System.out.println("Removing a book from the catalogue...");
+    }
 }

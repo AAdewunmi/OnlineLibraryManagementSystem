@@ -14,17 +14,26 @@ public class LibraryMain {
         Library library = new Library("A.K. Adewunmi Memorial Library",
                 "Ilaro, Ogun State, Nigeria");
         System.out.println(library.getLibraryName() + "\n" + library.getLibraryAddress() + "\n");
+        // Create Librarian
         Librarian librarian = new Librarian("Ade Adewunmi", "001","a.ade@akauni.org");
-        System.out.println("Librarian Details: " + librarian.getLibrarianName() +" , "+ librarian.getLibrarianIDNumber()
-                +" , " + librarian.getLibrarianEmail());
-
+        System.out.println("Librarian Details: " + librarian.getLibrarianName() +","+ librarian.getLibrarianIDNumber()
+                +"," + librarian.getLibrarianEmail());
+        // Librarian Creates New Boook
+        librarian.createNewBook("123", "Dan Morelli", "Java Programming", 5);
+        librarian.createNewBook("456", "James Dietel", "C++ Programming", 5);
+        librarian.createNewBook("789", "John Walls", "C Programming", 5);
+        librarian.createNewBook("101", "Johnas Deepu", "Python Programming", 5);
+        librarian.createNewBook("102", "Richard Thor", "Systems Engineering", 5);
+        librarian.createNewBook("103", "Billy Kay", "Software Methodology", 5);
+        librarian.createNewBook("104", "Edward Bally", "Software Architecture", 5);
+        librarian.createNewBook("105", "James Korbin", "Engineering Management", 5);
         // Create a new book (Programming Books)
         Book book1 = new Book("123", "Dan Morelli", "Java Programming", 5);
         Book book2 = new Book("456", "James Dietel", "C++ Programming", 5);
         Book book3 = new Book("789", "John Walls", "C Programming", 5);
         Book book4 = new Book("101", "Johnas Deepu", "Python Programming", 5);
-        book1.bookBorrowedDate();
-        book1.bookReturnedDate();
+        //book1.bookBorrowedDate();
+        //book1.bookReturnedDate();
 
         // Create a new book (Software Engineering Books)
         Book book5 = new Book("102", "Richard Thor", "Systems Engineering", 5);
@@ -54,7 +63,7 @@ public class LibraryMain {
         BookShelf softwareEngineeringBookShelf = new BookShelf();
         softwareEngineeringBookShelf.addBookList("Software Engineering", softwareEngineeringList);
 
-        System.out.println("=====Test Catalogue======");
+        //System.out.println("=====Test Catalogue======");
 
         // Add bookshelf to catalogue
         // Shelf 1
@@ -63,7 +72,7 @@ public class LibraryMain {
         //shelfOneCatalog.countBooks();
         //shelfOneCatalog.printAllBooks();
 
-        System.out.println("-------------------------");
+        //System.out.println("-------------------------");
 
         // Shelf 2
         BookCatalogue shelfTwoCatalog = new BookCatalogue();
