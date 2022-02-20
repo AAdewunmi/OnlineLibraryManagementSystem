@@ -39,31 +39,77 @@ public class Librarian {
         return librarianEmail;
     }
 
+    // Add A Book To The Catalogue
+    public void addBookToCatalogue(String ISBN, String author, String bookTitle,
+                                  int numberOfBookCopies, String bookCategory, String shelfName) {
+        Book book = new Book(ISBN, author, bookTitle, numberOfBookCopies);
+        BookList bookList = new BookList();
+        bookList.addBook(book);
+        BookShelf bookShelf = new BookShelf();
+        bookShelf.addBookList(bookCategory, bookList);
+        BookCatalogue bookCatalogue = new BookCatalogue();
+        bookCatalogue.addBookShelf(shelfName, bookShelf);
+        //bookCatalogue.printAllBooks();
+    }
+
+    // Print All Books In The Catalogue
+    public void printAllBooksInCatalogue() {
+        BookCatalogue bookCatalogue = new BookCatalogue();
+        bookCatalogue.printAllBooks();
+    }
+
+    /*// Print All Books In A Specific Shelf
+    public void printAllBooksInAShelf(String shelfName) {
+        BookCatalogue bookCatalogue = new BookCatalogue();
+        bookCatalogue.printAllBooksInAShelf(shelfName);
+    }
+
+    // Print All Books In A Specific Shelf
+    public void printAllBooksInAShelf(String shelfName, String bookCategory) {
+        BookCatalogue bookCatalogue = new BookCatalogue();
+        bookCatalogue.printAllBooksInAShelf(shelfName, bookCategory);
+    }
+
+    // Print All Books In A Specific Shelf
+    public void printAllBooksInAShelf(String shelfName, String bookCategory, String bookTitle) {
+        BookCatalogue bookCatalogue = new BookCatalogue();
+        bookCatalogue.printAllBooksInAShelf(shelfName, bookCategory, bookTitle);
+    }
+
+    // Print All Books In A Specific Shelf
+    public void printAllBooksInAShelf(String shelfName, String bookCategory, String bookTitle, String author) {
+        BookCatalogue bookCatalogue = new BookCatalogue();
+        bookCatalogue.printAllBooksInAShelf(shelfName, bookCategory, bookTitle, author);
+    }
+
+    // Print All Books In A Specific Shelf
+    public void printAllBooksInAShelf(String shelfName, String bookCategory, String bookTitle, String author, String ISBN) {
+        BookCatalogue bookCatalogue = new BookCatalogue();
+        bookCatalogue.printAllBooksInAShelf(shelfName, bookCategory, bookTitle, author, ISBN);
+    }
+
+    // Print All Books In A Specific Shelf
+    public void printAllBooksInAShelf(String shelfName, String bookCategory, String bookTitle, String author, String ISBN, int numberOfBookCopies) {
+        BookCatalogue bookCatalogue = new BookCatalogue();
+        bookCatalogue.printAllBooksInAShelf(shelfName, bookCategory, bookTitle, author, ISBN, numberOfBookCopies);
+    }
+
+    // Print All Books*/
+
     // Search Catalogue For A Book
     public void searchCatalogue() {
         System.out.println("Searching for a book...");
     }
 
-    // Add A Book To The Catalogue
-    public void addBookToCatalogue(String ISBN, String author, String bookTitle,
-                                  int numberOfBookCopies, String bookCategory, String shelfName) {
-        System.out.println("Adding a book to the catalogue...");
-        // Create A Book
-        Book book = new Book(ISBN, author, bookTitle, numberOfBookCopies);
-        // Create A BookList Of Books
-        BookList bookList = new BookList();
-        bookList.addBook(book);
-        // Create A Category Of Books
-        BookShelf bookShelf = new BookShelf();
-        bookShelf.addBookList(bookCategory, bookList);
-        // Create A Shelf Of Books
-        BookCatalogue bookCatalogue = new BookCatalogue();
-        bookCatalogue.addBookShelf(shelfName, bookShelf);
-        bookCatalogue.printAllBooks();
-    }
-
     // Remove A Book From The Catalogue
     public void removeBookFromCatalogue() {
         System.out.println("Removing a book from the catalogue...");
+    }
+
+    @Override
+    public String toString() {
+        return "Librarian Name: " + librarianName + "\n" +
+                "Librarian ID Number: " + librarianIDNumber + "\n" +
+                "Librarian Email: " + librarianEmail + "\n";
     }
 }

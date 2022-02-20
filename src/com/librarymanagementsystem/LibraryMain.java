@@ -16,8 +16,7 @@ public class LibraryMain {
         System.out.println(library.getLibraryName() + "\n" + library.getLibraryAddress() + "\n");
         // Create Librarian
         Librarian librarian = new Librarian("Ade Adewunmi", "001","a.ade@akauni.org");
-        System.out.println("Librarian Details: " + librarian.getLibrarianName() +","+ librarian.getLibrarianIDNumber()
-                +"," + librarian.getLibrarianEmail());
+        System.out.println(librarian.toString());
         // Librarian Creates New Book, Then Add To Library
         librarian.addBookToCatalogue("123", "Dan Morelli", "Java Programming", 5,
                 "Programming", "Shelf 1");
