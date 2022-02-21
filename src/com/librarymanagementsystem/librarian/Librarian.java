@@ -5,6 +5,8 @@ import com.librarymanagementsystem.books.BookCatalogue;
 import com.librarymanagementsystem.books.BookList;
 import com.librarymanagementsystem.books.BookShelf;
 
+import java.util.Map;
+
 /**
  * @author Adrian Adewunmi
  * @date 24/01/2022
@@ -57,44 +59,6 @@ public class Librarian {
         BookCatalogue bookCatalogue = new BookCatalogue();
         bookCatalogue.printAllBooks();
     }
-
-    /*// Print All Books In A Specific Shelf
-    public void printAllBooksInAShelf(String shelfName) {
-        BookCatalogue bookCatalogue = new BookCatalogue();
-        bookCatalogue.printAllBooksInAShelf(shelfName);
-    }
-
-    // Print All Books In A Specific Shelf
-    public void printAllBooksInAShelf(String shelfName, String bookCategory) {
-        BookCatalogue bookCatalogue = new BookCatalogue();
-        bookCatalogue.printAllBooksInAShelf(shelfName, bookCategory);
-    }
-
-    // Print All Books In A Specific Shelf
-    public void printAllBooksInAShelf(String shelfName, String bookCategory, String bookTitle) {
-        BookCatalogue bookCatalogue = new BookCatalogue();
-        bookCatalogue.printAllBooksInAShelf(shelfName, bookCategory, bookTitle);
-    }
-
-    // Print All Books In A Specific Shelf
-    public void printAllBooksInAShelf(String shelfName, String bookCategory, String bookTitle, String author) {
-        BookCatalogue bookCatalogue = new BookCatalogue();
-        bookCatalogue.printAllBooksInAShelf(shelfName, bookCategory, bookTitle, author);
-    }
-
-    // Print All Books In A Specific Shelf
-    public void printAllBooksInAShelf(String shelfName, String bookCategory, String bookTitle, String author, String ISBN) {
-        BookCatalogue bookCatalogue = new BookCatalogue();
-        bookCatalogue.printAllBooksInAShelf(shelfName, bookCategory, bookTitle, author, ISBN);
-    }
-
-    // Print All Books In A Specific Shelf
-    public void printAllBooksInAShelf(String shelfName, String bookCategory, String bookTitle, String author, String ISBN, int numberOfBookCopies) {
-        BookCatalogue bookCatalogue = new BookCatalogue();
-        bookCatalogue.printAllBooksInAShelf(shelfName, bookCategory, bookTitle, author, ISBN, numberOfBookCopies);
-    }
-
-    // Print All Books*/
 
     // Search Catalogue For A Book
     public void searchCatalogue() {

@@ -8,7 +8,7 @@ package com.librarymanagementsystem.books;
 
 import java.util.*;
 
-public class BookShelf {
+public class BookShelf extends BookList{
 
     private final Map<String, BookList> bookShelf;
 

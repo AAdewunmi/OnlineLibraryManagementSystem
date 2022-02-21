@@ -20,19 +20,27 @@ public class LibraryMain {
         // Librarian Creates New Book, Then Add To Library
         librarian.addBookToCatalogue("123", "Dan Morelli", "Java Programming", 5,
                 "Programming", "Shelf 1");
+        //librarian.printAllBooksInCatalogue();
         librarian.addBookToCatalogue("456", "James Dietel", "C++ Programming", 5,
                 "Programming", "Shelf 1");
+        //librarian.printAllBooksInCatalogue();
         librarian.addBookToCatalogue("789", "John Walls", "C Programming", 5,
                 "Programming", "Shelf 1");
+        //librarian.printAllBooksInCatalogue();
         librarian.addBookToCatalogue("101", "Johnas Deepu", "Python Programming", 5,
                 "Programming", "Shelf 1");
+        //librarian.printAllBooksInCatalogue();
         librarian.addBookToCatalogue("102", "Richard Thor", "Systems Engineering", 5,
                 "Software Engineering", "Shelf 2");
+        //librarian.printAllBooksInCatalogue();
         librarian.addBookToCatalogue("103", "Billy Kay", "Software Methodology", 5,
                 "Software Engineering", "Shelf 2");
+        //librarian.printAllBooksInCatalogue();
         librarian.addBookToCatalogue("104", "Edward Bally", "Software Architecture", 5,
                 "Software Engineering", "Shelf 2");
+        //librarian.printAllBooksInCatalogue();
         librarian.addBookToCatalogue("105", "James Korbin", "Engineering Management", 5,
                 "Software Engineering", "Shelf 2");
+        librarian.printAllBooksInCatalogue();
     }
 }

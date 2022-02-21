@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class BookCatalogue implements Search {
+public class BookCatalogue extends BookShelf implements Search {
     private final Map<String, BookShelf> bookCatalogue;
 
     public BookCatalogue() {
