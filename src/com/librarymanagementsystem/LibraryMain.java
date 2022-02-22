@@ -1,46 +1,57 @@
 package com.librarymanagementsystem;
 
-import com.librarymanagementsystem.books.*;
-import com.librarymanagementsystem.librarian.Librarian;
+import java.time.LocalDate;
+import java.util.Scanner;
 
 /**
  * @author Adrian Adewunmi
  * @date 19/01/2022
- * This is the main class of the library management system
+ * This is the main class of the library management system.
+ * It gives the UI for the user to interact with the system.
  */
 public class LibraryMain {
     public static void main(String[] args) {
-        // Create a new library
-        Library library = new Library("A.K. Adewunmi Memorial Library",
-                "Ilaro, Ogun State, Nigeria");
-        System.out.println(library.getLibraryName() + "\n" + library.getLibraryAddress() + "\n");
-        // Create Librarian
-        Librarian librarian = new Librarian("Ade Adewunmi", "001","a.ade@akauni.org");
-        System.out.println(librarian.toString());
-        // Librarian Creates New Book, Then Add To Library
-        librarian.addBookToCatalogue("123", "Dan Morelli", "Java Programming", 5,
-                "Programming", "Shelf 1");
-        //librarian.printAllBooksInCatalogue();
-        librarian.addBookToCatalogue("456", "James Dietel", "C++ Programming", 5,
-                "Programming", "Shelf 1");
-        //librarian.printAllBooksInCatalogue();
-        librarian.addBookToCatalogue("789", "John Walls", "C Programming", 5,
-                "Programming", "Shelf 1");
-        //librarian.printAllBooksInCatalogue();
-        librarian.addBookToCatalogue("101", "Johnas Deepu", "Python Programming", 5,
-                "Programming", "Shelf 1");
-        //librarian.printAllBooksInCatalogue();
-        librarian.addBookToCatalogue("102", "Richard Thor", "Systems Engineering", 5,
-                "Software Engineering", "Shelf 2");
-        //librarian.printAllBooksInCatalogue();
-        librarian.addBookToCatalogue("103", "Billy Kay", "Software Methodology", 5,
-                "Software Engineering", "Shelf 2");
-        //librarian.printAllBooksInCatalogue();
-        librarian.addBookToCatalogue("104", "Edward Bally", "Software Architecture", 5,
-                "Software Engineering", "Shelf 2");
-        //librarian.printAllBooksInCatalogue();
-        librarian.addBookToCatalogue("105", "James Korbin", "Engineering Management", 5,
-                "Software Engineering", "Shelf 2");
-        librarian.printAllBooksInCatalogue();
+        int mainMenuChoice;
+
+        Library library = new Library("London University Library",
+                "Finsbury Park, London, UK");
+        System.out.println(library.toString());
+        System.out.println("*** Welcome to the Library Management System (LMS) ***");
+        LocalDate date = LocalDate.now();
+        System.out.println("Date: " + date);
+
+        do {
+            System.out.println("\n*** Main Menu ***\n"
+             + "Please select an option from the menu below:\n"
+             + "1. Student User\n"
+             + "2. Librarian User\n"
+             + "3. Exit\n");
+
+            Scanner scanner = new Scanner(System.in);
+            mainMenuChoice = scanner.nextInt();
+
+            switch (mainMenuChoice) {
+                case 1:
+                    System.out.println("Student User");
+                    break;
+                case 2:
+                    System.out.println("Librarian User");
+                    break;
+                case 3:
+                    System.out.println("Exiting LMS...\n...Goodbye");
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+                    System.out.println("Would you like to try again? (y/n)");
+                    char y = scanner.next().charAt(0);
+                    if (y == 'y') {
+                        System.out.println("Enter your choice again");
+                    }else {
+                        mainMenuChoice = 3;
+                    }
+                    System.out.println("Exiting LMS...\n...Goodbye");
+                    break;
+            }
+        }while(mainMenuChoice != 3);
     }
 }

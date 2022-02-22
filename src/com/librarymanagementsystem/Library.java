@@ -21,4 +21,10 @@ public class Library {
     public String getLibraryAddress(){
         return LibraryAddress;
     }
+
+    @Override
+    public String toString() {
+        return "Library Name: " + LibraryName + "\n" +
+                "Library Address: " + LibraryAddress + "\n";
+    }
 }
