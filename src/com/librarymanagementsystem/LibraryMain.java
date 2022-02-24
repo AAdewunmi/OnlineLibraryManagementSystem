@@ -14,7 +14,7 @@ public class LibraryMain {
         int mainMenuChoice;
 
         Library library = new Library("London University Library",
-                "Finsbury Park, London, UK");
+                "Fins-bury Park, London, UK");
         System.out.println(library.toString());
         System.out.println("*** Welcome to the Library Management System (LMS) ***");
         LocalDate date = LocalDate.now();

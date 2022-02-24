@@ -1,18 +1,17 @@
 package com.librarymanagementsystem.librarian;
 
 import com.librarymanagementsystem.books.Book;
-import com.librarymanagementsystem.books.BookCatalogue;
-import com.librarymanagementsystem.books.BookList;
-import com.librarymanagementsystem.books.BookShelf;
+import com.librarymanagementsystem.transactions.Search;
+import com.librarymanagementsystem.transactions.UserTransactions;
 
-import java.util.Map;
+import java.util.List;
 
 /**
  * @author Adrian Adewunmi
  * @date 24/01/2022
  * This class is used to create a librarian object
  */
-public class Librarian {
+public class Librarian extends UserTransactions implements Search {
     private String librarianName;
     private String librarianIDNumber;
     private String librarianEmail;
@@ -41,40 +40,10 @@ public class Librarian {
         return librarianEmail;
     }
 
-    // Add A Book To The Catalogue
-    public void addBookToCatalogue(String ISBN, String author, String bookTitle,
-                                  int numberOfBookCopies, String bookCategory, String shelfName) {
-        Book book = new Book(ISBN, author, bookTitle, numberOfBookCopies);
-        BookList bookList = new BookList();
-        bookList.addBook(book);
-        BookShelf bookShelf = new BookShelf();
-        bookShelf.addBookList(bookCategory, bookList);
-        BookCatalogue bookCatalogue = new BookCatalogue();
-        bookCatalogue.addBookShelf(shelfName, bookShelf);
-        //bookCatalogue.printAllBooks();
-    }
-
-    // Print All Books In The Catalogue
-    public void printAllBooksInCatalogue() {
-        BookCatalogue bookCatalogue = new BookCatalogue();
-        bookCatalogue.printAllBooks();
-    }
-
-    // Search Catalogue For A Book
-    public void searchCatalogue() {
-        System.out.println("Searching for a book...");
-    }
-
-    // Remove A Book From The Catalogue
-    public void removeBookFromCatalogue() {
-        System.out.println("Removing a book from the catalogue...");
-    }
-
     @Override
     public String toString() {
         return "Librarian Name: " + librarianName + "\n" +
                 "Librarian ID Number: " + librarianIDNumber + "\n" +
                 "Librarian Email: " + librarianEmail + "\n";
     }
-
 }
