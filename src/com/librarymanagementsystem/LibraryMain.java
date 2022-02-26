@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class LibraryMain {
     public static void main(String[] args) {
         int mainMenuChoice;
+        int studentMenuChoice;
 
         Library library = new Library("London University Library",
                 "Fins-bury Park, London, UK");
@@ -33,6 +34,33 @@ public class LibraryMain {
             switch (mainMenuChoice) {
                 case 1:
                     System.out.println("Student User");
+                    do {
+                        System.out.println("\n*** Student Menu ***\n"
+                                + "Please select an option from the menu below:\n"
+                                + "1. Search Book\n"
+                                + "2. Reserve Book\n"
+                                + "3. Borrow Book\n"
+                                + "4. Return Book\n"
+                                + "5. Exit to Main Menu\n");
+                        studentMenuChoice = scanner.nextInt();
+                        switch (studentMenuChoice) {
+                            case 1:
+                                System.out.println("Search Book");
+                                break;
+                            case 2:
+                                System.out.println("Reserve Book");
+                                break;
+                            case 3:
+                                System.out.println("Borrow Book");
+                                break;
+                            case 4:
+                                System.out.println("Return Book");
+                                break;
+                            case 5:
+                                System.out.println("Exit to Main Menu");
+                                break;
+                        }
+                    }while (studentMenuChoice != 5);
                     break;
                 case 2:
                     System.out.println("Librarian User");
