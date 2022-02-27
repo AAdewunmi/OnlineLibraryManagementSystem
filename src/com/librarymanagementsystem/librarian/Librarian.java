@@ -1,10 +1,7 @@
 package com.librarymanagementsystem.librarian;
 
-import com.librarymanagementsystem.books.Book;
 import com.librarymanagementsystem.transactions.Search;
 import com.librarymanagementsystem.transactions.UserTransactions;
-
-import java.util.List;
 
 /**
  * @author Adrian Adewunmi

@@ -1,10 +1,6 @@
-package com.librarymanagementsystem.books;
+package com.librarymanagementsystem.book;
 
 import com.librarymanagementsystem.transactions.BookTransactions;
-
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Formatter;
 
 /**
  * @author Adrian Adewunmi

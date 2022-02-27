@@ -1,6 +1,6 @@
 package com.librarymanagementsystem.transactions;
 
-import com.librarymanagementsystem.books.Book;
+import com.librarymanagementsystem.book.Book;
 
 import java.util.List;
 

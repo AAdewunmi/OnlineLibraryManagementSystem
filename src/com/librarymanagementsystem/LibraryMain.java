@@ -13,9 +13,10 @@ public class LibraryMain {
     public static void main(String[] args) {
         int mainMenuChoice;
         int studentMenuChoice;
+        int librarianMenuChoice;
 
         Library library = new Library("London University Library",
-                "Fins-bury Park, London, UK");
+                "Finsbury Park, London, UK");
         System.out.println(library.toString());
         System.out.println("*** Welcome to the Library Management System (LMS) ***");
         LocalDate date = LocalDate.now();
@@ -64,6 +65,33 @@ public class LibraryMain {
                     break;
                 case 2:
                     System.out.println("Librarian User");
+                    do {
+                        System.out.println("\n*** Librarian Menu ***\n"
+                        + "Please select an option from the menu below:\n"
+                        + "1. Search Book\n"
+                        + "2. Add Book\n"
+                        + "3. Remove Book\n"
+                        + "4. Print Books\n"
+                        + "5. Exit to Main Menu\n");
+                        librarianMenuChoice = scanner.nextInt();
+                        switch (librarianMenuChoice) {
+                            case 1:
+                                System.out.println("Search Book");
+                                break;
+                            case 2:
+                                System.out.println("Add Book");
+                                break;
+                            case 3:
+                                System.out.println("Remove Book");
+                                break;
+                            case 4:
+                                System.out.println("Print Books");
+                                break;
+                            case 5:
+                                System.out.println("Exit to Main Menu");
+                                break;
+                        }
+                    }while (librarianMenuChoice != 5);
                     break;
                 case 3:
                     System.out.println("Exiting LMS...\n...Goodbye");
