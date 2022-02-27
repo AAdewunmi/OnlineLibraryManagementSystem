@@ -1,5 +1,8 @@
 package com.librarymanagementsystem;
 
+import com.librarymanagementsystem.book.Book;
+import com.librarymanagementsystem.librarian.Librarian;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -41,8 +44,9 @@ public class LibraryMain {
                                 + "1. Search Book\n"
                                 + "2. Reserve Book\n"
                                 + "3. Borrow Book\n"
-                                + "4. Return Book\n"
-                                + "5. Exit to Main Menu\n");
+                                + "4. Renew Book\n"
+                                + "5. Return Book\n"
+                                + "6. Exit to Main Menu\n");
                         studentMenuChoice = scanner.nextInt();
                         switch (studentMenuChoice) {
                             case 1:
@@ -55,13 +59,16 @@ public class LibraryMain {
                                 System.out.println("Borrow Book");
                                 break;
                             case 4:
-                                System.out.println("Return Book");
+                                System.out.println("Renew Book");
                                 break;
                             case 5:
+                                System.out.println("Return Book");
+                                break;
+                            case 6:
                                 System.out.println("Exit to Main Menu");
                                 break;
                         }
-                    }while (studentMenuChoice != 5);
+                    }while (studentMenuChoice != 6);
                     break;
                 case 2:
                     System.out.println("Librarian User");
@@ -110,4 +117,5 @@ public class LibraryMain {
             }
         }while(mainMenuChoice != 3);
     }
+
 }

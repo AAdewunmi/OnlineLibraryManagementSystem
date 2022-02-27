@@ -8,7 +8,7 @@ import com.librarymanagementsystem.transactions.UserTransactions;
  * @date 24/01/2022
  * This class is used to create a librarian object
  */
-public class Librarian extends UserTransactions implements Search {
+public class Librarian extends UserTransactions {
     private String librarianName;
     private String librarianIDNumber;
     private String librarianEmail;

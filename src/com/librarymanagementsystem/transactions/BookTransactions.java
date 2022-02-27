@@ -12,17 +12,22 @@ import java.util.Formatter;
  */
 public class BookTransactions {
 
-   // Check Book Status
-   public void checkBookStatus(String bookId) {
+    // Check book status
+    public void checkBookStatus(String bookId) {
+        if (bookId.equals("")) {
+            System.out.println("Book status is: " + "Book is not available");
+        } else {
+            System.out.println("Book status is: " + "Book is available");
+        }
+    }
 
-   }
-
-   // Reserved date
-   public Date reservedDate() {
+    // Reserved date
+    public Date reservedDate() {
         return new Date();
-   }
+    }
 
-    public Date bookBorrowedDate(){
+    // Book borrowed date
+    public Date bookBorrowedDate() {
         Date date = new Date();
         Formatter formatter = new Formatter();
         Calendar calendar = Calendar.getInstance();
@@ -31,7 +36,8 @@ public class BookTransactions {
         return calendar.getTime();
     }
 
-    public Date bookReturnedDate(){
+    // Book returned date
+    public Date bookReturnedDate() {
         Date date = new Date();
         Formatter formatter = new Formatter();
         Calendar calendar = Calendar.getInstance();
@@ -43,7 +49,8 @@ public class BookTransactions {
         return calendar.getTime();
     }
 
-    public long bookBorrowedDays(){
+    // Days borrowed
+    public long bookBorrowedDays() {
         Date date1 = bookBorrowedDate();
         Date date2 = bookReturnedDate();
         long daysBetween = ChronoUnit.DAYS.between(date2.toInstant(), date1.toInstant());

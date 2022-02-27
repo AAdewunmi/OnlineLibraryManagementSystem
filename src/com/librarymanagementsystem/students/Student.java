@@ -8,7 +8,7 @@ import com.librarymanagementsystem.transactions.UserTransactions;
  * @date 06/01/2020
  * This class is used to create a student object
  */
-public class Student extends UserTransactions implements Search {
+public class Student extends UserTransactions {
 
     private final String name;
     private final String studentId;
