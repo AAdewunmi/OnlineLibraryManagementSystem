@@ -1,5 +1,6 @@
 package com.librarymanagementsystem;
 
+import administrator.Administrator;
 import com.librarymanagementsystem.book.Book;
 import com.librarymanagementsystem.librarian.Librarian;
 
@@ -14,6 +15,7 @@ import java.util.Scanner;
  */
 public class LibraryMain {
     public static void main(String[] args) {
+        int adminChoice;
         int mainMenuChoice;
         int studentMenuChoice;
         int librarianMenuChoice;
@@ -24,8 +26,48 @@ public class LibraryMain {
         System.out.println("*** Welcome to the Library Management System (LMS) ***");
         LocalDate date = LocalDate.now();
         System.out.println("Date: " + date);
+        Scanner scanner = new Scanner(System.in);
+        Administrator admin = new Administrator();
 
         do {
+            System.out.println("\nPlease select an option from the menu below:\n"
+            + "1. Register a new librarian\n"
+            + "2. Print all librarians\n"
+            + "3. Register a new student\n"
+            + "4. Print all students\n"
+            + "5. Exit\n");
+            adminChoice = scanner.nextInt();
+            switch (adminChoice) {
+                case 1:
+                    System.out.println("Register a new librarian");
+                    admin.createLibrarian("Ade", "001", "ade@aol.com");
+                    admin.createLibrarian("Olu", "002", "olu@aol.com");
+                    admin.createLibrarian("Ola", "003", "ola@aol.com");
+                    break;
+                case 2:
+                    System.out.println("Print a list of all librarians");
+                    admin.printLibrarians();
+                    break;
+                case 3:
+                    System.out.println("Register a new student");
+                    admin.createStudent("Ade", "001", "ade@aol.com");
+                    admin.createStudent("Olu", "002", "olu@aol.com");
+                    admin.createStudent("Ola", "003", "ola@aol.com");
+                    break;
+                case 4:
+                    System.out.println("Print a list of all students");
+                    admin.printStudents();
+                    break;
+                case 5:
+                    System.out.println("Exiting the system ... \n ... Good-Bye!");
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+                    break;
+            }
+        } while (adminChoice != 5);
+
+       /* do {
             System.out.println("\n*** Main Menu ***\n"
              + "Please select an option from the menu below:\n"
              + "1. Student User\n"
@@ -115,7 +157,7 @@ public class LibraryMain {
                     System.out.println("Exiting LMS...\n...Goodbye");
                     break;
             }
-        }while(mainMenuChoice != 3);
+        }while(mainMenuChoice != 3);*/
     }
 
 }
