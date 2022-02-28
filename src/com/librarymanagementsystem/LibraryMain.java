@@ -28,8 +28,10 @@ public class LibraryMain {
         System.out.println("Date: " + date);
         Scanner scanner = new Scanner(System.in);
         Administrator admin = new Administrator();
+        // Admin login
 
-        do {
+       /* ADMINISTRATOR MENU
+       do {
             System.out.println("\nPlease select an option from the menu below:\n"
             + "1. Register a new librarian\n"
             + "2. Print all librarians\n"
@@ -65,9 +67,10 @@ public class LibraryMain {
                     System.out.println("Invalid choice");
                     break;
             }
-        } while (adminChoice != 5);
+        } while (adminChoice != 5);*/
 
-       /* do {
+       /* TEACHER / STUDENT MENU
+       do {
             System.out.println("\n*** Main Menu ***\n"
              + "Please select an option from the menu below:\n"
              + "1. Student User\n"

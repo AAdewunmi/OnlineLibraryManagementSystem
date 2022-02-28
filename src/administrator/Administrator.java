@@ -14,13 +14,16 @@ import java.util.List;
  */
 
 public class Administrator {
-
+    String adminUserName = "admin";
+    String adminPassword = "admin";
     private List<Librarian> listOfLibrarians;
     private List<Student> listOfStudents;
 
     public Administrator() {
         this.listOfLibrarians = new ArrayList<>();
         this.listOfStudents = new ArrayList<>();
+        this.adminUserName = adminUserName;
+        this.adminPassword = adminPassword;
     }
 
     // Create new librarian
