@@ -15,6 +15,7 @@ import java.util.Scanner;
  */
 public class LibraryMain {
     public static void main(String[] args) {
+        int loginChoice;
         int adminChoice;
         int mainMenuChoice;
         int studentMenuChoice;
@@ -25,10 +26,35 @@ public class LibraryMain {
         System.out.println(library.toString());
         System.out.println("*** Welcome to the Library Management System (LMS) ***");
         LocalDate date = LocalDate.now();
-        System.out.println("Date: " + date);
+        System.out.println("*** Date: " + date + " ***");
         Scanner scanner = new Scanner(System.in);
         Administrator admin = new Administrator();
         // Admin login
+        do {
+            System.out.println("\n*** Administrator Login ***");
+            System.out.println("Please select an option: "
+                                + "\n1. Login"
+                                + "\n2. Exit");
+            loginChoice = scanner.nextInt();
+            switch (loginChoice){
+                case 1:
+                    System.out.println("Loging ... ");
+                    System.out.println("\nPlease enter your login details: ");
+                    System.out.print("Username: ");
+                    String username = scanner.next();
+                    System.out.print("Password: ");
+                    String password = scanner.next();
+                    admin.adminLogin(username, password);
+                    break;
+                case 2:
+                    System.out.println("Loging Out ... \nExiting Library Management System (LMS) ... " +
+                            "\nGoodbye!");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
+            }
+        }while (loginChoice != 2);
 
        /* ADMINISTRATOR MENU
        do {

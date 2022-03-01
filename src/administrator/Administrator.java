@@ -2,6 +2,7 @@ package administrator;
 
 import com.librarymanagementsystem.librarian.Librarian;
 import com.librarymanagementsystem.students.Student;
+import com.librarymanagementsystem.transactions.UserTransactions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  * for registering new students and librarians.
  */
 
-public class Administrator {
+public class Administrator extends UserTransactions {
     String adminUserName = "admin";
     String adminPassword = "admin";
     private List<Librarian> listOfLibrarians;
@@ -24,6 +25,14 @@ public class Administrator {
         this.listOfStudents = new ArrayList<>();
         this.adminUserName = adminUserName;
         this.adminPassword = adminPassword;
+    }
+
+    public String getAdminUserName() {
+        return adminUserName;
+    }
+
+    public String getAdminPassword() {
+        return adminPassword;
     }
 
     // Create new librarian

@@ -12,6 +12,20 @@ import java.util.List;
  */
 public class UserTransactions implements Search{
     // +++++++++++++++++++++++++++++++
+    // +++  Administrator methods ++++
+    // +++++++++++++++++++++++++++++++
+
+    public boolean adminLogin(String username, String password){
+        if(username.equals("admin") && password.equals("admin")){
+            System.out.println("Administrator Login Successful!");
+            return true;
+        }else {
+            System.out.println("Administrator Login Failed!");
+        }
+        return false;
+    }
+
+    // +++++++++++++++++++++++++++++++
     // ++++++  Librarian  methods ++++
     // +++++++++++++++++++++++++++++++
     // Add a new book to the library
