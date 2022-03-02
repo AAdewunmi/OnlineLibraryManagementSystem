@@ -12,6 +12,8 @@ public class Librarian extends UserTransactions {
     private String librarianName;
     private String librarianIDNumber;
     private String librarianEmail;
+    private String librarianUserName;
+    private String librarianPassword;
 
     /**
      * This is a constructor for the librarian class
@@ -23,6 +25,8 @@ public class Librarian extends UserTransactions {
         this.librarianName = librarianName;
         this.librarianIDNumber = librarianIDNumber;
         this.librarianEmail = librarianEmail;
+        this.librarianUserName = "librarian";
+        this.librarianPassword = "librarian";
     }
 
     public String getLibrarianName() {

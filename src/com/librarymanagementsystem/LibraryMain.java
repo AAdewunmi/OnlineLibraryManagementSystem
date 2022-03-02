@@ -1,9 +1,6 @@
 package com.librarymanagementsystem;
 
 import administrator.Administrator;
-import com.librarymanagementsystem.book.Book;
-import com.librarymanagementsystem.librarian.Librarian;
-
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -29,7 +26,7 @@ public class LibraryMain {
         System.out.println("*** Date: " + date + " ***");
         Scanner scanner = new Scanner(System.in);
         Administrator admin = new Administrator();
-        // Admin login
+        // Administrator Login Menu
         do {
             System.out.println("\n*** Administrator Login ***");
             System.out.println("Please select an option: "
@@ -44,7 +41,52 @@ public class LibraryMain {
                     String username = scanner.next();
                     System.out.print("Password: ");
                     String password = scanner.next();
-                    admin.adminLogin(username, password);
+                    if (admin.adminLogin(username, password)){
+                        // Administrator Menu after login
+                        do {
+                            System.out.println("\nPlease select an option from the menu below:\n"
+                                    + "1. Register a new librarian\n"
+                                    + "2. Print all librarians\n"
+                                    + "3. Register a new student\n"
+                                    + "4. Print all students\n"
+                                    + "5. Exit\n");
+                            adminChoice = scanner.nextInt();
+                            switch (adminChoice) {
+                                case 1:
+                                    System.out.println("Register a new librarian ... ");
+                                    System.out.println("\nPlease enter the details of the new librarian: ");
+                                    System.out.print("Enter the librarian's name: ");
+                                    String librarianName = scanner.next();
+                                    System.out.print("Enter the librarian's username: ");
+                                    String librarianUsername = scanner.next();
+                                    admin.createLibrarian("Ade", "001", "ade@aol.com");
+                                    admin.createLibrarian("Olu", "002", "olu@aol.com");
+                                    admin.createLibrarian("Ola", "003", "ola@aol.com");
+                                    break;
+                                case 2:
+                                    System.out.println("Print a list of all librarians ...");
+                                    admin.printLibrarians();
+                                    break;
+                                case 3:
+                                    System.out.println("Register a new student ... ");
+                                    admin.createStudent("Ade", "001", "ade@aol.com");
+                                    admin.createStudent("Olu", "002", "olu@aol.com");
+                                    admin.createStudent("Ola", "003", "ola@aol.com");
+                                    break;
+                                case 4:
+                                    System.out.println("Print a list of all students ... ");
+                                    admin.printStudents();
+                                    break;
+                                case 5:
+                                    System.out.println("Exiting Administrator Menu ... " +
+                                            "\n ... Returning to Administrator Login Menu");
+                                    break;
+                                default:
+                                    System.out.println("Invalid choice");
+                                    break;
+                            }
+                        } while (adminChoice != 5);
+                    }
                     break;
                 case 2:
                     System.out.println("Loging Out ... \nExiting Library Management System (LMS) ... " +
@@ -56,44 +98,7 @@ public class LibraryMain {
             }
         }while (loginChoice != 2);
 
-       /* ADMINISTRATOR MENU
-       do {
-            System.out.println("\nPlease select an option from the menu below:\n"
-            + "1. Register a new librarian\n"
-            + "2. Print all librarians\n"
-            + "3. Register a new student\n"
-            + "4. Print all students\n"
-            + "5. Exit\n");
-            adminChoice = scanner.nextInt();
-            switch (adminChoice) {
-                case 1:
-                    System.out.println("Register a new librarian");
-                    admin.createLibrarian("Ade", "001", "ade@aol.com");
-                    admin.createLibrarian("Olu", "002", "olu@aol.com");
-                    admin.createLibrarian("Ola", "003", "ola@aol.com");
-                    break;
-                case 2:
-                    System.out.println("Print a list of all librarians");
-                    admin.printLibrarians();
-                    break;
-                case 3:
-                    System.out.println("Register a new student");
-                    admin.createStudent("Ade", "001", "ade@aol.com");
-                    admin.createStudent("Olu", "002", "olu@aol.com");
-                    admin.createStudent("Ola", "003", "ola@aol.com");
-                    break;
-                case 4:
-                    System.out.println("Print a list of all students");
-                    admin.printStudents();
-                    break;
-                case 5:
-                    System.out.println("Exiting the system ... \n ... Good-Bye!");
-                    break;
-                default:
-                    System.out.println("Invalid choice");
-                    break;
-            }
-        } while (adminChoice != 5);*/
+
 
        /* TEACHER / STUDENT MENU
        do {
@@ -187,6 +192,6 @@ public class LibraryMain {
                     break;
             }
         }while(mainMenuChoice != 3);*/
+        scanner.close();
     }
-
 }

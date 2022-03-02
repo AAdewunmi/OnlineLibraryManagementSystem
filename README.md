@@ -26,4 +26,11 @@ The project is completed once all the MVP features have been implemented.
 3. Add a GUI for the student
 4. Add a database to store the users / books
 
+## How to run the project?
+
+1. Administrator:
+    1.1. Login as admin (username: "admin", password: "admin")
+    1.2. Add / delete users
+    1.3. Logout
+
 

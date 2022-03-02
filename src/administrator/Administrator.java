@@ -15,24 +15,16 @@ import java.util.List;
  */
 
 public class Administrator extends UserTransactions {
-    String adminUserName = "admin";
-    String adminPassword = "admin";
+    String adminUserName;
+    String adminPassword;
     private List<Librarian> listOfLibrarians;
     private List<Student> listOfStudents;
 
     public Administrator() {
         this.listOfLibrarians = new ArrayList<>();
         this.listOfStudents = new ArrayList<>();
-        this.adminUserName = adminUserName;
-        this.adminPassword = adminPassword;
-    }
-
-    public String getAdminUserName() {
-        return adminUserName;
-    }
-
-    public String getAdminPassword() {
-        return adminPassword;
+        this.adminUserName = "admin";
+        this.adminPassword = "admin";
     }
 
     // Create new librarian
