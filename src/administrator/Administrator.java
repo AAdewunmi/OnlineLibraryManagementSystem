@@ -33,11 +33,32 @@ public class Administrator extends UserTransactions {
         listOfLibrarians.add(librarian);
     }
 
+    // Remove librarian
+    public boolean removeLibrarian(String librarianIDNumber){
+        for (Librarian librarian : listOfLibrarians) {
+            if (librarian.getLibrarianIDNumber().equals(librarianIDNumber)){
+                listOfLibrarians.remove(librarian);
+                return true;
+            }
+        }
+        return false;
+    }
+
     // Print list of librarians
     public void printLibrarians(){
         for (Librarian librarian : listOfLibrarians) {
             System.out.println(librarian);
         }
+    }
+
+    // Search for a librarian by ID number
+    public boolean searchLibrarian(String librarianIDNumber){
+        for (Librarian librarian : listOfLibrarians) {
+            if (librarian.getLibrarianIDNumber().equals(librarianIDNumber)){
+                return true;
+            }
+        }
+        return false;
     }
 
     // Create new student

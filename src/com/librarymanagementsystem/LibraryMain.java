@@ -1,6 +1,8 @@
 package com.librarymanagementsystem;
 
 import administrator.Administrator;
+import com.librarymanagementsystem.librarian.Librarian;
+
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -46,38 +48,58 @@ public class LibraryMain {
                         do {
                             System.out.println("\nPlease select an option from the menu below:\n"
                                     + "1. Register a new librarian\n"
-                                    + "2. Print all librarians\n"
-                                    + "3. Register a new student\n"
-                                    + "4. Print all students\n"
-                                    + "5. Exit\n");
+                                    + "2. Delete a librarian\n"
+                                    + "3. Print all librarians\n"
+                                    + "4. Register a new student\n"
+                                    + "5. Delete a student\n"
+                                    + "6. Print all students\n"
+                                    + "7. Exit\n");
                             adminChoice = scanner.nextInt();
                             switch (adminChoice) {
                                 case 1:
-                                    System.out.println("Register a new librarian ... ");
-                                    System.out.println("\nPlease enter the details of the new librarian: ");
-                                    System.out.print("Enter the librarian's name: ");
-                                    String librarianName = scanner.next();
-                                    System.out.print("Enter the librarian's username: ");
-                                    String librarianUsername = scanner.next();
-                                    admin.createLibrarian("Ade", "001", "ade@aol.com");
-                                    admin.createLibrarian("Olu", "002", "olu@aol.com");
-                                    admin.createLibrarian("Ola", "003", "ola@aol.com");
+                                    char y;
+                                    do {
+                                        System.out.println("Register a new librarian ... ");
+                                        System.out.println("\nPlease enter the details of the new librarian: ");
+                                        System.out.print("Enter the librarian's name: ");
+                                        String librarianName = scanner.next();
+                                        System.out.print("Enter the librarian's user ID Number: ");
+                                        String librarianIDNumber = scanner.next();
+                                        System.out.println("Enter the librarian's Email Address: ");
+                                        String librarianEmail = scanner.next();
+                                        if(admin.searchLibrarian(librarianIDNumber)){
+                                            System.out.println("Librarian already exists");
+                                            System.out.println("Do you want to add another librarian? (y/n)");
+                                        }else {
+                                            admin.createLibrarian(librarianName, librarianIDNumber, librarianEmail);
+                                            System.out.println("Librarian successfully registered!");
+                                            System.out.println("\nDo you want to register another librarian? (y/n)");
+                                        }
+                                        y = scanner.next().charAt(0);
+                                    } while (y == 'y');
                                     break;
                                 case 2:
+                                    System.out.println("Delete a librarian ... ");
+                                    admin.removeLibrarian("003");
+                                    break;
+                                case 3:
                                     System.out.println("Print a list of all librarians ...");
                                     admin.printLibrarians();
                                     break;
-                                case 3:
+                                case 4:
                                     System.out.println("Register a new student ... ");
                                     admin.createStudent("Ade", "001", "ade@aol.com");
                                     admin.createStudent("Olu", "002", "olu@aol.com");
                                     admin.createStudent("Ola", "003", "ola@aol.com");
                                     break;
-                                case 4:
+                                case 5:
+                                    System.out.println("Delete a student ... ");
+                                    break;
+                                case 6:
                                     System.out.println("Print a list of all students ... ");
                                     admin.printStudents();
                                     break;
-                                case 5:
+                                case 7:
                                     System.out.println("Exiting Administrator Menu ... " +
                                             "\n ... Returning to Administrator Login Menu");
                                     break;
@@ -85,7 +107,7 @@ public class LibraryMain {
                                     System.out.println("Invalid choice");
                                     break;
                             }
-                        } while (adminChoice != 5);
+                        } while (adminChoice != 7);
                     }
                     break;
                 case 2:

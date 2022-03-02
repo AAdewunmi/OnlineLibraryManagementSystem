@@ -11,7 +11,7 @@ and a console based application.
 
 It is an application that consists of three users:
 
-1. Administrator -> allow user to login, add / delete users, logout.
+1. Administrator -> allow user to login, add / delete / print users, logout.
 2. Librarian -> allow user to login, add / delete / search for books, logout.
 3. Student -> allow user to login, search / reserve books / borrow books, logout.
 
@@ -30,7 +30,11 @@ The project is completed once all the MVP features have been implemented.
 
 1. Administrator:
     1.1. Login as admin (username: "admin", password: "admin")
-    1.2. Add / delete users
+    1.2. Add / delete / print list of users
     1.3. Logout
+2. Librarian:
+    2.1. Login as librarian (username: "librarian", password: "librarian")
+    2.2. Add / delete / search for books
+    2.3. Logout
 
 
