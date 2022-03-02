@@ -79,8 +79,22 @@ public class LibraryMain {
                                     } while (y == 'y');
                                     break;
                                 case 2:
-                                    System.out.println("Delete a librarian ... ");
-                                    admin.removeLibrarian("003");
+                                    char z;
+                                    do {
+                                        System.out.println("Delete a librarian ... ");
+                                        System.out.println("\nPlease enter the details of the librarian to be deleted: ");
+                                        System.out.print("Enter the librarian's user ID Number: ");
+                                        String librarianIDNumber = scanner.next();
+                                        if(admin.searchLibrarian(librarianIDNumber)){
+                                            admin.removeLibrarian(librarianIDNumber);
+                                            System.out.println("Librarian successfully deleted!");
+                                            System.out.println("Do you want to add another librarian? (y/n)");
+                                        }else {
+                                            System.out.println("Librarian does not exist");
+                                            System.out.println("\nDo you want to delete another librarian? (y/n)");
+                                        }
+                                        z = scanner.next().charAt(0);
+                                    } while (z == 'y');
                                     break;
                                 case 3:
                                     System.out.println("Print a list of all librarians ...");
