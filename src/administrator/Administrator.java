@@ -33,7 +33,7 @@ public class Administrator extends UserTransactions {
         listOfLibrarians.add(librarian);
     }
 
-    // Remove librarian
+    // Remove a librarian
     public boolean removeLibrarian(String librarianIDNumber){
         for (Librarian librarian : listOfLibrarians) {
             if (librarian.getLibrarianIDNumber().equals(librarianIDNumber)){
@@ -72,5 +72,26 @@ public class Administrator extends UserTransactions {
         for (Student student : listOfStudents) {
             System.out.println(student);
         }
+    }
+
+    // Search for a student by ID number
+    public boolean searchStudent(String studentIDNumber){
+        for (Student student : listOfStudents) {
+            if (student.getStudentId().equals(studentIDNumber)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    // Remove a student
+    public boolean removeStudent(String studentIDNumber){
+        for (Student student : listOfStudents) {
+            if (student.getStudentId().equals(studentIDNumber)){
+                listOfStudents.remove(student);
+                return true;
+            }
+        }
+        return false;
     }
 }
