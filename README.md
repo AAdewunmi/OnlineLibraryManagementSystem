@@ -36,5 +36,9 @@ The project is completed once all the MVP features have been implemented.
     2.1. Login as librarian (username: "librarian", password: "librarian")
     2.2. Add / delete / search for books
     2.3. Logout
+3. Student:
+    3.1. Login as student (username: "student", password: "student")
+    3.2. Search / reserve books / borrow books
+    3.3. Logout
 
 
