@@ -101,10 +101,29 @@ public class LibraryMain {
                                     admin.printLibrarians();
                                     break;
                                 case 4:
-                                    System.out.println("Register a new student ... ");
-                                    admin.createStudent("Ade", "001", "ade@aol.com");
+                                    /*admin.createStudent("Ade", "001", "ade@aol.com");
                                     admin.createStudent("Olu", "002", "olu@aol.com");
-                                    admin.createStudent("Ola", "003", "ola@aol.com");
+                                    admin.createStudent("Ola", "003", "ola@aol.com");*/
+                                    char a;
+                                    do {
+                                        System.out.println("Register a new student ... ");
+                                        System.out.println("\nPlease enter the details of the new student: ");
+                                        System.out.print("Enter the student's name: ");
+                                        String studentName = scanner.next();
+                                        System.out.print("Enter the student's user ID Number: ");
+                                        String studentIDNumber = scanner.next();
+                                        System.out.println("Enter the student's Email Address: ");
+                                        String studentEmail = scanner.next();
+                                        if(admin.searchStudent(studentIDNumber)){
+                                            System.out.println("Student already exists");
+                                            System.out.println("Do you want to add another student? (y/n)");
+                                        }else {
+                                            admin.createStudent(studentName, studentIDNumber, studentEmail);
+                                            System.out.println("Student successfully registered!");
+                                            System.out.println("\nDo you want to register another Student? (y/n)");
+                                        }
+                                        a = scanner.next().charAt(0);
+                                    } while (a == 'y');
                                     break;
                                 case 5:
                                     System.out.println("Delete a student ... ");
