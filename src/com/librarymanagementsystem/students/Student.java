@@ -13,6 +13,8 @@ public class Student extends UserTransactions {
     private final String name;
     private final String studentId;
     private final String email;
+    private final String studentUsername;
+    private String studentPassword;
 
     /**
      * This is the constructor for the student class
@@ -21,10 +23,12 @@ public class Student extends UserTransactions {
      * @param email
      */
 
-    public Student(String name, String studentId, String email) {
+    public Student(String name, String studentId, String email, String studentUsername, String studentPassword) {
         this.name = name;
         this.studentId = studentId;
         this.email = email;
+        this.studentUsername = "student";
+        this.studentPassword = "student";
     }
 
     public String getName() {
@@ -37,6 +41,18 @@ public class Student extends UserTransactions {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getStudentUsername() {
+        return studentUsername;
+    }
+
+    public String getStudentPassword() {
+        return studentPassword;
+    }
+
+    public void setStudentPassword(String studentPassword) {
+        this.studentPassword = studentPassword;
     }
 
     @Override

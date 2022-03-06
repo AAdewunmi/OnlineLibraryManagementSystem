@@ -9,10 +9,10 @@ import com.librarymanagementsystem.transactions.UserTransactions;
  * This class is used to create a librarian object
  */
 public class Librarian extends UserTransactions {
-    private String librarianName;
-    private String librarianIDNumber;
-    private String librarianEmail;
-    private String librarianUserName;
+    private final String librarianName;
+    private final String librarianIDNumber;
+    private final String librarianEmail;
+    private final String librarianUserName;
     private String librarianPassword;
 
     /**
@@ -21,7 +21,7 @@ public class Librarian extends UserTransactions {
      * @param librarianIDNumber
      * @param librarianEmail
      */
-    public Librarian(String librarianName, String librarianIDNumber, String librarianEmail) {
+    public Librarian(String librarianName, String librarianIDNumber, String librarianEmail, String librarianUserName, String librarianPassword) {
         this.librarianName = librarianName;
         this.librarianIDNumber = librarianIDNumber;
         this.librarianEmail = librarianEmail;
@@ -39,6 +39,18 @@ public class Librarian extends UserTransactions {
 
     public String getLibrarianEmail() {
         return librarianEmail;
+    }
+
+    public String getLibrarianUserName() {
+        return librarianUserName;
+    }
+
+    public String getLibrarianPassword() {
+        return librarianPassword;
+    }
+
+    public void setLibrarianPassword(String librarianPassword) {
+        this.librarianPassword = librarianPassword;
     }
 
     @Override

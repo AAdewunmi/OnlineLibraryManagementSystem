@@ -28,8 +28,8 @@ public class Administrator extends UserTransactions {
     }
 
     // Create new librarian
-    public void createLibrarian(String librarianName, String librarianIDNumber, String librarianEmail){
-        Librarian librarian = new Librarian(librarianName, librarianIDNumber, librarianEmail);
+    public void createLibrarian(String librarianName, String librarianIDNumber, String librarianEmail, String librarianUserName, String librarianPassword){
+        Librarian librarian = new Librarian(librarianName, librarianIDNumber, librarianEmail, librarianUserName, librarianPassword);
         listOfLibrarians.add(librarian);
     }
 
@@ -62,8 +62,8 @@ public class Administrator extends UserTransactions {
     }
 
     // Create new student
-    public void createStudent(String name, String studentId, String email){
-        Student student = new Student(name, studentId, email);
+    public void createStudent(String name, String studentId, String email, String userName, String password){
+        Student student = new Student(name, studentId, email, userName, password);
         listOfStudents.add(student);
     }
 
