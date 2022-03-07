@@ -27,8 +27,8 @@ public class Student extends UserTransactions {
         this.name = name;
         this.studentId = studentId;
         this.email = email;
-        this.studentUsername = "student";
-        this.studentPassword = "student";
+        this.studentUsername = studentUsername;
+        this.studentPassword = studentPassword;
     }
 
     public String getName() {

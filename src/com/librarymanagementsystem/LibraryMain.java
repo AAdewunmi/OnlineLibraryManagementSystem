@@ -66,6 +66,9 @@ public class LibraryMain {
                                         adminChoice = scanner.nextInt();
                                         switch (adminChoice) {
                                             case 1:
+                                                // TODO: Admin login, register a new librarian, logout
+                                                //  Librarian must be UNIQUE librarian! (MAX 1),
+                                                //  Librarian login in, carry out operations, logout!
                                                 char y;
                                                 do {
                                                     System.out.println("Register a new librarian ... ");
@@ -89,7 +92,6 @@ public class LibraryMain {
                                                         System.out.println("\nDo you want to register another librarian? (y/n)");
                                                     }
                                                     y = scanner.next().charAt(0);
-
                                                 } while (y == 'y');
                                                 break;
                                             case 2:
@@ -115,12 +117,13 @@ public class LibraryMain {
                                                 admin.printLibrarians();
                                                 break;
                                             case 4:
+                                                // TODO: Register a UNIQUE student (MAX 3)
                                                 char a;
                                                 do {
                                                     System.out.println("Register a new student ... ");
                                                     System.out.println("\nPlease enter the details of the new student: ");
                                                     System.out.print("Enter the student's name: ");
-                                                    String studentName = scanner.next();
+                                                    String studentName = scanner.nextLine();
                                                     System.out.print("Enter the student's user ID Number: ");
                                                     String studentIDNumber = scanner.next();
                                                     System.out.println("Enter the student's Email Address: ");
@@ -186,7 +189,23 @@ public class LibraryMain {
                     } while (loginChoice != 2);
                     break;
                 case 2:
-                    System.out.println("*** Librarian Login ***");
+                    do {
+                        System.out.println("*** Librarian Login ***");
+                        System.out.println("Please select an option: ");
+                        System.out.println("1. Login");
+                        System.out.println("2. Exit");
+                        librarianMenuChoice = scanner.nextInt();
+                        switch (librarianMenuChoice){
+                            case 1:
+                                System.out.println("Logging in ... ");
+                                break;
+                            case 2:
+                                System.out.println("Loging Out ... \nExiting Librarian Login Menu");
+                                break;
+                            default:
+                                System.out.println("Invalid choice. Please try again.");
+                        }
+                    } while (librarianMenuChoice != 2);
                     break;
                 case 3:
                     System.out.println("*** Student Login ***");

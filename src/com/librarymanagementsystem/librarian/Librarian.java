@@ -25,8 +25,8 @@ public class Librarian extends UserTransactions {
         this.librarianName = librarianName;
         this.librarianIDNumber = librarianIDNumber;
         this.librarianEmail = librarianEmail;
-        this.librarianUserName = "librarian";
-        this.librarianPassword = "librarian";
+        this.librarianUserName = librarianUserName;
+        this.librarianPassword = librarianPassword;
     }
 
     public String getLibrarianName() {
