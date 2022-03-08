@@ -10,10 +10,10 @@ import com.librarymanagementsystem.transactions.UserTransactions;
  */
 public class Librarian extends UserTransactions {
     private final String librarianName;
-    private final String librarianIDNumber;
+    private final int librarianIDNumber;
     private final String librarianEmail;
     private final String librarianUserName;
-    private String librarianPassword;
+    private final String librarianPassword;
 
     /**
      * This is a constructor for the librarian class
@@ -21,7 +21,7 @@ public class Librarian extends UserTransactions {
      * @param librarianIDNumber
      * @param librarianEmail
      */
-    public Librarian(String librarianName, String librarianIDNumber, String librarianEmail, String librarianUserName, String librarianPassword) {
+    public Librarian(String librarianName, int librarianIDNumber, String librarianEmail, String librarianUserName, String librarianPassword) {
         this.librarianName = librarianName;
         this.librarianIDNumber = librarianIDNumber;
         this.librarianEmail = librarianEmail;
@@ -33,7 +33,7 @@ public class Librarian extends UserTransactions {
         return librarianName;
     }
 
-    public String getLibrarianIDNumber() {
+    public int getLibrarianIDNumber() {
         return librarianIDNumber;
     }
 
@@ -47,10 +47,6 @@ public class Librarian extends UserTransactions {
 
     public String getLibrarianPassword() {
         return librarianPassword;
-    }
-
-    public void setLibrarianPassword(String librarianPassword) {
-        this.librarianPassword = librarianPassword;
     }
 
     @Override

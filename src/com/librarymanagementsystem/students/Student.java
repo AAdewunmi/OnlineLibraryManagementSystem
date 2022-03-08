@@ -11,10 +11,10 @@ import com.librarymanagementsystem.transactions.UserTransactions;
 public class Student extends UserTransactions {
 
     private final String name;
-    private final String studentId;
+    private final int studentId;
     private final String email;
     private final String studentUsername;
-    private String studentPassword;
+    private final String studentPassword;
 
     /**
      * This is the constructor for the student class
@@ -23,7 +23,7 @@ public class Student extends UserTransactions {
      * @param email
      */
 
-    public Student(String name, String studentId, String email, String studentUsername, String studentPassword) {
+    public Student(String name, int studentId, String email, String studentUsername, String studentPassword) {
         this.name = name;
         this.studentId = studentId;
         this.email = email;
@@ -35,7 +35,7 @@ public class Student extends UserTransactions {
         return name;
     }
 
-    public String getStudentId() {
+    public int getStudentId() {
         return studentId;
     }
 
@@ -49,10 +49,6 @@ public class Student extends UserTransactions {
 
     public String getStudentPassword() {
         return studentPassword;
-    }
-
-    public void setStudentPassword(String studentPassword) {
-        this.studentPassword = studentPassword;
     }
 
     @Override

@@ -28,15 +28,15 @@ public class Administrator extends UserTransactions {
     }
 
     // Create new librarian
-    public void createLibrarian(String librarianName, String librarianIDNumber, String librarianEmail, String librarianUserName, String librarianPassword){
+    public void createLibrarian(String librarianName, int librarianIDNumber, String librarianEmail, String librarianUserName, String librarianPassword){
         Librarian librarian = new Librarian(librarianName, librarianIDNumber, librarianEmail, librarianUserName, librarianPassword);
         listOfLibrarians.add(librarian);
     }
 
     // Remove a librarian
-    public boolean removeLibrarian(String librarianIDNumber){
+    public boolean removeLibrarian(int librarianIDNumber){
         for (Librarian librarian : listOfLibrarians) {
-            if (librarian.getLibrarianIDNumber().equals(librarianIDNumber)){
+            if (librarian.getLibrarianIDNumber() == librarianIDNumber){
                 listOfLibrarians.remove(librarian);
                 return true;
             }
@@ -52,9 +52,9 @@ public class Administrator extends UserTransactions {
     }
 
     // Search for a librarian by ID number
-    public boolean searchLibrarian(String librarianIDNumber){
+    public boolean searchLibrarian(int librarianIDNumber){
         for (Librarian librarian : listOfLibrarians) {
-            if (librarian.getLibrarianIDNumber().equals(librarianIDNumber)){
+            if (librarian.getLibrarianIDNumber() == librarianIDNumber){
                 return true;
             }
         }
@@ -62,7 +62,7 @@ public class Administrator extends UserTransactions {
     }
 
     // Create new student
-    public void createStudent(String name, String studentId, String email, String userName, String password){
+    public void createStudent(String name, int studentId, String email, String userName, String password){
         Student student = new Student(name, studentId, email, userName, password);
         listOfStudents.add(student);
     }
@@ -75,9 +75,9 @@ public class Administrator extends UserTransactions {
     }
 
     // Search for a student by ID number
-    public boolean searchStudent(String studentIDNumber){
+    public boolean searchStudent(int studentIDNumber){
         for (Student student : listOfStudents) {
-            if (student.getStudentId().equals(studentIDNumber)){
+            if (student.getStudentId() == studentIDNumber){
                 return true;
             }
         }
@@ -85,11 +85,34 @@ public class Administrator extends UserTransactions {
     }
 
     // Remove a student
-    public boolean removeStudent(String studentIDNumber){
+    public boolean removeStudent(int studentIDNumber){
         for (Student student : listOfStudents) {
-            if (student.getStudentId().equals(studentIDNumber)){
+            if (student.getStudentId() == studentIDNumber){
                 listOfStudents.remove(student);
                 return true;
+            }
+        }
+        return false;
+    }
+
+    // Admin Log in
+    public boolean adminLogin(String username, String password){
+        if(username.equals("admin") && password.equals("admin")){
+            System.out.println("Administrator Login Successful!");
+            return true;
+        }else {
+            System.out.println("Administrator Login Failed!");
+        }
+        return false;
+    }
+    // Librarian Log in
+    public boolean librarianLogin(String username, String password){
+        for (Librarian librarian : listOfLibrarians) {
+            if(username.equals(librarian.getLibrarianUserName()) && password.equals(librarian.getLibrarianPassword())){
+                System.out.println("Librarian Login Successful!");
+                return true;
+            }else {
+                System.out.println("Librarian Login Failed!");
             }
         }
         return false;

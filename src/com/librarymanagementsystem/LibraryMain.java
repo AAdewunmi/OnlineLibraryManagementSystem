@@ -27,6 +27,7 @@ public class LibraryMain {
         LocalDate date = LocalDate.now();
         System.out.println("*** Date: " + date + " ***");
         Scanner scanner = new Scanner(System.in);
+        Administrator admin = new Administrator();
         do {
             System.out.println("\nPlease select an option:\n" +
                     "\n1. Admin Login" +
@@ -37,7 +38,6 @@ public class LibraryMain {
             switch (menuChoice) {
                 case 1:
                     // Administrator Login Menu
-                    Administrator admin = new Administrator();
                     do {
                         System.out.println("\n*** Administrator Login ***");
                         System.out.println("Please select an option: "
@@ -66,23 +66,21 @@ public class LibraryMain {
                                         adminChoice = scanner.nextInt();
                                         switch (adminChoice) {
                                             case 1:
-                                                // TODO: Admin login, register a new librarian, logout
-                                                //  Librarian must be UNIQUE librarian! (MAX 1),
-                                                //  Librarian login in, carry out operations, logout!
+                                                Scanner scanner1 = new Scanner(System.in);
                                                 char y;
                                                 do {
                                                     System.out.println("Register a new librarian ... ");
                                                     System.out.println("\nPlease enter the details of the new librarian: ");
-                                                    System.out.print("Enter the librarian's name: ");
-                                                    String librarianName = scanner.next();
-                                                    System.out.print("Enter the librarian's user ID Number: ");
-                                                    String librarianIDNumber = scanner.next();
+                                                    System.out.print("Enter the librarian's name: \n");
+                                                    String librarianName = scanner1.nextLine();
                                                     System.out.println("Enter the librarian's Email Address: ");
-                                                    String librarianEmail = scanner.next();
+                                                    String librarianEmail = scanner1.nextLine();
+                                                    System.out.print("Enter the librarian's user ID Number: \n");
+                                                    int librarianIDNumber = scanner1.nextInt();
                                                     System.out.println("Enter the librarian's User Name: ");
-                                                    String librarianUserName = scanner.next();
+                                                    String librarianUserName = scanner1.next();
                                                     System.out.println("Enter the librarian's Password: ");
-                                                    String librarianPassword = scanner.next();
+                                                    String librarianPassword = scanner1.next();
                                                     if (admin.searchLibrarian(librarianIDNumber)) {
                                                         System.out.println("Librarian already exists");
                                                         System.out.println("Do you want to add another librarian? (y/n)");
@@ -91,7 +89,7 @@ public class LibraryMain {
                                                         System.out.println("Librarian successfully registered!");
                                                         System.out.println("\nDo you want to register another librarian? (y/n)");
                                                     }
-                                                    y = scanner.next().charAt(0);
+                                                    y = scanner1.next().charAt(0);
                                                 } while (y == 'y');
                                                 break;
                                             case 2:
@@ -100,7 +98,7 @@ public class LibraryMain {
                                                     System.out.println("Delete a librarian ... ");
                                                     System.out.println("\nPlease enter the details of the librarian to be deleted: ");
                                                     System.out.print("Enter the librarian's user ID Number: ");
-                                                    String librarianIDNumber = scanner.next();
+                                                    int librarianIDNumber = scanner.nextInt();
                                                     if (admin.searchLibrarian(librarianIDNumber)) {
                                                         admin.removeLibrarian(librarianIDNumber);
                                                         System.out.println("Librarian successfully deleted!");
@@ -117,21 +115,21 @@ public class LibraryMain {
                                                 admin.printLibrarians();
                                                 break;
                                             case 4:
-                                                // TODO: Register a UNIQUE student (MAX 3)
+                                                Scanner scanner2 = new Scanner(System.in);
                                                 char a;
                                                 do {
                                                     System.out.println("Register a new student ... ");
                                                     System.out.println("\nPlease enter the details of the new student: ");
-                                                    System.out.print("Enter the student's name: ");
-                                                    String studentName = scanner.nextLine();
-                                                    System.out.print("Enter the student's user ID Number: ");
-                                                    String studentIDNumber = scanner.next();
+                                                    System.out.print("Enter the student's name: \n");
+                                                    String studentName = scanner2.nextLine();
                                                     System.out.println("Enter the student's Email Address: ");
-                                                    String studentEmail = scanner.next();
+                                                    String studentEmail = scanner2.nextLine();
+                                                    System.out.print("Enter the student's user ID Number: \n");
+                                                    int studentIDNumber = scanner2.nextInt();
                                                     System.out.println("Enter the student's username: ");
-                                                    String studentUserName = scanner.next();
+                                                    String studentUserName = scanner2.next();
                                                     System.out.println("Enter the student's password: ");
-                                                    String studentPassword = scanner.next();
+                                                    String studentPassword = scanner2.next();
                                                     if (admin.searchStudent(studentIDNumber)) {
                                                         System.out.println("Student already exists");
                                                         System.out.println("Do you want to add another student? (y/n)");
@@ -140,7 +138,7 @@ public class LibraryMain {
                                                         System.out.println("Student successfully registered!");
                                                         System.out.println("\nDo you want to register another Student? (y/n)");
                                                     }
-                                                    a = scanner.next().charAt(0);
+                                                    a = scanner2.next().charAt(0);
                                                 } while (a == 'y');
                                                 break;
                                             case 5:
@@ -149,7 +147,7 @@ public class LibraryMain {
                                                     System.out.println("Delete a student ... ");
                                                     System.out.println("\nPlease enter the details of the student to be deleted: ");
                                                     System.out.print("Enter the student's user ID Number: ");
-                                                    String studentIDNumber = scanner.next();
+                                                    int studentIDNumber = scanner.nextInt();
                                                     if (admin.searchStudent(studentIDNumber)) {
                                                         admin.removeStudent(studentIDNumber);
                                                         System.out.println("Student successfully deleted!");
@@ -197,7 +195,42 @@ public class LibraryMain {
                         librarianMenuChoice = scanner.nextInt();
                         switch (librarianMenuChoice){
                             case 1:
-                                System.out.println("Logging in ... ");
+                                System.out.println("Loging ... ");
+                                System.out.println("\nPlease enter your login details: ");
+                                System.out.print("Username: ");
+                                String username = scanner.next();
+                                System.out.print("Password: ");
+                                String password = scanner.next();
+                                if (admin.librarianLogin(username, password)) {
+                                    do {
+                                        System.out.println("\n*** Librarian Menu ***\n"
+                                                + "Please select an option from the menu below:\n"
+                                                + "1. Search Book\n"
+                                                + "2. Add Book\n"
+                                                + "3. Remove Book\n"
+                                                + "4. Print Books\n"
+                                                + "5. Exit to Librarian Login Menu\n");
+                                        librarianMenuChoice = scanner.nextInt();
+                                        switch (librarianMenuChoice) {
+                                            case 1:
+                                                System.out.println("Search Book");
+                                                break;
+                                            case 2:
+                                                System.out.println("Add Book");
+                                                break;
+                                            case 3:
+                                                System.out.println("Remove Book");
+                                                break;
+                                            case 4:
+                                                System.out.println("Print Books");
+                                                break;
+                                            case 5:
+                                                System.out.println("Exit to Librarian Login Menu");
+                                                break;
+                                        }
+                                    }while (librarianMenuChoice != 5);
+                                    break;
+                                }
                                 break;
                             case 2:
                                 System.out.println("Loging Out ... \nExiting Librarian Login Menu");
@@ -268,34 +301,6 @@ public class LibraryMain {
                     break;
                 case 2:
                     System.out.println("Librarian User");
-                    do {
-                        System.out.println("\n*** Librarian Menu ***\n"
-                        + "Please select an option from the menu below:\n"
-                        + "1. Search Book\n"
-                        + "2. Add Book\n"
-                        + "3. Remove Book\n"
-                        + "4. Print Books\n"
-                        + "5. Exit to Main Menu\n");
-                        librarianMenuChoice = scanner.nextInt();
-                        switch (librarianMenuChoice) {
-                            case 1:
-                                System.out.println("Search Book");
-                                break;
-                            case 2:
-                                System.out.println("Add Book");
-                                break;
-                            case 3:
-                                System.out.println("Remove Book");
-                                break;
-                            case 4:
-                                System.out.println("Print Books");
-                                break;
-                            case 5:
-                                System.out.println("Exit to Main Menu");
-                                break;
-                        }
-                    }while (librarianMenuChoice != 5);
-                    break;
                 case 3:
                     System.out.println("Exiting LMS...\n...Goodbye");
                     break;

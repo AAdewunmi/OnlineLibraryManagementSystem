@@ -15,30 +15,11 @@ public class UserTransactions implements Search{
     // +++  Administrator methods ++++
     // +++++++++++++++++++++++++++++++
 
-    // Admin Log in
-    public boolean adminLogin(String username, String password){
-        if(username.equals("admin") && password.equals("admin")){
-            System.out.println("Administrator Login Successful!");
-            return true;
-        }else {
-            System.out.println("Administrator Login Failed!");
-        }
-        return false;
-    }
 
     // +++++++++++++++++++++++++++++++
     // ++++++  Librarian  methods ++++
     // +++++++++++++++++++++++++++++++
-    // Librarian Log in
-    public boolean librarianLogin(String username, String password){
-        if(username.equals("librarian") && password.equals("librarian")){
-            System.out.println("Librarian Login Successful!");
-            return true;
-        }else {
-            System.out.println("Librarian Login Failed!");
-        }
-        return false;
-    }
+
     // Add a new book to the library
     List<Book> listOfBooks = new ArrayList<>();
     public void addBook(Book book){
