@@ -1,7 +1,9 @@
 package com.librarymanagementsystem.librarian;
 
+import com.librarymanagementsystem.book.Book;
 import com.librarymanagementsystem.transactions.Search;
 import com.librarymanagementsystem.transactions.UserTransactions;
+import javafx.css.StyleableStringProperty;
 
 /**
  * @author Adrian Adewunmi
@@ -47,6 +49,18 @@ public class Librarian extends UserTransactions {
 
     public String getLibrarianPassword() {
         return librarianPassword;
+    }
+
+    // Add book to the library
+    public void addBook(String ISBN, String name, String title) {
+        System.out.println("Add book to the library ... ");
+        addBook(new Book(ISBN, name, title));
+    }
+
+    // Print the list of books
+    public void printBookList() {
+        System.out.println("Print the list of books ... ");
+        printAllBooks();
     }
 
     @Override

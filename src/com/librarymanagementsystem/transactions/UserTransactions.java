@@ -12,16 +12,12 @@ import java.util.List;
  */
 public class UserTransactions implements Search{
     // +++++++++++++++++++++++++++++++
-    // +++  Administrator methods ++++
-    // +++++++++++++++++++++++++++++++
-
-
-    // +++++++++++++++++++++++++++++++
     // ++++++  Librarian  methods ++++
     // +++++++++++++++++++++++++++++++
 
     // Add a new book to the library
-    List<Book> listOfBooks = new ArrayList<>();
+    protected List<Book> listOfBooks = new ArrayList<>();
+
     public void addBook(Book book){
         listOfBooks.add(book);
     }
@@ -68,16 +64,31 @@ public class UserTransactions implements Search{
 
     @Override
     public List<Book> searchByAuthor(String author) {
+        for (Book book : listOfBooks){
+            if (book.getAuthor().equals(author)){
+                return listOfBooks;
+            }
+        }
         return null;
     }
 
     @Override
     public List<Book> searchByTitle(String title) {
+        for(Book book : listOfBooks){
+            if (book.getBookTitle().equals(title)){
+                return listOfBooks;
+            }
+        }
         return null;
     }
 
     @Override
     public List<Book> searchByISBN(String ISBN) {
+        for(Book book : listOfBooks){
+            if (book.getISBN().equals(ISBN)){
+                return listOfBooks;
+            }
+        }
         return null;
     }
 }

@@ -1,5 +1,6 @@
 package administrator;
 
+import com.librarymanagementsystem.book.Book;
 import com.librarymanagementsystem.librarian.Librarian;
 import com.librarymanagementsystem.students.Student;
 import com.librarymanagementsystem.transactions.UserTransactions;
@@ -17,8 +18,8 @@ import java.util.List;
 public class Administrator extends UserTransactions {
     String adminUserName;
     String adminPassword;
-    private List<Librarian> listOfLibrarians;
-    private List<Student> listOfStudents;
+    private final List<Librarian> listOfLibrarians;
+    private final List<Student> listOfStudents;
 
     public Administrator() {
         this.listOfLibrarians = new ArrayList<>();
@@ -59,6 +60,21 @@ public class Administrator extends UserTransactions {
             }
         }
         return false;
+    }
+
+    // Librarian add a new book to the library
+    public void addBook(String ISBN, String name, String title){
+        for (Librarian librarian : listOfLibrarians) {
+            librarian.addBook(ISBN, name, title);
+            System.out.println("Book added successfully\nBy: " + librarian.getLibrarianName());
+        }
+    }
+
+    // Print list of books
+    public void printBooks(){
+        for (Librarian librarian : listOfLibrarians) {
+            librarian.printBookList();
+        }
     }
 
     // Create new student

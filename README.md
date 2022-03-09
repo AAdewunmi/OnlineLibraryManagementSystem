@@ -7,7 +7,7 @@ Library Management System Project
 This project is a library management system, developed using Java 8,
 and a console based application.
 
-## What is the Minimum Viable Product(MVP)?: 
+## What is the Minimum Viable Product(MVP)?
 
 It is an application that consists of three users:
 

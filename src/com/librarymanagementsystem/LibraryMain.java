@@ -217,12 +217,16 @@ public class LibraryMain {
                                                 break;
                                             case 2:
                                                 System.out.println("Add Book");
+                                                admin.addBook("001", "Ade", "Java");
+                                                admin.addBook("002", "Olu", "C++");
+                                                admin.addBook("003", "Ola", "Python");
                                                 break;
                                             case 3:
                                                 System.out.println("Remove Book");
                                                 break;
                                             case 4:
                                                 System.out.println("Print Books");
+                                                admin.printBooks();
                                                 break;
                                             case 5:
                                                 System.out.println("Exit to Librarian Login Menu");
