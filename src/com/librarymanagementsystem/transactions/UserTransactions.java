@@ -14,10 +14,8 @@ public class UserTransactions implements Search{
     // +++++++++++++++++++++++++++++++
     // ++++++  Librarian  methods ++++
     // +++++++++++++++++++++++++++++++
-
     // Add a new book to the library
-    protected List<Book> listOfBooks = new ArrayList<>();
-
+    private final List<Book> listOfBooks = new ArrayList<>();
     public void addBook(Book book){
         listOfBooks.add(book);
     }
@@ -63,32 +61,33 @@ public class UserTransactions implements Search{
     }
 
     @Override
-    public List<Book> searchByAuthor(String author) {
+    public boolean searchByAuthor(String author) {
         for (Book book : listOfBooks){
             if (book.getAuthor().equals(author)){
-                return listOfBooks;
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
     @Override
-    public List<Book> searchByTitle(String title) {
+    public boolean searchByTitle(String title) {
         for(Book book : listOfBooks){
             if (book.getBookTitle().equals(title)){
-                return listOfBooks;
+                return true;
             }
         }
-        return null;
+        return false;
     }
 
     @Override
-    public List<Book> searchByISBN(String ISBN) {
+    public boolean searchByISBN(int ISBN) {
         for(Book book : listOfBooks){
-            if (book.getISBN().equals(ISBN)){
-                return listOfBooks;
+            if (book.getISBN() == ISBN){
+                return true;
             }
         }
-        return null;
+        return false;
     }
+
 }

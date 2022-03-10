@@ -9,7 +9,7 @@ import com.librarymanagementsystem.transactions.BookTransactions;
  */
 
 public class Book extends BookTransactions {
-    private final String ISBN;
+    private final int ISBN;
     private final String author;
     private final String bookTitle;
 
@@ -19,13 +19,13 @@ public class Book extends BookTransactions {
      * @param author
      * @param bookTitle
      */
-    public Book(String ISBN, String author, String bookTitle) {
+    public Book(int ISBN, String author, String bookTitle) {
         this.author = author;
         this.bookTitle = bookTitle;
         this.ISBN = ISBN;
     }
 
-    public String getISBN() {
+    public int getISBN() {
         return ISBN;
     }
 

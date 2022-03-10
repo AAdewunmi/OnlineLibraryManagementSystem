@@ -1,6 +1,7 @@
 package com.librarymanagementsystem;
 
 import administrator.Administrator;
+import com.sun.deploy.security.BlacklistedCerts;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -12,6 +13,7 @@ import java.util.Scanner;
  * It gives the UI for the user to interact with the system.
  */
 public class LibraryMain {
+    // TODO: 1 ADMINISTRATOR, 2 LIBRARIAN, 6 STUDENTS.
     public static void main(String[] args) {
         int menuChoice;
         int loginChoice;
@@ -213,13 +215,27 @@ public class LibraryMain {
                                         librarianMenuChoice = scanner.nextInt();
                                         switch (librarianMenuChoice) {
                                             case 1:
-                                                System.out.println("Search Book");
+                                                // TODO: Find book and display details
+                                                System.out.println("Search Book\nby Title, Author, or ISBN");
+                                                //admin.searchBOOKBYISBN();
                                                 break;
                                             case 2:
-                                                System.out.println("Add Book");
-                                                admin.addBook("001", "Ade", "Java");
-                                                admin.addBook("002", "Olu", "C++");
-                                                admin.addBook("003", "Ola", "Python");
+                                                Scanner scannerRegisterBook = new Scanner(System.in);
+                                                char c;
+                                                do {
+                                                    System.out.println("Register Book ... ");
+                                                    System.out.print("Enter Book ISBN: ");
+                                                    int isbn = scannerRegisterBook.nextInt();
+                                                    scannerRegisterBook.nextLine();
+                                                    System.out.print("Enter Book Author Name: ");
+                                                    String author = scannerRegisterBook.nextLine();
+                                                    System.out.print("Enter Book Title: ");
+                                                    String title = scannerRegisterBook.nextLine();
+                                                    admin.addBook(isbn, author, title);
+                                                    System.out.println("Book added successfully!");
+                                                    System.out.println("Do you want to add another book? (y/n)");
+                                                    c = scannerRegisterBook.next().charAt(0);
+                                                }while (c == 'y');
                                                 break;
                                             case 3:
                                                 System.out.println("Remove Book");

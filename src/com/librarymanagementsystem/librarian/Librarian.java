@@ -1,9 +1,7 @@
 package com.librarymanagementsystem.librarian;
 
 import com.librarymanagementsystem.book.Book;
-import com.librarymanagementsystem.transactions.Search;
 import com.librarymanagementsystem.transactions.UserTransactions;
-import javafx.css.StyleableStringProperty;
 
 /**
  * @author Adrian Adewunmi
@@ -52,7 +50,7 @@ public class Librarian extends UserTransactions {
     }
 
     // Add book to the library
-    public void addBook(String ISBN, String name, String title) {
+    public void addBook(int ISBN, String name, String title) {
         System.out.println("Add book to the library ... ");
         addBook(new Book(ISBN, name, title));
     }
@@ -69,4 +67,5 @@ public class Librarian extends UserTransactions {
                 "Librarian ID Number: " + librarianIDNumber + "\n" +
                 "Librarian Email: " + librarianEmail + "\n";
     }
+
 }

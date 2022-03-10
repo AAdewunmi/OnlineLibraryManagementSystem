@@ -1,6 +1,5 @@
 package administrator;
 
-import com.librarymanagementsystem.book.Book;
 import com.librarymanagementsystem.librarian.Librarian;
 import com.librarymanagementsystem.students.Student;
 import com.librarymanagementsystem.transactions.UserTransactions;
@@ -63,11 +62,20 @@ public class Administrator extends UserTransactions {
     }
 
     // Librarian add a new book to the library
-    public void addBook(String ISBN, String name, String title){
+    public void addBook(int ISBN, String name, String title){
         for (Librarian librarian : listOfLibrarians) {
             librarian.addBook(ISBN, name, title);
             System.out.println("Book added successfully\nBy: " + librarian.getLibrarianName());
         }
+    }
+
+    // Librarian search for a book by isbn
+    public boolean searchBOOKBYISBN(int isbn){
+        for (Librarian librarian : listOfLibrarians) {
+            librarian.searchByISBN(isbn);
+            return true;
+        }
+        return false;
     }
 
     // Print list of books
@@ -133,4 +141,5 @@ public class Administrator extends UserTransactions {
         }
         return false;
     }
+
 }
