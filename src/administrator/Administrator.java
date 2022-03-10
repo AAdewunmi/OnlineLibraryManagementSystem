@@ -14,12 +14,17 @@ import java.util.List;
  * for registering new students and librarians.
  */
 
-public class Administrator extends UserTransactions {
+public class Administrator {
     String adminUserName;
     String adminPassword;
     private final List<Librarian> listOfLibrarians;
     private final List<Student> listOfStudents;
 
+    /**
+     * This is the constructor for the Administrator class.
+     * adminUserName: The username of the administrator
+     * adminPassword: The password of the administrator
+     */
     public Administrator() {
         this.listOfLibrarians = new ArrayList<>();
         this.listOfStudents = new ArrayList<>();
@@ -27,13 +32,19 @@ public class Administrator extends UserTransactions {
         this.adminPassword = "admin";
     }
 
-    // Create new librarian
+    /**
+     * This method is used to register a new librarian.
+     * librarian: The librarian to be registered
+     */
     public void createLibrarian(String librarianName, int librarianIDNumber, String librarianEmail, String librarianUserName, String librarianPassword){
         Librarian librarian = new Librarian(librarianName, librarianIDNumber, librarianEmail, librarianUserName, librarianPassword);
         listOfLibrarians.add(librarian);
     }
 
-    // Remove a librarian
+    /**
+     * This method is used to remove a librarian.
+     * librarian: The librarian to be removed
+     */
     public boolean removeLibrarian(int librarianIDNumber){
         for (Librarian librarian : listOfLibrarians) {
             if (librarian.getLibrarianIDNumber() == librarianIDNumber){
@@ -44,14 +55,20 @@ public class Administrator extends UserTransactions {
         return false;
     }
 
-    // Print list of librarians
+    /**
+     * This method is used to print all librarians.
+     * librarian: The librarian to be printed
+     */
     public void printLibrarians(){
         for (Librarian librarian : listOfLibrarians) {
             System.out.println(librarian);
         }
     }
 
-    // Search for a librarian by ID number
+    /**
+     * This method is used to search for a librarian by ID Number.
+     * librarian: The librarian to be searched
+     */
     public boolean searchLibrarian(int librarianIDNumber){
         for (Librarian librarian : listOfLibrarians) {
             if (librarian.getLibrarianIDNumber() == librarianIDNumber){
@@ -61,44 +78,55 @@ public class Administrator extends UserTransactions {
         return false;
     }
 
-    // Librarian add a new book to the library
+    /**
+     * This method is used to add new book to library.
+     * book: The book to be added
+     */
     public void addBook(int ISBN, String name, String title){
         for (Librarian librarian : listOfLibrarians) {
-            librarian.addBook(ISBN, name, title);
-            System.out.println("Book added successfully\nBy: " + librarian.getLibrarianName());
+            // Search for a book with the same ISBN!
+            if (!librarian.searchByISBN(ISBN)) {
+                librarian.addBook(ISBN, name, title);
+                System.out.println("Book added successfully\nBy: " + librarian.getLibrarianName());
+            } else {
+                System.out.println("Book already exists\n");
+            }
         }
     }
 
-    // Librarian search for a book by isbn
-    public boolean searchBOOKBYISBN(int isbn){
-        for (Librarian librarian : listOfLibrarians) {
-            librarian.searchByISBN(isbn);
-            return true;
-        }
-        return false;
-    }
-
-    // Print list of books
+    /**
+     * This method is used to print books from library.
+     * book: The book to be printed
+     */
     public void printBooks(){
         for (Librarian librarian : listOfLibrarians) {
             librarian.printBookList();
         }
     }
 
-    // Create new student
+    /**
+     * This method is used to create new student.
+     * student: The student to be created
+     */
     public void createStudent(String name, int studentId, String email, String userName, String password){
         Student student = new Student(name, studentId, email, userName, password);
         listOfStudents.add(student);
     }
 
-    // Print list of students
+    /**
+     * This method is used to print all students.
+     * student: The student to be printed
+     */
     public void printStudents(){
         for (Student student : listOfStudents) {
             System.out.println(student);
         }
     }
 
-    // Search for a student by ID number
+    /**
+     * This method is used to search for a student by ID Number.
+     * student: The student to be searched
+     */
     public boolean searchStudent(int studentIDNumber){
         for (Student student : listOfStudents) {
             if (student.getStudentId() == studentIDNumber){
@@ -108,7 +136,10 @@ public class Administrator extends UserTransactions {
         return false;
     }
 
-    // Remove a student
+    /**
+     * This method is used to remove a student.
+     * student: The student to be removed
+     */
     public boolean removeStudent(int studentIDNumber){
         for (Student student : listOfStudents) {
             if (student.getStudentId() == studentIDNumber){
@@ -119,7 +150,10 @@ public class Administrator extends UserTransactions {
         return false;
     }
 
-    // Admin Log in
+    /**
+     * This method is used to log in by admin.
+     * admin: The admin to be logged in
+     */
     public boolean adminLogin(String username, String password){
         if(username.equals("admin") && password.equals("admin")){
             System.out.println("Administrator Login Successful!");
@@ -129,7 +163,11 @@ public class Administrator extends UserTransactions {
         }
         return false;
     }
-    // Librarian Log in
+
+    /**
+     * This method is used to log in by librarian.
+     * librarian: The librarian to be logged in
+     */
     public boolean librarianLogin(String username, String password){
         for (Librarian librarian : listOfLibrarians) {
             if(username.equals(librarian.getLibrarianUserName()) && password.equals(librarian.getLibrarianPassword())){

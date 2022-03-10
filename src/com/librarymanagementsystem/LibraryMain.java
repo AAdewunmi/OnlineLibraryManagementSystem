@@ -217,7 +217,6 @@ public class LibraryMain {
                                             case 1:
                                                 // TODO: Find book and display details
                                                 System.out.println("Search Book\nby Title, Author, or ISBN");
-                                                //admin.searchBOOKBYISBN();
                                                 break;
                                             case 2:
                                                 Scanner scannerRegisterBook = new Scanner(System.in);
@@ -232,7 +231,6 @@ public class LibraryMain {
                                                     System.out.print("Enter Book Title: ");
                                                     String title = scannerRegisterBook.nextLine();
                                                     admin.addBook(isbn, author, title);
-                                                    System.out.println("Book added successfully!");
                                                     System.out.println("Do you want to add another book? (y/n)");
                                                     c = scannerRegisterBook.next().charAt(0);
                                                 }while (c == 'y');

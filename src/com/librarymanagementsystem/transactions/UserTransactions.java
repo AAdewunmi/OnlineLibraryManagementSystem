@@ -14,18 +14,25 @@ public class UserTransactions implements Search{
     // +++++++++++++++++++++++++++++++
     // ++++++  Librarian  methods ++++
     // +++++++++++++++++++++++++++++++
-    // Add a new book to the library
-    private final List<Book> listOfBooks = new ArrayList<>();
+    /**
+     * This method is used to add a book to the library
+     */
+    protected final List<Book> listOfBooks = new ArrayList<>();
     public void addBook(Book book){
         listOfBooks.add(book);
     }
 
-    // Remove a book from the library
+    /**
+     * This method is used to remove a book from the library
+     * @param book: book to be removed
+     */
     public void removeBook(Book book){
         listOfBooks.remove(book);
     }
 
-    // Print all books in the library
+    /**
+     * This method is used to print all the books in the library
+     */
     public void printAllBooks(){
         for (Book book : listOfBooks){
             System.out.println(book);
@@ -60,6 +67,11 @@ public class UserTransactions implements Search{
 
     }
 
+    /**
+     * This method is used to search a book by author
+     * @param author:
+     * @return
+     */
     @Override
     public boolean searchByAuthor(String author) {
         for (Book book : listOfBooks){
@@ -69,7 +81,11 @@ public class UserTransactions implements Search{
         }
         return false;
     }
-
+    /**
+     * This method is used to search a book by title
+     * @param title:
+     * @return
+     */
     @Override
     public boolean searchByTitle(String title) {
         for(Book book : listOfBooks){
@@ -79,7 +95,11 @@ public class UserTransactions implements Search{
         }
         return false;
     }
-
+    /**
+     * This method is used to search a book by ISBN
+     * @param ISBN: ISBN of the book
+     * @return
+     */
     @Override
     public boolean searchByISBN(int ISBN) {
         for(Book book : listOfBooks){

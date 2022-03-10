@@ -28,39 +28,63 @@ public class Librarian extends UserTransactions {
         this.librarianUserName = librarianUserName;
         this.librarianPassword = librarianPassword;
     }
-
+    /**
+     * This method is used to get the librarian name
+     * @return
+     */
     public String getLibrarianName() {
         return librarianName;
     }
-
+    /**
+     * This method is used to get the librarian id number
+     * @return
+     */
     public int getLibrarianIDNumber() {
         return librarianIDNumber;
     }
-
+    /**
+     * This method is used to get the librarian email
+     * @return
+     */
     public String getLibrarianEmail() {
         return librarianEmail;
     }
-
+    /**
+     * This method is used to get the librarian user name
+     * @return
+     */
     public String getLibrarianUserName() {
         return librarianUserName;
     }
-
+    /**
+     * This method is used to get the librarian password
+     * @return
+     */
     public String getLibrarianPassword() {
         return librarianPassword;
     }
 
-    // Add book to the library
+    /**
+     * This method is used to add a book to the library
+     * @param ISBN: isbn number of the book
+     *              title: title of the book
+     *            name: name of the author
+     */
     public void addBook(int ISBN, String name, String title) {
         System.out.println("Add book to the library ... ");
         addBook(new Book(ISBN, name, title));
     }
 
-    // Print the list of books
+    /**
+     * This method is used to print all the books in the library
+     */
     public void printBookList() {
         System.out.println("Print the list of books ... ");
         printAllBooks();
     }
-
+    /**
+     * This method is used to print library details
+     */
     @Override
     public String toString() {
         return "Librarian Name: " + librarianName + "\n" +
