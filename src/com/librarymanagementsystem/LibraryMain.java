@@ -1,7 +1,6 @@
 package com.librarymanagementsystem;
 
 import administrator.Administrator;
-import com.sun.deploy.security.BlacklistedCerts;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -236,7 +235,16 @@ public class LibraryMain {
                                                 }while (c == 'y');
                                                 break;
                                             case 3:
-                                                System.out.println("Remove Book");
+                                                Scanner scannerRemoveBook = new Scanner(System.in);
+                                                char d;
+                                                do {
+                                                System.out.println("Remove Book ..");
+                                                System.out.print("Enter Book ISBN: ");
+                                                int isbn = scannerRemoveBook.nextInt();
+                                                admin.removeBook(isbn);
+                                                System.out.println("Do you want to remove another book? (y/n)");
+                                                d = scannerRemoveBook.next().charAt(0);
+                                                }while (d == 'y');
                                                 break;
                                             case 4:
                                                 System.out.println("Print Books");

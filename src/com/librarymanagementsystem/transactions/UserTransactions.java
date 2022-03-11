@@ -24,10 +24,10 @@ public class UserTransactions implements Search{
 
     /**
      * This method is used to remove a book from the library
-     * @param book: book to be removed
+     * book1: placeholder for book to be removed
      */
-    public void removeBook(Book book){
-        listOfBooks.remove(book);
+    public void removeBook(int ISBN){
+        listOfBooks.removeIf(book1 -> book1.getISBN() == ISBN);
     }
 
     /**

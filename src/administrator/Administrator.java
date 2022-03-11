@@ -1,5 +1,6 @@
 package administrator;
 
+import com.librarymanagementsystem.book.Book;
 import com.librarymanagementsystem.librarian.Librarian;
 import com.librarymanagementsystem.students.Student;
 import com.librarymanagementsystem.transactions.UserTransactions;
@@ -90,6 +91,21 @@ public class Administrator {
                 System.out.println("Book added successfully\nBy: " + librarian.getLibrarianName());
             } else {
                 System.out.println("Book already exists\n");
+            }
+        }
+    }
+
+    /**
+     * This method is used to remove a book from library.
+     * book: The book to be removed
+     */
+    public void removeBook(int ISBN){
+        for (Librarian librarian : listOfLibrarians) {
+            if (librarian.searchByISBN(ISBN)) {
+                librarian.removeBook(ISBN);
+                System.out.println("Book removed successfully\nBy: " + librarian.getLibrarianName());
+            }else {
+                System.out.println("Book does not exist\n");
             }
         }
     }
