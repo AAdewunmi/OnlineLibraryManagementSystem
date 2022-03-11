@@ -134,7 +134,23 @@ public class Administrator {
         for (Librarian librarian : listOfLibrarians) {
             if (librarian.searchByTitle(title)) {
                 System.out.println("Book found!");
-                librarian.printABook(title);
+                librarian.printABookTitle(title);
+                return true;
+            }
+        }
+        System.out.println("Book does not exist!\n");
+        return false;
+    }
+
+    /**
+     * This method is used to search for a book by author name.
+     * book: The book to be searched
+     */
+    public boolean searchBookAuthor(String name){
+        for (Librarian librarian : listOfLibrarians) {
+            if (librarian.searchByAuthor(name)) {
+                System.out.println("Book found!");
+                librarian.printABookAuthor(name);
                 return true;
             }
         }

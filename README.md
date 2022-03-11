@@ -22,7 +22,7 @@ The project is completed once all the MVP features have been implemented.
 11 / 03 / 2022:
 
 1. Administrator -> COMPLETED! 😎
-2. Librarian -> COMPLETED! 
+2. Librarian -> COMPLETED! 😎
 
 ## What are the nice to have?
 

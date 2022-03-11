@@ -229,9 +229,15 @@ public class LibraryMain {
                                                 admin.searchBookISBN(123);
                                                 admin.searchBookISBN(456);
                                                 admin.searchBookISBN(789);
+                                                admin.searchBookISBN(111);
                                                 admin.searchBookTitle("Java");
                                                 admin.searchBookTitle("C++");
                                                 admin.searchBookTitle("Python");
+                                                admin.searchBookTitle("C#");
+                                                admin.searchBookAuthor("Ade");
+                                                admin.searchBookAuthor("Olu");
+                                                admin.searchBookAuthor("Ola");
+                                                admin.searchBookAuthor("Ini");
                                                 break;
                                             case 2:
                                                 Scanner scannerRegisterBook = new Scanner(System.in);

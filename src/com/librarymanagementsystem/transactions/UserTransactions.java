@@ -49,9 +49,18 @@ public class UserTransactions implements Search{
     }
 
     // Print a book in the library by title
-    public void printABook(String title) {
+    public void printABookTitle(String title) {
         for (Book book : listOfBooks){
             if (book.getBookTitle().equalsIgnoreCase(title)){
+                System.out.println(book.toString());
+            }
+        }
+    }
+
+    // Print a book in the library by author
+    public void printABookAuthor(String author) {
+        for (Book book : listOfBooks){
+            if (book.getAuthor().equalsIgnoreCase(author)){
                 System.out.println(book.toString());
             }
         }
