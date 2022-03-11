@@ -19,6 +19,11 @@ It is an application that consists of three users:
 
 The project is completed once all the MVP features have been implemented.
 
+11 / 03 / 2022:
+
+1. Administrator -> COMPLETED! 😎
+2. Librarian -> COMPLETED! 
+
 ## What are the nice to have?
 
 1. Add a main GUI

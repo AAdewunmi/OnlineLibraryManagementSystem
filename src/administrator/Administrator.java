@@ -127,6 +127,22 @@ public class Administrator {
     }
 
     /**
+     * This method is used to search for a book by title.
+     * book: The book to be searched
+     */
+    public boolean searchBookTitle(String title){
+        for (Librarian librarian : listOfLibrarians) {
+            if (librarian.searchByTitle(title)) {
+                System.out.println("Book found!");
+                librarian.printABook(title);
+                return true;
+            }
+        }
+        System.out.println("Book does not exist!\n");
+        return false;
+    }
+
+    /**
      * This method is used to print books from library.
      * book: The book to be printed
      */

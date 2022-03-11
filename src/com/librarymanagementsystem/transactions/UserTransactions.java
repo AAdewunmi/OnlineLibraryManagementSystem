@@ -39,10 +39,19 @@ public class UserTransactions implements Search{
         }
     }
 
-    // Print a book in the library
+    // Print a book in the library by ISBN
     public void printABook(int ISBN) {
         for (Book book : listOfBooks){
             if (book.getISBN() == ISBN){
+                System.out.println(book.toString());
+            }
+        }
+    }
+
+    // Print a book in the library by title
+    public void printABook(String title) {
+        for (Book book : listOfBooks){
+            if (book.getBookTitle().equalsIgnoreCase(title)){
                 System.out.println(book.toString());
             }
         }
@@ -79,7 +88,7 @@ public class UserTransactions implements Search{
     @Override
     public boolean searchByAuthor(String author) {
         for (Book book : listOfBooks){
-            if (book.getAuthor().equals(author)){
+            if (book.getAuthor().equalsIgnoreCase(author)){
                 return true;
             }
         }
@@ -93,7 +102,7 @@ public class UserTransactions implements Search{
     @Override
     public boolean searchByTitle(String title) {
         for(Book book : listOfBooks){
-            if (book.getBookTitle().equals(title)){
+            if (book.getBookTitle().equalsIgnoreCase(title)){
                 return true;
             }
         }

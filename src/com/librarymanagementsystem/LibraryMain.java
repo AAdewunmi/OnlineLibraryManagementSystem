@@ -76,6 +76,7 @@ public class LibraryMain {
                                                     System.out.println("\nPlease enter the details of the new librarian: ");
                                                     System.out.print("Enter the librarian's name: \n");
                                                     String librarianName = scanner1.nextLine();
+                                                    scanner1.nextLine();
                                                     System.out.println("Enter the librarian's Email Address: ");
                                                     String librarianEmail = scanner1.nextLine();
                                                     System.out.print("Enter the librarian's user ID Number: \n");
@@ -128,6 +129,7 @@ public class LibraryMain {
                                                     System.out.println("\nPlease enter the details of the new student: ");
                                                     System.out.print("Enter the student's name: \n");
                                                     String studentName = scanner2.nextLine();
+                                                    scanner2.nextLine();
                                                     System.out.println("Enter the student's Email Address: ");
                                                     String studentEmail = scanner2.nextLine();
                                                     System.out.print("Enter the student's user ID Number: \n");
@@ -227,6 +229,9 @@ public class LibraryMain {
                                                 admin.searchBookISBN(123);
                                                 admin.searchBookISBN(456);
                                                 admin.searchBookISBN(789);
+                                                admin.searchBookTitle("Java");
+                                                admin.searchBookTitle("C++");
+                                                admin.searchBookTitle("Python");
                                                 break;
                                             case 2:
                                                 Scanner scannerRegisterBook = new Scanner(System.in);
