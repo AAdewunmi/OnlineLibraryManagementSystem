@@ -40,8 +40,12 @@ public class UserTransactions implements Search{
     }
 
     // Print a book in the library
-    public void printBook(Book book){
-
+    public void printABook(int ISBN) {
+        for (Book book : listOfBooks){
+            if (book.getISBN() == ISBN){
+                System.out.println(book.toString());
+            }
+        }
     }
 
     // +++++++++++++++++++++++++++++++

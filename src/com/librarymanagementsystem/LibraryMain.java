@@ -29,6 +29,7 @@ public class LibraryMain {
         System.out.println("*** Date: " + date + " ***");
         Scanner scanner = new Scanner(System.in);
         Administrator admin = new Administrator();
+
         do {
             System.out.println("\nPlease select an option:\n" +
                     "\n1. Admin Login" +
@@ -69,6 +70,7 @@ public class LibraryMain {
                                             case 1:
                                                 Scanner scanner1 = new Scanner(System.in);
                                                 char y;
+                                                // Register a new librarian
                                                 do {
                                                     System.out.println("Register a new librarian ... ");
                                                     System.out.println("\nPlease enter the details of the new librarian: ");
@@ -95,6 +97,7 @@ public class LibraryMain {
                                                 break;
                                             case 2:
                                                 char z;
+                                                // Delete a librarian
                                                 do {
                                                     System.out.println("Delete a librarian ... ");
                                                     System.out.println("\nPlease enter the details of the librarian to be deleted: ");
@@ -112,12 +115,14 @@ public class LibraryMain {
                                                 } while (z == 'y');
                                                 break;
                                             case 3:
+                                                // Print all librarians
                                                 System.out.println("Print a list of all librarians ...");
                                                 admin.printLibrarians();
                                                 break;
                                             case 4:
                                                 Scanner scanner2 = new Scanner(System.in);
                                                 char a;
+                                                // Register a student
                                                 do {
                                                     System.out.println("Register a new student ... ");
                                                     System.out.println("\nPlease enter the details of the new student: ");
@@ -144,6 +149,7 @@ public class LibraryMain {
                                                 break;
                                             case 5:
                                                 char b;
+                                                // Delete a student
                                                 do {
                                                     System.out.println("Delete a student ... ");
                                                     System.out.println("\nPlease enter the details of the student to be deleted: ");
@@ -162,6 +168,7 @@ public class LibraryMain {
                                                 } while (b == 'y');
                                                 break;
                                             case 6:
+                                                // View all students
                                                 System.out.println("Print a list of all students ... ");
                                                 admin.printStudents();
                                                 break;
@@ -188,6 +195,7 @@ public class LibraryMain {
                     } while (loginChoice != 2);
                     break;
                 case 2:
+                    // Library Staff Login
                     do {
                         System.out.println("*** Librarian Login ***");
                         System.out.println("Please select an option: ");
@@ -216,6 +224,9 @@ public class LibraryMain {
                                             case 1:
                                                 // TODO: Find book and display details
                                                 System.out.println("Search Book\nby Title, Author, or ISBN");
+                                                admin.searchBookISBN(123);
+                                                admin.searchBookISBN(456);
+                                                admin.searchBookISBN(789);
                                                 break;
                                             case 2:
                                                 Scanner scannerRegisterBook = new Scanner(System.in);

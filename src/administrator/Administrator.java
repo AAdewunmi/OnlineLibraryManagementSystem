@@ -111,6 +111,22 @@ public class Administrator {
     }
 
     /**
+     * This method is used to search for a book by ISBN.
+     * book: The book to be searched
+     */
+    public boolean searchBookISBN(int ISBN){
+        for (Librarian librarian : listOfLibrarians) {
+            if (librarian.searchByISBN(ISBN)) {
+                System.out.println("Book found!");
+                librarian.printABook(ISBN);
+                return true;
+            }
+        }
+        System.out.println("Book does not exist!\n");
+        return false;
+    }
+
+    /**
      * This method is used to print books from library.
      * book: The book to be printed
      */
