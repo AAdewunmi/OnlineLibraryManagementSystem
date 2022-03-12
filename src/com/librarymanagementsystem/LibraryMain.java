@@ -17,9 +17,10 @@ public class LibraryMain {
         int menuChoice;
         int loginChoice;
         int adminChoice;
-        int mainMenuChoice;
-        int studentMenuChoice;
         int librarianMenuChoice;
+        int searchChoice;
+        int studentMenuChoice;
+
 
         Library library = new Library("London University Library",
                 "Finsbury Park, London, UK");
@@ -224,20 +225,44 @@ public class LibraryMain {
                                         librarianMenuChoice = scanner.nextInt();
                                         switch (librarianMenuChoice) {
                                             case 1:
-                                                // TODO: Find book and display details
-                                                System.out.println("Search Book\nby Title, Author, or ISBN");
-                                                admin.searchBookISBN(123);
-                                                admin.searchBookISBN(456);
-                                                admin.searchBookISBN(789);
-                                                admin.searchBookISBN(111);
-                                                admin.searchBookTitle("Java");
-                                                admin.searchBookTitle("C++");
-                                                admin.searchBookTitle("Python");
-                                                admin.searchBookTitle("C#");
-                                                admin.searchBookAuthor("Ade");
-                                                admin.searchBookAuthor("Olu");
-                                                admin.searchBookAuthor("Ola");
-                                                admin.searchBookAuthor("Ini");
+                                                Scanner scannerSearch = new Scanner(System.in);
+                                                do {
+                                                    System.out.println("\n*** Search Menu ***\n"
+                                                            + "Please select an option from the menu below:\n"
+                                                            + "1. Search by ISBN\n"
+                                                            + "2. Search by Author\n"
+                                                            + "3. Search by Title\n"
+                                                            + "4. Exit\n");
+                                                    searchChoice = scanner.nextInt();
+                                                    switch (searchChoice) {
+                                                        case 1:
+                                                            System.out.println("Search by ISBN");
+                                                            System.out.println("Searching by ISBN ... ");
+                                                            System.out.print("Enter ISBN: ");
+                                                            int isbn = scannerSearch.nextInt();
+                                                            admin.searchBookISBN(isbn);
+                                                            break;
+                                                        case 2:
+                                                            System.out.println("Searching by Author ... ");
+                                                            System.out.print("Enter Author Name: ");
+                                                            scannerSearch.nextLine();
+                                                            String author = scannerSearch.nextLine();
+                                                            admin.searchBookAuthor(author);
+                                                            break;
+                                                        case 3:
+                                                            System.out.println("Searching by Title ... ");
+                                                            System.out.print("Enter Title: ");
+                                                            String title = scannerSearch.nextLine();
+                                                            admin.searchBookTitle(title);
+                                                            break;
+                                                        case 4:
+                                                            System.out.println("Exiting to Librarian Menu");
+                                                            break;
+                                                        default:
+                                                            System.out.println("Invalid input. Please try again.");
+                                                            break;
+                                                    }
+                                                }while (searchChoice != 4);
                                                 break;
                                             case 2:
                                                 Scanner scannerRegisterBook = new Scanner(System.in);
