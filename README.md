@@ -23,6 +23,7 @@ The project is completed once all the MVP features have been implemented.
 
 1. Administrator -> COMPLETED! 😎
 2. Librarian -> COMPLETED! 😎
+3. Student -> WORK IN PROGRESS!
 
 ## What are the nice to have?
 
