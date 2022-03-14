@@ -13,7 +13,7 @@ It is an application that consists of three users:
 
 1. Administrator -> allow user to login, add / delete / print users, logout.
 2. Librarian -> allow user to login, add / delete / search / print books, logout.
-3. Student -> allow user to login, search / reserve / borrow / renew / return books, logout.
+3. Student -> allow user to login, search / borrow / return books, logout.
 
 ## When is the project completed?
 

@@ -42,7 +42,7 @@ public class LibraryMain {
                 case 1:
                     // Administrator Login Menu
                     do {
-                        System.out.println("\n*** Administrator Login ***");
+                        System.out.println("\n*** Administrator Login ***\n");
                         System.out.println("Please select an option: "
                                 + "\n1. Login"
                                 + "\n2. Exit");
@@ -200,7 +200,7 @@ public class LibraryMain {
                 case 2:
                     // Library Staff Login
                     do {
-                        System.out.println("*** Librarian Login ***");
+                        System.out.println("\n*** Librarian Login ***\n");
                         System.out.println("Please select an option: ");
                         System.out.println("1. Login");
                         System.out.println("2. Exit");
@@ -216,7 +216,7 @@ public class LibraryMain {
                                 if (admin.librarianLogin(username, password)) {
                                     do {
                                         // Librarian Menu after login
-                                        System.out.println("\n*** Librarian Menu ***\n"
+                                        System.out.println("\nLibrarian Menu\n"
                                                 + "Please select an option from the menu below:\n"
                                                 + "1. Search Book\n"
                                                 + "2. Add Book\n"
@@ -229,7 +229,7 @@ public class LibraryMain {
                                             case 1:
                                                 Scanner scannerSearch = new Scanner(System.in);
                                                 do {
-                                                    System.out.println("\n*** Search Menu ***\n"
+                                                    System.out.println("\nSearch Menu\n"
                                                             + "Please select an option from the menu below:\n"
                                                             + "1. Search by ISBN\n"
                                                             + "2. Search by Author\n"
@@ -321,7 +321,7 @@ public class LibraryMain {
                 case 3:
                     // Student menu
                     do {
-                        System.out.println("***Student Login Menu***");
+                        System.out.println("\n***Student Login Menu***\n");
                         System.out.println("1. Login");
                         System.out.println("2. Exit");
                         studentMenuChoice = scanner.nextInt();
@@ -336,36 +336,28 @@ public class LibraryMain {
                                 String password = scanner.next();
                                 if (admin.studentLogin(username, password)) {
                                     do {
-                                        System.out.println("\n*** Student Menu ***\n"
+                                        System.out.println("\nStudent Menu\n"
                                                 + "Please select an option from the menu below:\n"
                                                 + "1. Search Book\n"
-                                                + "2. Reserve Book\n"
-                                                + "3. Borrow Book\n"
-                                                + "4. Renew Book\n"
-                                                + "5. Return Book\n"
-                                                + "6. Exit to Student Login Menu\n");
+                                                + "2. Borrow Book\n"
+                                                + "3. Return Book\n"
+                                                + "4. Exit to Student Login Menu\n");
                                         studentMenuChoice = scanner.nextInt();
                                         switch (studentMenuChoice) {
                                             case 1:
                                                 System.out.println("Search Book");
                                                 break;
                                             case 2:
-                                                System.out.println("Reserve Book");
-                                                break;
-                                            case 3:
                                                 System.out.println("Borrow Book");
                                                 break;
-                                            case 4:
-                                                System.out.println("Renew Book");
-                                                break;
-                                            case 5:
+                                            case 3:
                                                 System.out.println("Return Book");
                                                 break;
-                                            case 6:
+                                            case 4:
                                                 System.out.println("Exit to Main Menu");
                                                 break;
                                         }
-                                }while (studentMenuChoice != 6);
+                                }while (studentMenuChoice != 4);
                                 break;
                                 }
                                 break;
