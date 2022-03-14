@@ -335,7 +335,38 @@ public class LibraryMain {
                                 System.out.print("Password: ");
                                 String password = scanner.next();
                                 if (admin.studentLogin(username, password)) {
-
+                                    do {
+                                        System.out.println("\n*** Student Menu ***\n"
+                                                + "Please select an option from the menu below:\n"
+                                                + "1. Search Book\n"
+                                                + "2. Reserve Book\n"
+                                                + "3. Borrow Book\n"
+                                                + "4. Renew Book\n"
+                                                + "5. Return Book\n"
+                                                + "6. Exit to Student Login Menu\n");
+                                        studentMenuChoice = scanner.nextInt();
+                                        switch (studentMenuChoice) {
+                                            case 1:
+                                                System.out.println("Search Book");
+                                                break;
+                                            case 2:
+                                                System.out.println("Reserve Book");
+                                                break;
+                                            case 3:
+                                                System.out.println("Borrow Book");
+                                                break;
+                                            case 4:
+                                                System.out.println("Renew Book");
+                                                break;
+                                            case 5:
+                                                System.out.println("Return Book");
+                                                break;
+                                            case 6:
+                                                System.out.println("Exit to Main Menu");
+                                                break;
+                                        }
+                                }while (studentMenuChoice != 6);
+                                break;
                                 }
                                 break;
                             case 2:
