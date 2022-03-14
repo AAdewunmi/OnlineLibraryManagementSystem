@@ -215,6 +215,7 @@ public class LibraryMain {
                                 String password = scanner.next();
                                 if (admin.librarianLogin(username, password)) {
                                     do {
+                                        // Librarian Menu after login
                                         System.out.println("\n*** Librarian Menu ***\n"
                                                 + "Please select an option from the menu below:\n"
                                                 + "1. Search Book\n"
@@ -224,6 +225,7 @@ public class LibraryMain {
                                                 + "5. Exit to Librarian Login Menu\n");
                                         librarianMenuChoice = scanner.nextInt();
                                         switch (librarianMenuChoice) {
+                                            // Search Book
                                             case 1:
                                                 Scanner scannerSearch = new Scanner(System.in);
                                                 do {
@@ -265,6 +267,7 @@ public class LibraryMain {
                                                 }while (searchChoice != 4);
                                                 break;
                                             case 2:
+                                                // Register Book
                                                 Scanner scannerRegisterBook = new Scanner(System.in);
                                                 char c;
                                                 do {
@@ -282,6 +285,7 @@ public class LibraryMain {
                                                 }while (c == 'y');
                                                 break;
                                             case 3:
+                                                // Remove Book
                                                 Scanner scannerRemoveBook = new Scanner(System.in);
                                                 char d;
                                                 do {
@@ -294,6 +298,7 @@ public class LibraryMain {
                                                 }while (d == 'y');
                                                 break;
                                             case 4:
+                                                // Print all books
                                                 System.out.println("Print Books");
                                                 admin.printBooks();
                                                 break;
@@ -314,33 +319,27 @@ public class LibraryMain {
                     } while (librarianMenuChoice != 2);
                     break;
                 case 3:
-                    System.out.println("*** Student Login ***");
-                    break;
-                case 4:
-                    System.out.println("Exiting the ...\nLibrary Management System (LMS)");
-                    break;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-                    break;
-            }
-
-        } while (menuChoice != 4);
-        scanner.close();
-       /* TEACHER / STUDENT MENU
-       do {
-            System.out.println("\n*** Main Menu ***\n"
-             + "Please select an option from the menu below:\n"
-             + "1. Student User\n"
-             + "2. Librarian User\n"
-             + "3. Exit\n");
-
-            Scanner scanner = new Scanner(System.in);
-            mainMenuChoice = scanner.nextInt();
-
-            switch (mainMenuChoice) {
-                case 1:
-                    System.out.println("Student User");
-                    do {
+                    // Student Login
+                    /*do {
+                        System.out.println("Student Login Menu");
+                        System.out.println("1. Login");
+                        System.out.println("2. Exit");
+                        System.out.print("Please select a menu: ");
+                        studentMenuChoice = scanner.nextInt();
+                        switch (studentMenuChoice) {
+                            case 1:
+                                // Login
+                                System.out.println("Login ...");
+                                break;
+                            case 2:
+                                System.out.println("Loging Out ... \nExiting Student Login Menu");
+                                break;
+                            default:
+                                System.out.println("Invalid choice. Please try again.");
+                                break;
+                        }
+                    }while (studentMenuChoice != 2);*/
+                    /*do {
                         System.out.println("\n*** Student Menu ***\n"
                                 + "Please select an option from the menu below:\n"
                                 + "1. Search Book\n"
@@ -349,8 +348,8 @@ public class LibraryMain {
                                 + "4. Renew Book\n"
                                 + "5. Return Book\n"
                                 + "6. Exit to Main Menu\n");
-                        studentMenuChoice = scanner.nextInt();
-                        switch (studentMenuChoice) {
+                        xxx = scanner.nextInt();
+                        switch (xxx) {
                             case 1:
                                 System.out.println("Search Book");
                                 break;
@@ -371,24 +370,15 @@ public class LibraryMain {
                                 break;
                         }
                     }while (studentMenuChoice != 6);
-                    break;
-                case 2:
-                    System.out.println("Librarian User");
-                case 3:
-                    System.out.println("Exiting LMS...\n...Goodbye");
+                    break;*/
+                case 4:
+                    System.out.println("Exiting the ...\nLibrary Management System (LMS)");
                     break;
                 default:
-                    System.out.println("Invalid choice");
-                    System.out.println("Would you like to try again? (y/n)");
-                    char y = scanner.next().charAt(0);
-                    if (y == 'y') {
-                        System.out.println("Enter your choice again");
-                    }else {
-                        mainMenuChoice = 3;
-                    }
-                    System.out.println("Exiting LMS...\n...Goodbye");
+                    System.out.println("Invalid choice. Please try again.");
                     break;
             }
-        }while(mainMenuChoice != 3);*/
+        } while (menuChoice != 4);
+        scanner.close();
     }
 }

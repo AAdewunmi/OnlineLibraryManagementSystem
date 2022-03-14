@@ -1,6 +1,5 @@
 package com.librarymanagementsystem.students;
 
-import com.librarymanagementsystem.transactions.Search;
 import com.librarymanagementsystem.transactions.UserTransactions;
 
 /**
@@ -18,9 +17,9 @@ public class Student extends UserTransactions {
 
     /**
      * This is the constructor for the student class
-     * @param name
-     * @param studentId
-     * @param email
+     * @param name: student name
+     * @param studentId: student id
+     * @param email: student email
      */
 
     public Student(String name, int studentId, String email, String studentUsername, String studentPassword) {

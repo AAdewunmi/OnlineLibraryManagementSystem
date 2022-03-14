@@ -244,4 +244,20 @@ public class Administrator {
         return false;
     }
 
+    /**
+     * This method is used to log in by student.
+     * student: The student to be logged in
+     */
+    public boolean studentLogin(String username, String password){
+        for (Student student : listOfStudents) {
+            if(username.equals(student.getStudentUsername()) && password.equals(student.getStudentPassword())){
+                System.out.println("Student Login Successful!");
+                return true;
+            }else {
+                System.out.println("Student Login Failed!");
+            }
+        }
+        return false;
+    }
+
 }

@@ -69,25 +69,7 @@ public class UserTransactions implements Search{
     // +++++++++++++++++++++++++++++++
     // ++++++  Student methods +++++++
     // +++++++++++++++++++++++++++++++
-    // Reserve a book
-    public void reserveBook() {
 
-    }
-
-    // Borrow a book
-    public void borrowBook() {
-
-    }
-
-    // Renew a book
-    public void renewBook() {
-
-    }
-
-    // Return a book
-    public void returnBook() {
-
-    }
 
     /**
      * This method is used to search a book by author

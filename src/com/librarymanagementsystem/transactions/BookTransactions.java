@@ -58,4 +58,25 @@ public class BookTransactions {
         return daysBetween;
     }
 
+    // Reserve a book
+    public void reserveBook() {
+
+    }
+
+    // Borrow a book
+    public void borrowBook() {
+
+    }
+
+    // Renew a book
+    public void renewBook() {
+
+    }
+
+    // Return a book
+    public void returnBook() {
+
+    }
+
+
 }

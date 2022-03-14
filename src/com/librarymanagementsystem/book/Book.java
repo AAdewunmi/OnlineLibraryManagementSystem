@@ -7,7 +7,7 @@ import com.librarymanagementsystem.transactions.BookTransactions;
  * This class is used to create a book object
  */
 
-public class Book extends BookTransactions {
+public class Book {
     private final int ISBN;
     private final String author;
     private final String bookTitle;
