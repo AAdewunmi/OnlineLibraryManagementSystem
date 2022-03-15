@@ -12,7 +12,7 @@ import java.util.Scanner;
  * It gives the UI for the user to interact with the system.
  */
 public class LibraryMain {
-    // TODO: 1 ADMINISTRATOR, 2 LIBRARIAN, 6 STUDENTS.
+    // TODO: USER TYPES: LIBRARIAN = 1, STUDENT = 3, BOOK = 11.
     public static void main(String[] args) {
         int menuChoice;
         int loginChoice;

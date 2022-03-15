@@ -111,7 +111,7 @@ public class Administrator {
     }
 
     /**
-     * This method is used to search for a book by ISBN.
+     * This method is used by Librarian to search for a book by ISBN.
      * book: The book to be searched
      */
     public boolean searchBookISBN(int ISBN){
@@ -123,6 +123,21 @@ public class Administrator {
             }
         }
         System.out.println("Book does not exist!\n");
+        return false;
+    }
+
+    /**
+     * This method is used by a student to search for a book by ISBN.
+     * book: The book to be searched
+     */
+    public boolean studentSearchBookISBN(int ISBN){
+        for (Student student: listOfStudents) {
+            if(student.searchByISBN(ISBN)){
+                System.out.println("Book found!");
+                student.printABook(ISBN);
+                return true;
+            }
+        }
         return false;
     }
 
