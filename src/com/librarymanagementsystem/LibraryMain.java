@@ -20,6 +20,7 @@ public class LibraryMain {
         int librarianMenuChoice;
         int searchChoice;
         int studentMenuChoice;
+        int studentSearchChoice;
 
 
         Library library = new Library("London University Library",
@@ -229,7 +230,7 @@ public class LibraryMain {
                                             case 1:
                                                 Scanner scannerSearch = new Scanner(System.in);
                                                 do {
-                                                    System.out.println("\nSearch Menu\n"
+                                                    System.out.println("\nLibrarian Book Search Menu\n"
                                                             + "Please select an option from the menu below:\n"
                                                             + "1. Search by ISBN\n"
                                                             + "2. Search by Author\n"
@@ -238,7 +239,6 @@ public class LibraryMain {
                                                     searchChoice = scanner.nextInt();
                                                     switch (searchChoice) {
                                                         case 1:
-                                                            System.out.println("Search by ISBN");
                                                             System.out.println("Searching by ISBN ... ");
                                                             System.out.print("Enter ISBN: ");
                                                             int isbn = scannerSearch.nextInt();
@@ -345,7 +345,29 @@ public class LibraryMain {
                                         studentMenuChoice = scanner.nextInt();
                                         switch (studentMenuChoice) {
                                             case 1:
-                                                System.out.println("Search Book");
+                                                Scanner studentScannerSearch = new Scanner(System.in);
+                                                do{
+                                                    System.out.println("\nStudent Book Search Menu\n"
+                                                            + "Please select an option from the menu below:\n"
+                                                            + "1. Search by ISBN\n"
+                                                            + "2. Search by Author\n"
+                                                            + "3. Search by Title\n"
+                                                            + "4. Exit\n");
+                                                    studentSearchChoice = scanner.nextInt();
+                                                    switch (studentSearchChoice){
+                                                        case 1:
+                                                            System.out.println("Search By ISBN ... ");
+                                                            break;
+                                                        case 2:
+                                                            System.out.println("Search By Author ... ");
+                                                            break;
+                                                        case 3:
+                                                            System.out.println("Search by Title ... ");
+                                                            break;
+                                                        default:
+                                                            System.out.println("Invalid input. Please try again.");
+                                                    }
+                                                }while(studentSearchChoice != 4);
                                                 break;
                                             case 2:
                                                 System.out.println("Borrow Book");
