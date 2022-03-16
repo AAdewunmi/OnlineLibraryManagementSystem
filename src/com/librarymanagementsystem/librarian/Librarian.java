@@ -70,18 +70,18 @@ public class Librarian extends UserTransactions {
      *              title: title of the book
      *            name: name of the author
      */
-    public void addBook(int ISBN, String name, String title) {
+    /*public void addBook(int ISBN, String name, String title) {
         System.out.println("Add book to the library ... ");
         addBook(new Book(ISBN, name, title));
-    }
+    }*/
 
     /**
      * This method is used to print all the books in the library
      */
-    public void printBookList() {
+    /*public void printBookList() {
         System.out.println("Print the list of books ... ");
         printAllBooks();
-    }
+    }*/
     /**
      * This method is used to print library details
      */

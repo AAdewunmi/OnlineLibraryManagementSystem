@@ -1,6 +1,10 @@
 package com.librarymanagementsystem.students;
 
+import com.librarymanagementsystem.book.Book;
 import com.librarymanagementsystem.transactions.UserTransactions;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Adrian Adewunmi
@@ -14,6 +18,7 @@ public class Student extends UserTransactions {
     private final String email;
     private final String studentUsername;
     private final String studentPassword;
+
 
     /**
      * This is the constructor for the student class
@@ -56,5 +61,6 @@ public class Student extends UserTransactions {
                 + "Student ID: " + studentId + "\n"
                 + "Email: " + email + "\n";
     }
+
 
 }

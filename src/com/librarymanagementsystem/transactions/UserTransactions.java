@@ -11,15 +11,26 @@ import java.util.List;
  * This class is used to create an account object
  */
 public class UserTransactions implements Search{
+    class Write{
+
+    }
+    class Read{
+
+    }
     // +++++++++++++++++++++++++++++++
     // ++++++  Librarian  methods ++++
     // +++++++++++++++++++++++++++++++
     /**
      * This method is used to add a book to the library
      */
-    protected final List<Book> listOfBooks = new ArrayList<>();
-    public void addBook(Book book){
+    private List<Book> listOfBooks;
+    public void addBook(int ISBN, String name, String title){
+        Book book = new Book(ISBN, name, title);
         listOfBooks.add(book);
+    }
+
+    public UserTransactions() {
+        this.listOfBooks = new ArrayList<>();
     }
 
     /**
@@ -69,7 +80,12 @@ public class UserTransactions implements Search{
     // +++++++++++++++++++++++++++++++
     // ++++++  Student methods +++++++
     // +++++++++++++++++++++++++++++++
-
+    /**
+     * This method is used to get a list of books in the library
+     */
+    public List<Book> getListOfBooks(){
+        return listOfBooks;
+    }
 
     /**
      * This method is used to search a book by author

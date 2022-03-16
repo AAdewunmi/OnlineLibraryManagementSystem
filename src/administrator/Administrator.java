@@ -18,8 +18,8 @@ import java.util.List;
 public class Administrator {
     String adminUserName;
     String adminPassword;
-    private final List<Librarian> listOfLibrarians;
-    private final List<Student> listOfStudents;
+    private List<Librarian> listOfLibrarians;
+    private List<Student> listOfStudents;
 
     /**
      * This is the constructor for the Administrator class.
@@ -130,7 +130,7 @@ public class Administrator {
      * This method is used by a student to search for a book by ISBN.
      * book: The book to be searched
      */
-    public boolean studentSearchBookISBN(int ISBN){
+    /*public boolean studentSearchBookISBN(int ISBN){
         for (Student student: listOfStudents) {
             if(student.searchByISBN(ISBN)){
                 System.out.println("Book found!");
@@ -139,7 +139,7 @@ public class Administrator {
             }
         }
         return false;
-    }
+    }*/
 
     /**
      * This method is used to search for a book by title.
@@ -179,7 +179,7 @@ public class Administrator {
      */
     public void printBooks(){
         for (Librarian librarian : listOfLibrarians) {
-            librarian.printBookList();
+            librarian.printAllBooks();
         }
     }
 
@@ -273,6 +273,23 @@ public class Administrator {
             }
         }
         return false;
+    }
+    private static UserTransactions userTransactions;
+    public static void main(String[] args) {
+        Librarian librarian1 = new Librarian("ade", 123,
+                "ade", "ade","ade");
+        librarian1.addBook(123, "Ade", "Java");
+        librarian1.addBook(456, "Olu", "Python");
+        librarian1.addBook(789, "Ola", "C++");
+        librarian1.printAllBooks();
+        System.out.println("********");
+        Student student1 = new Student("ola", 123, "ola",
+                "ola", "ola");
+        userTransactions = new UserTransactions();
+        List<Book> listOfBooks = userTransactions.getListOfBooks();
+        //student1.printBooks();
+        userTransactions.printAllBooks();
+        System.out.println(listOfBooks);
     }
 
 }

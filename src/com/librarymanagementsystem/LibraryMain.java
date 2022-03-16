@@ -357,6 +357,9 @@ public class LibraryMain {
                                                     switch (studentSearchChoice){
                                                         case 1:
                                                             System.out.println("Search By ISBN ... ");
+                                                            System.out.println("Enter ISBN: ");
+                                                            int ISBN = studentScannerSearch.nextInt();
+                                                            //admin.studentSearchBookISBN(ISBN);
                                                             break;
                                                         case 2:
                                                             System.out.println("Search By Author ... ");
@@ -364,8 +367,11 @@ public class LibraryMain {
                                                         case 3:
                                                             System.out.println("Search by Title ... ");
                                                             break;
+                                                        case 4:
+                                                            System.out.println("Exiting to Student Menu");
                                                         default:
                                                             System.out.println("Invalid input. Please try again.");
+                                                            break;
                                                     }
                                                 }while(studentSearchChoice != 4);
                                                 break;
