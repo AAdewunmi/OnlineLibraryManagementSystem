@@ -11,9 +11,9 @@ and a console based application.
 
 It is an application that consists of three users:
 
-1. Administrator -> allow user to log in, add / delete / print users, logout.
-2. Librarian -> allow user to log in, add / delete / search / print books, logout.
-3. Student -> allow user to log in, search, borrow / return logout.
+1. Administrator -> allow user to log in / add / delete / print users / logout.
+2. Librarian -> allow user to log in / add / delete / search / print books / logout.
+3. Student -> allow user to log in / search / borrow / return / logout.
 
 ## When is the project completed?
 
