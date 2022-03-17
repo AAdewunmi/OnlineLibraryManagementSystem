@@ -13,7 +13,7 @@ It is an application that consists of three users:
 
 1. Administrator -> allow user to log in, add / delete / print users, logout.
 2. Librarian -> allow user to log in, add / delete / search / print books, logout.
-3. Student -> allow user to log in, search, logout.
+3. Student -> allow user to log in, search, borrow / return logout.
 
 ## When is the project completed?
 
@@ -23,25 +23,15 @@ The project is completed once all the MVP features have been implemented.
 
 1. Administrator -> COMPLETED! 😎
 2. Librarian -> COMPLETED! 😎
-
-17 / 03 / 2022:
-
-1. Student -> COMPLETED! 😎
-2. Retrospective:
-The project is completed and the MVP is working as expected.
-
-However, there are some issues with:
-1. The database is not connected to the application.
-
+3. Student -> WORK-IN-PROGRESS! 😎
 
 ## What are the nice to have?
 
-1. Implement Student User Features -> borrow / return books.
-2. Unit testing -> add unit testing for all the MVP features.
-3. Add a main GUI
-4. Add a GUI for the librarian
-5. Add a GUI for the student
-6. Add a database to store the users / books
+1. Unit testing -> add unit testing for all the MVP features.
+2. Add a main GUI
+3. Add a GUI for the librarian
+4. Add a GUI for the student
+5. Add a database to store the users / books
 
 ## How to run the project:
 
