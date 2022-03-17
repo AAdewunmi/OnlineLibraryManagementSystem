@@ -1,6 +1,5 @@
 package com.librarymanagementsystem.librarian;
 
-import com.librarymanagementsystem.book.Book;
 import com.librarymanagementsystem.transactions.UserTransactions;
 
 /**
@@ -17,9 +16,9 @@ public class Librarian extends UserTransactions {
 
     /**
      * This is a constructor for the librarian class
-     * @param librarianName
-     * @param librarianIDNumber
-     * @param librarianEmail
+     * @param librarianName: The name of the librarian
+     * @param librarianIDNumber: The id number of the librarian
+     * @param librarianEmail: The email of the librarian
      */
     public Librarian(String librarianName, int librarianIDNumber, String librarianEmail, String librarianUserName, String librarianPassword) {
         this.librarianName = librarianName;
@@ -30,61 +29,40 @@ public class Librarian extends UserTransactions {
     }
     /**
      * This method is used to get the librarian name
-     * @return
+     * @return librarianName
      */
     public String getLibrarianName() {
         return librarianName;
     }
     /**
      * This method is used to get the librarian id number
-     * @return
+     * @return librarianIDNumber
      */
     public int getLibrarianIDNumber() {
         return librarianIDNumber;
     }
     /**
      * This method is used to get the librarian email
-     * @return
+     * @return librarianEmail
      */
     public String getLibrarianEmail() {
         return librarianEmail;
     }
     /**
-     * This method is used to get the librarian user name
-     * @return
+     * This method is used to get the librarian username
+     * @return librarianUserName
      */
     public String getLibrarianUserName() {
         return librarianUserName;
     }
     /**
      * This method is used to get the librarian password
-     * @return
+     * @return librarianPassword
      */
     public String getLibrarianPassword() {
         return librarianPassword;
     }
 
-    /**
-     * This method is used to add a book to the library
-     * @param ISBN: isbn number of the book
-     *              title: title of the book
-     *            name: name of the author
-     */
-    /*public void addBook(int ISBN, String name, String title) {
-        System.out.println("Add book to the library ... ");
-        addBook(new Book(ISBN, name, title));
-    }*/
-
-    /**
-     * This method is used to print all the books in the library
-     */
-    /*public void printBookList() {
-        System.out.println("Print the list of books ... ");
-        printAllBooks();
-    }*/
-    /**
-     * This method is used to print library details
-     */
     @Override
     public String toString() {
         return "Librarian Name: " + librarianName + "\n" +

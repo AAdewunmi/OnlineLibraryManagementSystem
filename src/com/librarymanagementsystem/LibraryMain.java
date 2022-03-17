@@ -358,14 +358,14 @@ public class LibraryMain {
                                                         case 1:
                                                             System.out.println("Search By ISBN ... ");
                                                             System.out.println("Enter ISBN: ");
-                                                            int ISBN = studentScannerSearch.nextInt();
-                                                            //admin.studentSearchBookISBN(ISBN);
+                                                            int isbn = studentScannerSearch.nextInt();
+                                                            admin.findBookByISBNFromStudentAccount(isbn);
                                                             break;
                                                         case 2:
                                                             System.out.println("Search By Author ... ");
                                                             break;
                                                         case 3:
-                                                            System.out.println("Search by Title ... ");
+                                                            System.out.println("Search By Title ... ");
                                                             break;
                                                         case 4:
                                                             System.out.println("Exiting to Student Menu");

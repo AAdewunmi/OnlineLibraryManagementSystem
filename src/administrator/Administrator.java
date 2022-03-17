@@ -3,7 +3,6 @@ package administrator;
 import com.librarymanagementsystem.book.Book;
 import com.librarymanagementsystem.librarian.Librarian;
 import com.librarymanagementsystem.students.Student;
-import com.librarymanagementsystem.transactions.UserTransactions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +30,20 @@ public class Administrator {
         this.listOfStudents = new ArrayList<>();
         this.adminUserName = "admin";
         this.adminPassword = "admin";
+    }
+
+    /**
+     * This method is used to log in by admin.
+     * admin: The admin to be logged in
+     */
+    public boolean adminLogin(String username, String password){
+        if(username.equals("admin") && password.equals("admin")){
+            System.out.println("Administrator Login Successful!");
+            return true;
+        }else {
+            System.out.println("Administrator Login Failed!");
+        }
+        return false;
     }
 
     /**
@@ -74,6 +87,22 @@ public class Administrator {
         for (Librarian librarian : listOfLibrarians) {
             if (librarian.getLibrarianIDNumber() == librarianIDNumber){
                 return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * This method is used to log in by librarian.
+     * librarian: The librarian to be logged in
+     */
+    public boolean librarianLogin(String username, String password){
+        for (Librarian librarian : listOfLibrarians) {
+            if(username.equals(librarian.getLibrarianUserName()) && password.equals(librarian.getLibrarianPassword())){
+                System.out.println("Librarian Login Successful!");
+                return true;
+            }else {
+                System.out.println("Librarian Login Failed!");
             }
         }
         return false;
@@ -125,21 +154,6 @@ public class Administrator {
         System.out.println("Book does not exist!\n");
         return false;
     }
-
-    /**
-     * This method is used by a student to search for a book by ISBN.
-     * book: The book to be searched
-     */
-    /*public boolean studentSearchBookISBN(int ISBN){
-        for (Student student: listOfStudents) {
-            if(student.searchByISBN(ISBN)){
-                System.out.println("Book found!");
-                student.printABook(ISBN);
-                return true;
-            }
-        }
-        return false;
-    }*/
 
     /**
      * This method is used to search for a book by title.
@@ -229,35 +243,6 @@ public class Administrator {
         return false;
     }
 
-    /**
-     * This method is used to log in by admin.
-     * admin: The admin to be logged in
-     */
-    public boolean adminLogin(String username, String password){
-        if(username.equals("admin") && password.equals("admin")){
-            System.out.println("Administrator Login Successful!");
-            return true;
-        }else {
-            System.out.println("Administrator Login Failed!");
-        }
-        return false;
-    }
-
-    /**
-     * This method is used to log in by librarian.
-     * librarian: The librarian to be logged in
-     */
-    public boolean librarianLogin(String username, String password){
-        for (Librarian librarian : listOfLibrarians) {
-            if(username.equals(librarian.getLibrarianUserName()) && password.equals(librarian.getLibrarianPassword())){
-                System.out.println("Librarian Login Successful!");
-                return true;
-            }else {
-                System.out.println("Librarian Login Failed!");
-            }
-        }
-        return false;
-    }
 
     /**
      * This method is used to log in by student.
@@ -274,22 +259,23 @@ public class Administrator {
         }
         return false;
     }
-    private static UserTransactions userTransactions;
-    public static void main(String[] args) {
-        Librarian librarian1 = new Librarian("ade", 123,
-                "ade", "ade","ade");
-        librarian1.addBook(123, "Ade", "Java");
-        librarian1.addBook(456, "Olu", "Python");
-        librarian1.addBook(789, "Ola", "C++");
-        librarian1.printAllBooks();
-        System.out.println("********");
-        Student student1 = new Student("ola", 123, "ola",
-                "ola", "ola");
-        userTransactions = new UserTransactions();
-        List<Book> listOfBooks = userTransactions.getListOfBooks();
-        //student1.printBooks();
-        userTransactions.printAllBooks();
-        System.out.println(listOfBooks);
+
+    /**
+     * This method is used by a student to search for a book by ISBN.
+     * book: The book to be searched
+     */
+    public void findBookByISBNFromStudentAccount(int isbn){
+        for (Librarian librarian: listOfLibrarians) {
+            for (Student student : listOfStudents) {
+                student.getAllBooksFromUserTransactions((ArrayList<Book>)
+                        librarian.getListOfBooks());
+                if (student.findBookByISBNFromStudentAccount(isbn)) {
+                    student.printABookFromStudentAccount(isbn);
+                }else{
+                    System.out.println("Book does not exit");
+                }
+            }
+        }
     }
 
 }

@@ -18,6 +18,7 @@ public class Student extends UserTransactions {
     private final String email;
     private final String studentUsername;
     private final String studentPassword;
+    private List<Book> listOfBooks;
 
 
     /**
@@ -27,7 +28,8 @@ public class Student extends UserTransactions {
      * @param email: student email
      */
 
-    public Student(String name, int studentId, String email, String studentUsername, String studentPassword) {
+    public Student(String name, int studentId, String email,
+                   String studentUsername, String studentPassword) {
         this.name = name;
         this.studentId = studentId;
         this.email = email;
@@ -62,5 +64,24 @@ public class Student extends UserTransactions {
                 + "Email: " + email + "\n";
     }
 
+    public void getAllBooksFromUserTransactions(ArrayList<Book> list){
+        this.listOfBooks = (ArrayList<Book>) list.clone();
+    }
 
+    public boolean findBookByISBNFromStudentAccount(int isbn) {
+        for (Book book : listOfBooks) {
+            if (book.getISBN() == isbn) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void printABookFromStudentAccount(int isbn) {
+        for (Book book : listOfBooks) {
+            if (book.getISBN() == isbn) {
+                System.out.println(book);
+            }
+        }
+    }
 }

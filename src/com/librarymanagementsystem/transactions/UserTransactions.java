@@ -11,12 +11,6 @@ import java.util.List;
  * This class is used to create an account object
  */
 public class UserTransactions implements Search{
-    class Write{
-
-    }
-    class Read{
-
-    }
     // +++++++++++++++++++++++++++++++
     // ++++++  Librarian  methods ++++
     // +++++++++++++++++++++++++++++++
@@ -54,7 +48,7 @@ public class UserTransactions implements Search{
     public void printABook(int ISBN) {
         for (Book book : listOfBooks){
             if (book.getISBN() == ISBN){
-                System.out.println(book.toString());
+                System.out.println(book);
             }
         }
     }
@@ -63,7 +57,7 @@ public class UserTransactions implements Search{
     public void printABookTitle(String title) {
         for (Book book : listOfBooks){
             if (book.getBookTitle().equalsIgnoreCase(title)){
-                System.out.println(book.toString());
+                System.out.println(book);
             }
         }
     }
@@ -72,7 +66,7 @@ public class UserTransactions implements Search{
     public void printABookAuthor(String author) {
         for (Book book : listOfBooks){
             if (book.getAuthor().equalsIgnoreCase(author)){
-                System.out.println(book.toString());
+                System.out.println(book);
             }
         }
     }
@@ -89,8 +83,8 @@ public class UserTransactions implements Search{
 
     /**
      * This method is used to search a book by author
-     * @param author:
-     * @return
+     * @param author: author of the book
+     * @return true if the book is found
      */
     @Override
     public boolean searchByAuthor(String author) {
@@ -103,8 +97,8 @@ public class UserTransactions implements Search{
     }
     /**
      * This method is used to search a book by title
-     * @param title:
-     * @return
+     * @param title: title of the book
+     * @return  true if the book is found
      */
     @Override
     public boolean searchByTitle(String title) {
@@ -118,7 +112,7 @@ public class UserTransactions implements Search{
     /**
      * This method is used to search a book by ISBN
      * @param ISBN: ISBN of the book
-     * @return
+     * @return true if the book is found
      */
     @Override
     public boolean searchByISBN(int ISBN) {
