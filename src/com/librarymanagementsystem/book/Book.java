@@ -1,5 +1,4 @@
 package com.librarymanagementsystem.book;
-import com.librarymanagementsystem.transactions.BookTransactions;
 
 /**
  * @author Adrian Adewunmi

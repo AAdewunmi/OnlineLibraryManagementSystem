@@ -17,8 +17,8 @@ import java.util.List;
 public class Administrator {
     String adminUserName;
     String adminPassword;
-    private List<Librarian> listOfLibrarians;
-    private List<Student> listOfStudents;
+    private final List<Librarian> listOfLibrarians;
+    private final List<Student> listOfStudents;
 
     /**
      * This is the constructor for the Administrator class.
@@ -271,6 +271,24 @@ public class Administrator {
                         librarian.getListOfBooks());
                 if (student.findBookByISBNFromStudentAccount(isbn)) {
                     student.printABookFromStudentAccount(isbn);
+                }else{
+                    System.out.println("Book does not exit");
+                }
+            }
+        }
+    }
+
+    /**
+     * This method is used by a student to search for a book by title.
+     * book: The book to be searched
+     */
+    public void findBookByTitleFromStudentAccount(String title){
+        for (Librarian librarian: listOfLibrarians) {
+            for (Student student : listOfStudents) {
+                student.getAllBooksFromUserTransactions((ArrayList<Book>)
+                        librarian.getListOfBooks());
+                if (student.findBookByTitleFromStudentAccount(title)) {
+                    student.printABookFromStudentAccount(title);
                 }else{
                     System.out.println("Book does not exit");
                 }

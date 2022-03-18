@@ -11,13 +11,11 @@ import java.util.List;
  * This class is used to create an account object
  */
 public class UserTransactions implements Search{
-    // +++++++++++++++++++++++++++++++
-    // ++++++  Librarian  methods ++++
-    // +++++++++++++++++++++++++++++++
+
     /**
      * This method is used to add a book to the library
      */
-    private List<Book> listOfBooks;
+    private final List<Book> listOfBooks;
     public void addBook(int ISBN, String name, String title){
         Book book = new Book(ISBN, name, title);
         listOfBooks.add(book);
@@ -71,9 +69,6 @@ public class UserTransactions implements Search{
         }
     }
 
-    // +++++++++++++++++++++++++++++++
-    // ++++++  Student methods +++++++
-    // +++++++++++++++++++++++++++++++
     /**
      * This method is used to get a list of books in the library
      */

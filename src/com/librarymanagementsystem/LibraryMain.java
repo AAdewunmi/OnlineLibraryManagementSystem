@@ -25,7 +25,7 @@ public class LibraryMain {
 
         Library library = new Library("London University Library",
                 "Finsbury Park, London, UK");
-        System.out.println(library.toString());
+        System.out.println(library);
         System.out.println("*** Welcome to the Library Management System (LMS) ***");
         LocalDate date = LocalDate.now();
         System.out.println("*** Date: " + date + " ***");
@@ -360,12 +360,16 @@ public class LibraryMain {
                                                             System.out.println("Enter ISBN: ");
                                                             int isbn = studentScannerSearch.nextInt();
                                                             admin.findBookByISBNFromStudentAccount(isbn);
+                                                            studentScannerSearch.nextLine();
                                                             break;
                                                         case 2:
                                                             System.out.println("Search By Author ... ");
                                                             break;
                                                         case 3:
                                                             System.out.println("Search By Title ... ");
+                                                            System.out.println("Enter Title: ");
+                                                            String author = studentScannerSearch.nextLine();
+                                                            admin.findBookByTitleFromStudentAccount(author);
                                                             break;
                                                         case 4:
                                                             System.out.println("Exiting to Student Menu");

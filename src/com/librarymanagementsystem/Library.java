@@ -6,8 +6,8 @@ package com.librarymanagementsystem;
  * This class is used to create a library object
  */
 public class Library {
-    private String LibraryName;
-    private String LibraryAddress;
+    private final String LibraryName;
+    private final String LibraryAddress;
 
     public Library(String LibraryName, String LibraryAddress){
         this.LibraryName = LibraryName;

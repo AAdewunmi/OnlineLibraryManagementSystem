@@ -64,10 +64,20 @@ public class Student extends UserTransactions {
                 + "Email: " + email + "\n";
     }
 
+    /**
+     * This method is used to give the student access to the
+     * list of books, created by a librarian.
+     * @param list: book object
+     */
     public void getAllBooksFromUserTransactions(ArrayList<Book> list){
         this.listOfBooks = (ArrayList<Book>) list.clone();
     }
 
+    /**
+     * This method is used to search for a book by ISBN.
+     * @param isbn: book ISBN
+     * @return book object
+     */
     public boolean findBookByISBNFromStudentAccount(int isbn) {
         for (Book book : listOfBooks) {
             if (book.getISBN() == isbn) {
@@ -77,9 +87,40 @@ public class Student extends UserTransactions {
         return false;
     }
 
+    /**
+     * This method is used to print result from a search for a book by ISBN.
+     * @param isbn: book ISBN
+     */
     public void printABookFromStudentAccount(int isbn) {
         for (Book book : listOfBooks) {
             if (book.getISBN() == isbn) {
+                System.out.println(book);
+            }
+        }
+    }
+
+    /**
+     * This method is used to search for a book by title.
+     * @param title: book title
+     * @return book object
+     */
+
+    public boolean findBookByTitleFromStudentAccount(String title) {
+        for (Book book : listOfBooks) {
+            if (book.getBookTitle().equalsIgnoreCase(title)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * This method is used to print result from a search for a book by title.
+     * @param title: book title
+     */
+    public void printABookFromStudentAccount(String title) {
+        for (Book book : listOfBooks) {
+            if (book.getBookTitle().equalsIgnoreCase(title)) {
                 System.out.println(book);
             }
         }
