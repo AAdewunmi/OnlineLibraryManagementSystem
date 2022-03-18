@@ -364,12 +364,16 @@ public class LibraryMain {
                                                             break;
                                                         case 2:
                                                             System.out.println("Search By Author ... ");
+                                                            System.out.println("Enter Author: ");
+                                                            String author = studentScannerSearch.nextLine();
+                                                            admin.findBookByAuthorFromStudentAccount(author);
+                                                            studentScannerSearch.nextLine();
                                                             break;
                                                         case 3:
                                                             System.out.println("Search By Title ... ");
                                                             System.out.println("Enter Title: ");
-                                                            String author = studentScannerSearch.nextLine();
-                                                            admin.findBookByTitleFromStudentAccount(author);
+                                                            String title = studentScannerSearch.nextLine();
+                                                            admin.findBookByTitleFromStudentAccount(title);
                                                             break;
                                                         case 4:
                                                             System.out.println("Exiting to Student Menu");

@@ -118,9 +118,35 @@ public class Student extends UserTransactions {
      * This method is used to print result from a search for a book by title.
      * @param title: book title
      */
-    public void printABookFromStudentAccount(String title) {
+    public void printABookByTitleFromStudentAccount(String title) {
         for (Book book : listOfBooks) {
             if (book.getBookTitle().equalsIgnoreCase(title)) {
+                System.out.println(book);
+            }
+        }
+    }
+
+    /**
+     * This method is used to search for a book by author.
+     * @param author: book author
+     * @return book object
+     */
+    public boolean findBookByAuthorFromStudentAccount(String author) {
+        for (Book book : listOfBooks) {
+            if (book.getAuthor().equalsIgnoreCase(author)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * This method is used to print result from a search for a book by author.
+     * @param author: book author
+     */
+    public void printABookByAuthorFromStudentAccount(String author) {
+        for (Book book : listOfBooks) {
+            if (book.getAuthor().equalsIgnoreCase(author)) {
                 System.out.println(book);
             }
         }

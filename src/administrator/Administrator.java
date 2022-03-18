@@ -288,7 +288,25 @@ public class Administrator {
                 student.getAllBooksFromUserTransactions((ArrayList<Book>)
                         librarian.getListOfBooks());
                 if (student.findBookByTitleFromStudentAccount(title)) {
-                    student.printABookFromStudentAccount(title);
+                    student.printABookByTitleFromStudentAccount(title);
+                }else{
+                    System.out.println("Book does not exit");
+                }
+            }
+        }
+    }
+
+    /**
+     * This method is used by a student to search for a book by author.
+     * book: The book to be searched
+     */
+    public void findBookByAuthorFromStudentAccount(String author){
+        for (Librarian librarian: listOfLibrarians) {
+            for (Student student : listOfStudents) {
+                student.getAllBooksFromUserTransactions((ArrayList<Book>)
+                        librarian.getListOfBooks());
+                if (student.findBookByAuthorFromStudentAccount(author)) {
+                    student.printABookByAuthorFromStudentAccount(author);
                 }else{
                     System.out.println("Book does not exit");
                 }
