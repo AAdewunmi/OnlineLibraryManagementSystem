@@ -151,4 +151,32 @@ public class Student extends UserTransactions {
             }
         }
     }
+
+    /**
+     * This method is used to borrow a book from the library.
+     * @param title: book title
+     */
+    public boolean borrowBookFromStudentAccount(String title) {
+        for (Book book : listOfBooks) {
+            if (book.getBookTitle().equalsIgnoreCase(title)) {
+                listOfBooks.remove(book);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
+     * This method is used to return a book to the library.
+     * @param title: book title
+     */
+    public boolean returnBookFromStudentAccount(String title) {
+        for (Book book : listOfBooks) {
+            if (book.getBookTitle().equalsIgnoreCase(title)) {
+                listOfBooks.add(book);
+                return true;
+            }
+        }
+        return false;
+    }
 }
