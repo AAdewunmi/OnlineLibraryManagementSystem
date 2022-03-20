@@ -52,7 +52,27 @@ public class Book {
         return bookTitle;
     }
 
+    /**
+     * This method is keep track of the book borrowed status
+     * @return: The borrowed status of the book (true or false)
+     */
+    public boolean isBorrowed(){
+        return borrowed;
+    }
 
+    /**
+     * This method is used to set the book as borrowed
+     */
+    public void borrowed(){
+        this.borrowed = true;
+    }
+
+    /**
+     * This method is used to set the book as returned
+     */
+    public void returned(){
+        this.borrowed = false;
+    }
 
     /**
      * This method is used to get the details of the book
