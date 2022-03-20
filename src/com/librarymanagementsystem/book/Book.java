@@ -10,6 +10,7 @@ public class Book {
     private final int ISBN;
     private final String author;
     private final String bookTitle;
+    private boolean borrowed;
 
     /**
      * This is the constructor for the Book class
@@ -21,6 +22,12 @@ public class Book {
         this.author = author;
         this.bookTitle = bookTitle;
         this.ISBN = ISBN;
+    }
+
+    public Book(String bookTitle) {
+        this.bookTitle = bookTitle;
+        this.author = "";
+        this.ISBN = 0;
     }
 
     /**
@@ -44,6 +51,9 @@ public class Book {
     public String getBookTitle() {
         return bookTitle;
     }
+
+
+
     /**
      * This method is used to get the details of the book
      * @return: The details of the book
