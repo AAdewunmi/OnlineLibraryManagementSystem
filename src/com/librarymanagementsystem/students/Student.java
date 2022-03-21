@@ -152,4 +152,13 @@ public class Student extends UserTransactions {
         }
     }
 
+    public boolean borrowBook(Book book){
+        return true;
+    }
+
+    public boolean returnBook(Book book){
+        return true;
+    }
+
+
 }
