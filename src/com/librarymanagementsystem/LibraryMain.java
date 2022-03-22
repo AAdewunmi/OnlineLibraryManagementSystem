@@ -384,14 +384,25 @@ public class LibraryMain {
                                                 }while(studentSearchChoice != 4);
                                                 break;
                                             case 2:
-                                                Scanner scannerStudentTransactions = new Scanner(System.in);
+                                                Scanner scannerStudentBorrow = new Scanner(System.in);
                                                 System.out.println("Borrow Book ... ");
                                                 System.out.println("Enter Book title: ");
-                                                String title = scannerStudentTransactions.nextLine();
+                                                String title = scannerStudentBorrow.nextLine();
                                                 admin.studentBorrowBook(title);
+                                                scannerStudentBorrow.nextLine();
                                                 break;
                                             case 3:
-                                                System.out.println("Return Book");
+                                                Scanner scannerStudentReturn = new Scanner(System.in);
+                                                System.out.println("Return Book ...");
+                                                System.out.println("Enter ISBN:");
+                                                int isbn = scannerStudentReturn.nextInt();
+                                                scannerStudentReturn.nextLine();
+                                                System.out.println("Enter Author:");
+                                                String author = scannerStudentReturn.nextLine();
+                                                scannerStudentReturn.nextLine();
+                                                System.out.println("Enter Book title: ");
+                                                String titleReturn = scannerStudentReturn.nextLine();
+                                                admin.studentReturnBook(isbn, author, titleReturn);
                                                 break;
                                             case 4:
                                                 System.out.println("Exit to Main Menu");
