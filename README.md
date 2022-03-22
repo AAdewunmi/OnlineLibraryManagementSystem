@@ -1,11 +1,9 @@
-## Title: 
-
-Library Management System Project
+# Library Management System Project
 
 ## What is the project about? 
 
 This project is a library management system, developed using Java 8,
-and a console based application.
+as a console based application.
 
 ## What is the Minimum Viable Product(MVP)?
 
@@ -35,6 +33,23 @@ The project is completed once all the MVP features have been implemented.
 
 ## How to run the project:
 
+## Installing:
+
+1. Clone the repo
+
+```
+https://github.com/AAdewunmi/OnlineLibraryManagementSystem.git
+```
+
+2. Open Project Folder
+
+
+3. Explore
+
+Enjoy 😎
+
+## LogIn
+
 1. Administrator:
 
     1.1. Login as admin (username: "admin", password: "admin")
@@ -59,4 +74,19 @@ The project is completed once all the MVP features have been implemented.
     
     3.3. Logout
 
+### Here are screenshot's of the application:
+#### 1. 
 
+
+### Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+👇 👇 👇
+
+Future plans:
+
+1. Unit testing -> add unit testing for all the MVP features.
+2. Add a main GUI
+3. Add a GUI for the librarian
+4. Add a GUI for the student
+5. Add a database to store the users / books
