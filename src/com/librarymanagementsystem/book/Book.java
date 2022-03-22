@@ -22,12 +22,7 @@ public class Book {
         this.author = author;
         this.bookTitle = bookTitle;
         this.ISBN = ISBN;
-    }
-
-    public Book(String bookTitle) {
-        this.bookTitle = bookTitle;
-        this.author = "";
-        this.ISBN = 0;
+        this.borrowed = false;
     }
 
     /**
@@ -57,7 +52,7 @@ public class Book {
      * @return: The borrowed status of the book (true or false)
      */
     public boolean isBorrowed(){
-        return borrowed;
+        return this.borrowed;
     }
 
     /**

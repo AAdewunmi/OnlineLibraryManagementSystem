@@ -12,20 +12,6 @@ import java.util.Formatter;
  */
 public class BookTransactions {
 
-    // Check book status
-    public void checkBookStatus(String bookId) {
-        if (bookId.equals("")) {
-            System.out.println("Book status is: " + "Book is not available");
-        } else {
-            System.out.println("Book status is: " + "Book is available");
-        }
-    }
-
-    // Reserved date
-    public Date reservedDate() {
-        return new Date();
-    }
-
     // Book borrowed date
     public Date bookBorrowedDate() {
         Date date = new Date();
@@ -56,26 +42,6 @@ public class BookTransactions {
         long daysBetween = ChronoUnit.DAYS.between(date2.toInstant(), date1.toInstant());
         System.out.println("Book borrowed days is: " + daysBetween);
         return daysBetween;
-    }
-
-    // Reserve a book
-    public void reserveBook() {
-
-    }
-
-    // Borrow a book
-    public void borrowBook() {
-
-    }
-
-    // Renew a book
-    public void renewBook() {
-
-    }
-
-    // Return a book
-    public void returnBook() {
-
     }
 
 

@@ -385,18 +385,6 @@ public class LibraryMain {
                                                 break;
                                             case 2:
                                                 System.out.println("Borrow Book");
-                                                // TODO: Implement borrow book
-                                                // 1. Search for the book (Book Status: Available or Borrowed)
-                                                // 2. If borrowed, ask if the user wants to search for another book
-                                                // 3. If available, check out the book
-                                                // 4. Change Book Status to Borrowed
-                                                /**
-                                                 * if the search by title, return true,
-                                                 * isStatusAvailable = true;
-                                                 * check out the book
-                                                 * isStatusAvailable = false;
-                                                 */
-
                                                 break;
                                             case 3:
                                                 System.out.println("Return Book");

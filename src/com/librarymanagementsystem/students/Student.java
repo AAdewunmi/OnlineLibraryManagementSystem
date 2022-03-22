@@ -152,13 +152,71 @@ public class Student extends UserTransactions {
         }
     }
 
-    public boolean borrowBook(Book book){
-        return true;
+    /*
+     * This method is used to add a book to the list of books,
+     * created by a librarian. It is a helper method for the
+     * returnBook() method.
+     */
+    public void addBookFromStudentAccount(int ISBN, String name, String title){
+        Book book = new Book(ISBN, name, title);
+        listOfBooks.add(book);
     }
 
-    public boolean returnBook(Book book){
-        return true;
+    /**
+     * This method is used to remove a book from the list of books,
+     * created by a librarian. It is a helper method for the
+     * borrowBook() method.
+     */
+    public void removeBookFromStudentAccount(String title){
+        listOfBooks.removeIf(book1 -> book1.getBookTitle().equalsIgnoreCase(title));
     }
 
+    /**
+     * This method is used to borrow a book from the list of books,
+     * by a student.
+     * @param title
+     */
+    public void borrowBook(String title){
+        // date borrowed
+        for (Book book : listOfBooks) {
+            if (book.getBookTitle().equals(title)) {
+                if (!(book.isBorrowed())) {
+                    book.borrowed();
+                    System.out.println("You have successfully borrowed " + title);
+                    removeBookFromStudentAccount(title);
+                    return;
+                }
+            }
+            if(!(book.getBookTitle().equals(title))){
+                System.out.println("Sorry, this book is already borrowed!");
+                return;
+            }
+        }
+        System.out.println("Book not found in catalog!");
+    }
+    /**
+     * This method is used to return a book from the list of books,
+     * by a student.
+     * @param title
+     */
+    public void returnBook(int ISBN, String name, String title){
+        // date returned
+        for (Book book : listOfBooks) {
+            removeBookFromStudentAccount(title);
+            if (!(book.getBookTitle().equals(title))){
+                if (!(book.isBorrowed())) {
+                    book.returned();
+                    addBookFromStudentAccount(ISBN, name, title);
+                    System.out.println("Book returned: " + title);
+                    return;
+                }
+            }
+        }
+    }
 
+    public void printListOfBooksFromStudentAccount(){
+        for (Book book : listOfBooks) {
+            System.out.println(book);
+        }
+    }
 }
