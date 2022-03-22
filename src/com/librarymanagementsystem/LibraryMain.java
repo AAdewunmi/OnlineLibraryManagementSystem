@@ -384,7 +384,7 @@ public class LibraryMain {
                                                 }while(studentSearchChoice != 4);
                                                 break;
                                             case 2:
-                                                System.out.println("Borrow Book");
+
                                                 break;
                                             case 3:
                                                 System.out.println("Return Book");

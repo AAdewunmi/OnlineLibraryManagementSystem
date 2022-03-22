@@ -184,6 +184,7 @@ public class Student extends UserTransactions {
                     book.borrowed();
                     System.out.println("You have successfully borrowed " + title);
                     removeBookFromStudentAccount(title);
+                    printListOfBooksFromStudentAccount();
                     return;
                 }
             }
@@ -215,6 +216,7 @@ public class Student extends UserTransactions {
     }
 
     public void printListOfBooksFromStudentAccount(){
+        System.out.println("***List Of Books***");
         for (Book book : listOfBooks) {
             System.out.println(book);
         }

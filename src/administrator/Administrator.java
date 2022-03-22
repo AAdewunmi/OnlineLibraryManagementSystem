@@ -314,4 +314,13 @@ public class Administrator {
         }
     }
 
+    /**
+     * This method is used by a student to borrow a book.
+     */
+    public void studentBorrowBook(String title){
+        for (Student student : listOfStudents) {
+            student.borrowBook(title);
+        }
+    }
+
 }
