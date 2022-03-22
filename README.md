@@ -1,37 +1,7 @@
 # Library Management System Project
 
-## What is the project about? 
-
 This project is a library management system, developed using Java 8,
 as a console based application.
-
-## What is the Minimum Viable Product(MVP)?
-
-It is an application that consists of three users:
-
-1. Administrator -> allow user to log in / add / delete / print users / logout.
-2. Librarian -> allow user to log in / add / delete / search / print books / logout.
-3. Student -> allow user to log in / search / borrow / return / logout.
-
-## When is the project completed?
-
-The project is completed once all the MVP features have been implemented.
-
-11 / 03 / 2022:
-
-1. Administrator -> COMPLETED! 😎
-2. Librarian -> COMPLETED! 😎
-3. Student -> WORK-IN-PROGRESS! 😎
-
-## What are the nice to have?
-
-1. Unit testing -> add unit testing for all the MVP features.
-2. Add a main GUI
-3. Add a GUI for the librarian
-4. Add a GUI for the student
-5. Add a database to store the users / books
-
-## How to run the project:
 
 ## Installing:
 
@@ -75,7 +45,24 @@ Enjoy 😎
     3.3. Logout
 
 ### Here are screenshot's of the application:
-#### 1. 
+#### 1. Main Menu 
+
+![Image description](src/screenshots/Main_Screenshot.png)
+
+
+#### 2. Administrator Login
+
+![Image description](src/screenshots/Admin_Screenshot.png)
+
+
+#### 3. Librarian Login
+
+![Image description](src/screenshots/Librarian_Screenshot.png)
+
+
+#### 4. Student Login
+
+![Image description](src/screenshots/Student_Screenshot.png)
 
 
 ### Contributing
