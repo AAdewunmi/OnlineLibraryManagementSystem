@@ -384,7 +384,11 @@ public class LibraryMain {
                                                 }while(studentSearchChoice != 4);
                                                 break;
                                             case 2:
-
+                                                Scanner scannerStudentTransactions = new Scanner(System.in);
+                                                System.out.println("Borrow Book ... ");
+                                                System.out.println("Enter Book title: ");
+                                                String title = scannerStudentTransactions.nextLine();
+                                                admin.studentBorrowBook(title);
                                                 break;
                                             case 3:
                                                 System.out.println("Return Book");

@@ -323,4 +323,12 @@ public class Administrator {
         }
     }
 
+    /**
+     * This method is used by a student to return a book.
+     */
+    public void studentReturnBook(int ISBN, String name, String title){
+        for (Student student : listOfStudents) {
+            student.returnBook(ISBN, name, title);
+        }
+    }
 }
