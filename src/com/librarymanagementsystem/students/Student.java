@@ -177,7 +177,6 @@ public class Student extends UserTransactions {
      * @param title
      */
     public void borrowBook(String title){
-        // date borrowed
         for (Book book : listOfBooks) {
             if (book.getBookTitle().equals(title)) {
                 if (!(book.isBorrowed())) {
@@ -196,13 +195,13 @@ public class Student extends UserTransactions {
         }
         System.out.println("Book not found in catalog!");
     }
+
     /**
      * This method is used to return a book from the list of books,
      * by a student.
      * @param title
      */
     public void returnBook(int ISBN, String name, String title){
-        // date returned
         for (Book book : listOfBooks) {
             removeBookFromStudentAccount(title);
             if (!(book.getBookTitle().equals(title))){
@@ -210,14 +209,16 @@ public class Student extends UserTransactions {
                     book.returned();
                     addBookFromStudentAccount(ISBN, name, title);
                     System.out.println("Book returned: " + title);
-                    // TODO: Delete this line
                     printListOfBooksFromStudentAccount();
                     return;
                 }
             }
         }
     }
-    // TODO: Delete this method, it is for testing purposes only
+
+    /**
+     * This method is used to print the list of books.
+     */
     public void printListOfBooksFromStudentAccount(){
         System.out.println("***List Of Books***");
         for (Book book : listOfBooks) {

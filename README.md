@@ -44,7 +44,10 @@ Enjoy 😎
     
     3.3. Logout
 
-### Here are screenshot's of the application:
+NOTE: You may need to press enter more than once after each command to continue,
+especially when taking input from the command line. 
+
+### Here are screenshots of the application:
 #### 1. Main Menu 
 
 ![Image description](src/screenshots/Main_Screenshot.png)
