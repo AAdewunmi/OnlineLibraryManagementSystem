@@ -50,22 +50,22 @@ when taking input from the command line.
 ### Here are screenshots of the application:
 #### 1. Main Menu 
 
-![Image description](src/screenshots/Main_Screenshot.png)
+![Image description](src/com/librarymanagementsystem/screenshots/Main_Screenshot.png)
 
 
 #### 2. Administrator Login
 
-![Image description](src/screenshots/Admin_Screenshot.png)
+![Image description](src/com/librarymanagementsystem/screenshots/Admin_Screenshot.png)
 
 
 #### 3. Librarian Login
 
-![Image description](src/screenshots/Librarian_Screenshot.png)
+![Image description](src/com/librarymanagementsystem/screenshots/Librarian_Screenshot.png)
 
 
 #### 4. Student Login
 
-![Image description](src/screenshots/Student_Screenshot.png)
+![Image description](src/com/librarymanagementsystem/screenshots/Student_Screenshot.png)
 
 
 ### Contributing
