@@ -183,7 +183,7 @@ public class Student extends UserTransactions {
                     book.borrowed();
                     System.out.println("You have successfully borrowed " + title);
                     removeBookFromStudentAccount(title);
-                    // TODO: Delete this line
+                    System.out.println("\n***List Of Books After Book Borrowed!***\n");
                     printListOfBooksFromStudentAccount();
                     return;
                 }
@@ -209,6 +209,7 @@ public class Student extends UserTransactions {
                     book.returned();
                     addBookFromStudentAccount(ISBN, name, title);
                     System.out.println("Book returned: " + title);
+                    System.out.println("\n***List Of Books After Book Returned!***\n");
                     printListOfBooksFromStudentAccount();
                     return;
                 }
@@ -220,7 +221,6 @@ public class Student extends UserTransactions {
      * This method is used to print the list of books.
      */
     public void printListOfBooksFromStudentAccount(){
-        System.out.println("***List Of Books***");
         for (Book book : listOfBooks) {
             System.out.println(book);
         }

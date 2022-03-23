@@ -14,7 +14,7 @@ https://github.com/AAdewunmi/OnlineLibraryManagementSystem.git
 2. Open Project Folder
 
 
-3. Explore
+3. Explore (or run) the project. Main class is `library/LibraryMain.java`.
 
 Enjoy 😎
 
@@ -44,8 +44,8 @@ Enjoy 😎
     
     3.3. Logout
 
-NOTE: You may need to press enter more than once after each command to continue,
-especially when taking input from the command line. 
+NOTE: You may need to press ENTER more than once after each command to continue,
+when taking input from the command line. 
 
 ### Here are screenshots of the application:
 #### 1. Main Menu 

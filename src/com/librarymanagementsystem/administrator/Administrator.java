@@ -1,4 +1,4 @@
-package administrator;
+package com.librarymanagementsystem.administrator;
 
 import com.librarymanagementsystem.book.Book;
 import com.librarymanagementsystem.librarian.Librarian;
@@ -23,7 +23,7 @@ public class Administrator {
     /**
      * This is the constructor for the Administrator class.
      * adminUserName: The username of the administrator
-     * adminPassword: The password of the administrator
+     * adminPassword: The password of the com.administrator
      */
     public Administrator() {
         this.listOfLibrarians = new ArrayList<>();
@@ -114,7 +114,6 @@ public class Administrator {
      */
     public void addBook(int ISBN, String name, String title){
         for (Librarian librarian : listOfLibrarians) {
-            // Search for a book with the same ISBN!
             if (!librarian.searchByISBN(ISBN)) {
                 librarian.addBook(ISBN, name, title);
                 System.out.println("Book added successfully\nBy: " + librarian.getLibrarianName());

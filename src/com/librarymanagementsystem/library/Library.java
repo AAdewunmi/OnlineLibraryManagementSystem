@@ -1,4 +1,4 @@
-package com.librarymanagementsystem;
+package com.librarymanagementsystem.library;
 
 /**
  * @author Adrian Adewunmi

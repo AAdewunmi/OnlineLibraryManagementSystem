@@ -1,6 +1,6 @@
-package com.librarymanagementsystem;
+package com.librarymanagementsystem.library;
 
-import administrator.Administrator;
+import com.librarymanagementsystem.administrator.Administrator;
 
 import java.time.LocalDate;
 import java.util.Scanner;
@@ -12,7 +12,6 @@ import java.util.Scanner;
  * It gives the UI for the user to interact with the system.
  */
 public class LibraryMain {
-    // TODO: USER TYPES: LIBRARIAN = 1, STUDENT = 3, BOOK = 11.
     public static void main(String[] args) {
         int menuChoice;
         int loginChoice;
