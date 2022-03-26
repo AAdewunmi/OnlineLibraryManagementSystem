@@ -75,7 +75,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Future plans:
 
-1. Unit testing -> add unit testing for all the MVP features.
+1. Unit testing -> add unit testing for all the features.
 2. Add a main GUI
 3. Add a GUI for the librarian
 4. Add a GUI for the student

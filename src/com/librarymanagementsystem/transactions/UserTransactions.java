@@ -2,8 +2,9 @@ package com.librarymanagementsystem.transactions;
 
 import com.librarymanagementsystem.book.Book;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * @author Adrian Adewunmi
@@ -15,14 +16,14 @@ public class UserTransactions implements Search{
     /**
      * This method is used to add a book to the library
      */
-    private final List<Book> listOfBooks;
+    private List<Book> listOfBooks;
     public void addBook(int ISBN, String name, String title){
         Book book = new Book(ISBN, name, title);
         listOfBooks.add(book);
     }
 
     public UserTransactions() {
-        this.listOfBooks = new Vector<>(20);
+        this.listOfBooks = Collections.synchronizedList(new ArrayList<>());
     }
 
     /**

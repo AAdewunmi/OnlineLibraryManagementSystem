@@ -5,7 +5,6 @@ import com.librarymanagementsystem.transactions.UserTransactions;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * @author Adrian Adewunmi
@@ -71,7 +70,7 @@ public class Student extends UserTransactions {
      * @param list: book object
      */
     public void getAllBooksFromUserTransactions(ArrayList<Book> list){
-        this.listOfBooks = (Vector<Book>) list.clone();
+        this.listOfBooks = (List<Book>) list.clone();
     }
 
     /**

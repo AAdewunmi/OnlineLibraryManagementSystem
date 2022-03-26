@@ -6,7 +6,6 @@ import com.librarymanagementsystem.students.Student;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * @author Adrian Adewunmi
@@ -27,8 +26,8 @@ public class Administrator {
      * adminPassword: The password of the administrator
      */
     public Administrator() {
-        this.listOfLibrarians = new Vector<>(4);
-        this.listOfStudents = new Vector<>(8);
+        this.listOfLibrarians = new ArrayList<Librarian>();
+        this.listOfStudents = new ArrayList<Student>();
         this.adminUserName = "admin";
         this.adminPassword = "admin";
     }
