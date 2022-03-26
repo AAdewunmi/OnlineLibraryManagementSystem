@@ -2,8 +2,8 @@ package com.librarymanagementsystem.transactions;
 
 import com.librarymanagementsystem.book.Book;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 
 /**
  * @author Adrian Adewunmi
@@ -22,7 +22,7 @@ public class UserTransactions implements Search{
     }
 
     public UserTransactions() {
-        this.listOfBooks = new ArrayList<>();
+        this.listOfBooks = new Vector<>(20);
     }
 
     /**
