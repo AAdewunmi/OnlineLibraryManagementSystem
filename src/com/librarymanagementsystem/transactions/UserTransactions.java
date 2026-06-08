@@ -9,33 +9,43 @@ import java.util.List;
 /**
  * @author Adrian Adewunmi
  * @date 24/01/2022
- * This class is used to create an account object
+ * Stores and manages the shared catalogue of books for users who can perform
+ * library transactions.
  */
 public class UserTransactions implements Search{
 
-    /**
-     * This method is used to add a book to the library
-     */
     private List<Book> listOfBooks;
-    public void addBook(int ISBN, String name, String title){
-        Book book = new Book(ISBN, name, title);
-        listOfBooks.add(book);
-    }
 
+    /**
+     * Creates an empty, synchronized book catalogue.
+     */
     public UserTransactions() {
         this.listOfBooks = Collections.synchronizedList(new ArrayList<>());
     }
 
     /**
-     * This method is used to remove a book from the library
-     * book1: placeholder for book to be removed
+     * Adds a book to the catalogue.
+     *
+     * @param ISBN the ISBN of the book
+     * @param name the author name
+     * @param title the book title
+     */
+    public void addBook(int ISBN, String name, String title){
+        Book book = new Book(ISBN, name, title);
+        listOfBooks.add(book);
+    }
+
+    /**
+     * Removes books with the matching ISBN from the catalogue.
+     *
+     * @param ISBN the ISBN of the book to remove
      */
     public void removeBook(int ISBN){
         listOfBooks.removeIf(book1 -> book1.getISBN() == ISBN);
     }
 
     /**
-     * This method is used to print all the books in the library
+     * Prints every book in the catalogue.
      */
     public void printAllBooks(){
         for (Book book : listOfBooks){
@@ -43,7 +53,11 @@ public class UserTransactions implements Search{
         }
     }
 
-    // Print a book in the library by ISBN
+    /**
+     * Prints a book that matches the supplied ISBN.
+     *
+     * @param ISBN the ISBN to print
+     */
     public void printABook(int ISBN) {
         for (Book book : listOfBooks){
             if (book.getISBN() == ISBN){
@@ -52,7 +66,11 @@ public class UserTransactions implements Search{
         }
     }
 
-    // Print a book in the library by title
+    /**
+     * Prints books that match the supplied title.
+     *
+     * @param title the title to print
+     */
     public void printABookTitle(String title) {
         for (Book book : listOfBooks){
             if (book.getBookTitle().equalsIgnoreCase(title)){
@@ -61,7 +79,11 @@ public class UserTransactions implements Search{
         }
     }
 
-    // Print a book in the library by author
+    /**
+     * Prints books that match the supplied author.
+     *
+     * @param author the author to print
+     */
     public void printABookAuthor(String author) {
         for (Book book : listOfBooks){
             if (book.getAuthor().equalsIgnoreCase(author)){
@@ -71,16 +93,19 @@ public class UserTransactions implements Search{
     }
 
     /**
-     * This method is used to get a list of books in the library
+     * Gets the current catalogue list.
+     *
+     * @return the list of books
      */
     public List<Book> getListOfBooks(){
         return listOfBooks;
     }
 
     /**
-     * This method is used to search a book by author
-     * @param author: author of the book
-     * @return true if the book is found
+     * Searches the catalogue by author.
+     *
+     * @param author the author of the book
+     * @return true when a matching book is found; otherwise false
      */
     @Override
     public boolean searchByAuthor(String author) {
@@ -92,9 +117,10 @@ public class UserTransactions implements Search{
         return false;
     }
     /**
-     * This method is used to search a book by title
-     * @param title: title of the book
-     * @return  true if the book is found
+     * Searches the catalogue by title.
+     *
+     * @param title the title of the book
+     * @return true when a matching book is found; otherwise false
      */
     @Override
     public boolean searchByTitle(String title) {
@@ -106,9 +132,10 @@ public class UserTransactions implements Search{
         return false;
     }
     /**
-     * This method is used to search a book by ISBN
-     * @param ISBN: ISBN of the book
-     * @return true if the book is found
+     * Searches the catalogue by ISBN.
+     *
+     * @param ISBN the ISBN of the book
+     * @return true when a matching book is found; otherwise false
      */
     @Override
     public boolean searchByISBN(int ISBN) {

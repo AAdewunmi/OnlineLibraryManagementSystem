@@ -4,8 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests the Book model's stored details and borrowed status changes.
+ */
 class BookTest {
 
+    /**
+     * Verifies that a book stores its ISBN, author, and title.
+     */
     @Test
     void shouldCreateBook() {
 
@@ -19,6 +25,9 @@ class BookTest {
         assertEquals("Java", book.getBookTitle());
     }
 
+    /**
+     * Verifies that a new book starts as available.
+     */
     @Test
     void shouldBeNotBorrowedInitially() {
 
@@ -28,6 +37,9 @@ class BookTest {
         assertFalse(book.isBorrowed());
     }
 
+    /**
+     * Verifies that borrowing a book marks it as borrowed.
+     */
     @Test
     void shouldMarkBookBorrowed() {
 
@@ -39,6 +51,9 @@ class BookTest {
         assertTrue(book.isBorrowed());
     }
 
+    /**
+     * Verifies that returning a borrowed book marks it as available.
+     */
     @Test
     void shouldMarkBookReturned() {
 

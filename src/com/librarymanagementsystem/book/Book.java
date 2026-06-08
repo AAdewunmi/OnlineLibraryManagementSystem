@@ -3,7 +3,10 @@ package com.librarymanagementsystem.book;
 /**
  * @author Adrian Adewunmi
  * @date 06/01/2022
- * This class is used to create a book object
+ * Represents a book in the library catalogue.
+ *
+ * A book stores its identifying details and tracks whether it is currently
+ * borrowed.
  */
 
 public class Book {
@@ -13,10 +16,11 @@ public class Book {
     private boolean borrowed;
 
     /**
-     * This is the constructor for the Book class
-     * @param ISBN: The ISBN of the book
-     * @param author: The author of the book
-     * @param bookTitle: The title of the book
+     * Creates a book with the supplied catalogue details.
+     *
+     * @param ISBN the ISBN of the book
+     * @param author the author of the book
+     * @param bookTitle the title of the book
      */
     public Book(int ISBN, String author, String bookTitle) {
         this.author = author;
@@ -26,52 +30,57 @@ public class Book {
     }
 
     /**
-     * This method is used to get the ISBN of the book
-     * @return: The ISBN of the book
+     * Gets the book ISBN.
+     *
+     * @return the ISBN of the book
      */
     public int getISBN() {
         return ISBN;
     }
     /**
-     * This method is used to get the author of the book
-     * @return: The author of the book
+     * Gets the book author.
+     *
+     * @return the author of the book
      */
     public String getAuthor() {
         return author;
     }
     /**
-     * This method is used to get the title of the book
-     * @return: The title of the book
+     * Gets the book title.
+     *
+     * @return the title of the book
      */
     public String getBookTitle() {
         return bookTitle;
     }
 
     /**
-     * This method is keep track of the book borrowed status
-     * @return: The borrowed status of the book (true or false)
+     * Checks whether the book is currently borrowed.
+     *
+     * @return true when the book is borrowed; otherwise false
      */
     public boolean isBorrowed(){
         return this.borrowed;
     }
 
     /**
-     * This method is used to set the book as borrowed
+     * Marks the book as borrowed.
      */
     public void borrowed(){
         this.borrowed = true;
     }
 
     /**
-     * This method is used to set the book as returned
+     * Marks the book as returned.
      */
     public void returned(){
         this.borrowed = false;
     }
 
     /**
-     * This method is used to get the details of the book
-     * @return: The details of the book
+     * Formats the book details for console output.
+     *
+     * @return the book details
      */
     public String toString(){
         return "\nISBN: " + this.ISBN + "\n"

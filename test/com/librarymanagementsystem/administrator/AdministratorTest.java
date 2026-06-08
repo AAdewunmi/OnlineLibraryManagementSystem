@@ -4,8 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests administrator authentication and account management workflows.
+ */
 class AdministratorTest {
 
+    /**
+     * Verifies that the built-in administrator credentials are accepted.
+     */
     @Test
     void adminLoginSuccess() {
 
@@ -18,6 +24,9 @@ class AdministratorTest {
                         "admin"));
     }
 
+    /**
+     * Verifies that invalid administrator credentials are rejected.
+     */
     @Test
     void adminLoginFailure() {
 
@@ -30,6 +39,9 @@ class AdministratorTest {
                         "wrong"));
     }
 
+    /**
+     * Verifies that an administrator can register a student.
+     */
     @Test
     void shouldCreateStudent() {
 
@@ -37,16 +49,19 @@ class AdministratorTest {
                 new Administrator();
 
         admin.createStudent(
-                "Sai",
+                "Bill",
                 1,
-                "s@test.com",
-                "sai",
+                "b@test.com",
+                "bill",
                 "123");
 
         assertTrue(
                 admin.searchStudent(1));
     }
 
+    /**
+     * Verifies that an administrator can remove a registered student.
+     */
     @Test
     void shouldRemoveStudent() {
 
@@ -54,10 +69,10 @@ class AdministratorTest {
                 new Administrator();
 
         admin.createStudent(
-                "Sai",
+                "Bill",
                 1,
-                "s@test.com",
-                "sai",
+                "b@test.com",
+                "bill",
                 "123");
 
         assertTrue(
@@ -67,6 +82,9 @@ class AdministratorTest {
                 admin.searchStudent(1));
     }
 
+    /**
+     * Verifies that an administrator can register a librarian.
+     */
     @Test
     void shouldCreateLibrarian() {
 
@@ -84,6 +102,9 @@ class AdministratorTest {
                 admin.searchLibrarian(10));
     }
 
+    /**
+     * Verifies that an administrator can remove a registered librarian.
+     */
     @Test
     void shouldRemoveLibrarian() {
 
@@ -104,6 +125,9 @@ class AdministratorTest {
                 admin.searchLibrarian(10));
     }
 
+    /**
+     * Verifies that a registered librarian can log in.
+     */
     @Test
     void librarianLoginSuccess() {
 
@@ -123,6 +147,9 @@ class AdministratorTest {
                         "123"));
     }
 
+    /**
+     * Verifies that a registered student can log in.
+     */
     @Test
     void studentLoginSuccess() {
 
@@ -130,15 +157,15 @@ class AdministratorTest {
                 new Administrator();
 
         admin.createStudent(
-                "Sai",
+                "Bill",
                 1,
-                "s@test.com",
-                "sai",
+                "b@test.com",
+                "bill",
                 "123");
 
         assertTrue(
                 admin.studentLogin(
-                        "sai",
+                        "bill",
                         "123"));
     }
 }

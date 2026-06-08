@@ -8,19 +8,25 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests student profile details and catalogue search behavior.
+ */
 class StudentTest {
 
     Student student;
 
+    /**
+     * Builds a student with a copied catalogue before each test.
+     */
     @BeforeEach
     void setup() {
 
         student =
                 new Student(
-                        "Sai",
+                        "James",
                         1,
-                        "sai@test.com",
-                        "sai",
+                        "j@test.com",
+                        "james",
                         "pass");
 
         ArrayList<Book> books =
@@ -29,7 +35,7 @@ class StudentTest {
         books.add(
                 new Book(
                         100,
-                        "James",
+                        "Mark",
                         "Java"));
 
         books.add(
@@ -42,6 +48,9 @@ class StudentTest {
                 books);
     }
 
+    /**
+     * Verifies that a student can find a book by ISBN.
+     */
     @Test
     void shouldFindBookByISBN() {
 
@@ -50,6 +59,9 @@ class StudentTest {
                         100));
     }
 
+    /**
+     * Verifies that a missing ISBN is not found.
+     */
     @Test
     void shouldNotFindBookByISBN() {
 
@@ -58,6 +70,9 @@ class StudentTest {
                         999));
     }
 
+    /**
+     * Verifies that a student can find a book by title.
+     */
     @Test
     void shouldFindBookByTitle() {
 
@@ -66,19 +81,25 @@ class StudentTest {
                         "Java"));
     }
 
+    /**
+     * Verifies that a student can find a book by author.
+     */
     @Test
     void shouldFindBookByAuthor() {
 
         assertTrue(
                 student.findBookByAuthorFromStudentAccount(
-                        "James"));
+                        "Martin"));
     }
 
+    /**
+     * Verifies that student details are stored on creation.
+     */
     @Test
     void shouldStoreStudentDetails() {
 
         assertEquals(
-                "Sai",
+                "James",
                 student.getName());
 
         assertEquals(

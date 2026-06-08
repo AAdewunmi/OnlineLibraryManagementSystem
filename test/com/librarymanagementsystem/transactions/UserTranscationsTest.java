@@ -4,8 +4,14 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Tests book catalogue operations provided by UserTransactions.
+ */
 class UserTransactionsTest {
 
+    /**
+     * Verifies that a book can be added to the catalogue.
+     */
     @Test
     void shouldAddBook() {
 
@@ -22,6 +28,9 @@ class UserTransactionsTest {
                 ut.getListOfBooks().size());
     }
 
+    /**
+     * Verifies that a book can be removed from the catalogue by ISBN.
+     */
     @Test
     void shouldRemoveBook() {
 
@@ -37,6 +46,9 @@ class UserTransactionsTest {
                 ut.getListOfBooks().size());
     }
 
+    /**
+     * Verifies that an existing ISBN can be found.
+     */
     @Test
     void shouldFindBookByISBN() {
 
@@ -49,6 +61,9 @@ class UserTransactionsTest {
                 ut.searchByISBN(1));
     }
 
+    /**
+     * Verifies that a missing ISBN is not found.
+     */
     @Test
     void shouldNotFindMissingISBN() {
 
@@ -59,6 +74,9 @@ class UserTransactionsTest {
                 ut.searchByISBN(99));
     }
 
+    /**
+     * Verifies that an existing title can be found.
+     */
     @Test
     void shouldFindBookByTitle() {
 
@@ -71,6 +89,9 @@ class UserTransactionsTest {
                 ut.searchByTitle("Java"));
     }
 
+    /**
+     * Verifies that an existing author can be found.
+     */
     @Test
     void shouldFindBookByAuthor() {
 
