@@ -9,7 +9,8 @@ import java.util.List;
 /**
  * @author Adrian Adewunmi
  * @date 06/01/2020
- * This class is used to create a student object
+ * Represents a student account that can search, borrow, and return books from
+ * a copied catalogue.
  */
 public class Student extends UserTransactions {
 
@@ -22,10 +23,13 @@ public class Student extends UserTransactions {
 
 
     /**
-     * This is the constructor for the student class
-     * @param name: student name
-     * @param studentId: student id
-     * @param email: student email
+     * Creates a student profile with login details.
+     *
+     * @param name student name
+     * @param studentId student id
+     * @param email student email
+     * @param studentUsername student login username
+     * @param studentPassword student login password
      */
 
     public Student(String name, int studentId, String email,
@@ -37,26 +41,56 @@ public class Student extends UserTransactions {
         this.studentPassword = studentPassword;
     }
 
+    /**
+     * Gets the student name.
+     *
+     * @return the student name
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Gets the student id.
+     *
+     * @return the student id
+     */
     public int getStudentId() {
         return studentId;
     }
 
+    /**
+     * Gets the student email address.
+     *
+     * @return the student email address
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * Gets the student login username.
+     *
+     * @return the student username
+     */
     public String getStudentUsername() {
         return studentUsername;
     }
 
+    /**
+     * Gets the student login password.
+     *
+     * @return the student password
+     */
     public String getStudentPassword() {
         return studentPassword;
     }
 
+    /**
+     * Formats the student details for console output.
+     *
+     * @return the student name, id, and email address
+     */
     @Override
     public String toString() {
         return "Student Name: " + name + "\n"
@@ -65,18 +99,19 @@ public class Student extends UserTransactions {
     }
 
     /**
-     * This method is used to give the student access to the
-     * list of books, created by a librarian.
-     * @param list: book object
+     * Copies a shared catalogue into the student account.
+     *
+     * @param list the list of books created by a librarian
      */
     public void getAllBooksFromUserTransactions(ArrayList<Book> list){
         this.listOfBooks = (List<Book>) list.clone();
     }
 
     /**
-     * This method is used to search for a book by ISBN.
-     * @param isbn: book ISBN
-     * @return book object
+     * Searches the student catalogue by ISBN.
+     *
+     * @param isbn the book ISBN
+     * @return true when a matching book is found; otherwise false
      */
     public boolean findBookByISBNFromStudentAccount(int isbn) {
         for (Book book : listOfBooks) {
@@ -88,8 +123,9 @@ public class Student extends UserTransactions {
     }
 
     /**
-     * This method is used to print result from a search for a book by ISBN.
-     * @param isbn: book ISBN
+     * Prints a book from the student catalogue by ISBN.
+     *
+     * @param isbn the book ISBN
      */
     public void printABookFromStudentAccount(int isbn) {
         for (Book book : listOfBooks) {
@@ -100,9 +136,10 @@ public class Student extends UserTransactions {
     }
 
     /**
-     * This method is used to search for a book by title.
-     * @param title: book title
-     * @return book object
+     * Searches the student catalogue by title.
+     *
+     * @param title the book title
+     * @return true when a matching book is found; otherwise false
      */
 
     public boolean findBookByTitleFromStudentAccount(String title) {
@@ -115,8 +152,9 @@ public class Student extends UserTransactions {
     }
 
     /**
-     * This method is used to print result from a search for a book by title.
-     * @param title: book title
+     * Prints a book from the student catalogue by title.
+     *
+     * @param title the book title
      */
     public void printABookByTitleFromStudentAccount(String title) {
         for (Book book : listOfBooks) {
@@ -127,9 +165,10 @@ public class Student extends UserTransactions {
     }
 
     /**
-     * This method is used to search for a book by author.
-     * @param author: book author
-     * @return book object
+     * Searches the student catalogue by author.
+     *
+     * @param author the book author
+     * @return true when a matching book is found; otherwise false
      */
     public boolean findBookByAuthorFromStudentAccount(String author) {
         for (Book book : listOfBooks) {
@@ -141,8 +180,9 @@ public class Student extends UserTransactions {
     }
 
     /**
-     * This method is used to print result from a search for a book by author.
-     * @param author: book author
+     * Prints a book from the student catalogue by author.
+     *
+     * @param author the book author
      */
     public void printABookByAuthorFromStudentAccount(String author) {
         for (Book book : listOfBooks) {
@@ -152,10 +192,12 @@ public class Student extends UserTransactions {
         }
     }
 
-    /*
-     * This method is used to add a book to the list of books,
-     * created by a librarian. It is a helper method for the
-     * returnBook() method.
+    /**
+     * Adds a returned book back into the student catalogue.
+     *
+     * @param ISBN the ISBN of the book
+     * @param name the author name
+     * @param title the book title
      */
     public void addBookFromStudentAccount(int ISBN, String name, String title){
         Book book = new Book(ISBN, name, title);
@@ -163,18 +205,18 @@ public class Student extends UserTransactions {
     }
 
     /**
-     * This method is used to remove a book from the list of books,
-     * created by a librarian. It is a helper method for the
-     * borrowBook() method.
+     * Removes a book title from the student catalogue.
+     *
+     * @param title the title of the book to remove
      */
     public void removeBookFromStudentAccount(String title){
         listOfBooks.removeIf(book1 -> book1.getBookTitle().equalsIgnoreCase(title));
     }
 
     /**
-     * This method is used to borrow a book from the list of books,
-     * by a student.
-     * @param title
+     * Borrows a book by title when it exists and is available.
+     *
+     * @param title the title of the book to borrow
      */
     public void borrowBook(String title){
         for (Book book : listOfBooks) {
@@ -197,9 +239,11 @@ public class Student extends UserTransactions {
     }
 
     /**
-     * This method is used to return a book from the list of books,
-     * by a student.
-     * @param title
+     * Returns a book to the student catalogue.
+     *
+     * @param ISBN the ISBN of the returned book
+     * @param name the author name
+     * @param title the title of the returned book
      */
     public void returnBook(int ISBN, String name, String title){
         for (Book book : listOfBooks) {
@@ -218,7 +262,7 @@ public class Student extends UserTransactions {
     }
 
     /**
-     * This method is used to print the list of books.
+     * Prints all books currently visible in the student account.
      */
     public void printListOfBooksFromStudentAccount(){
         for (Book book : listOfBooks) {

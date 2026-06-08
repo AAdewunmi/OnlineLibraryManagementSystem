@@ -8,10 +8,14 @@ import java.util.Scanner;
 /**
  * @author Adrian Adewunmi
  * @date 19/01/2022
- * This is the main class of the library management system.
- * It gives the UI for the user to interact with the system.
+ * Starts the console user interface for the library management system.
  */
 public class LibraryMain {
+    /**
+     * Runs the menu-driven console application.
+     *
+     * @param args command-line arguments, currently unused
+     */
     public static void main(String[] args) {
         int menuChoice;
         int loginChoice;

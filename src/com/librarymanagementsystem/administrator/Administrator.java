@@ -10,8 +10,8 @@ import java.util.List;
 /**
  * @author Adrian Adewunmi
  * @date 28/02/2020
- * This class is used to create a new administrator,
- * for registering new students and librarians.
+ * Coordinates administrator actions for managing librarians, students, and
+ * book catalogue operations.
  */
 
 public class Administrator {
@@ -21,9 +21,7 @@ public class Administrator {
     private final List<Student> listOfStudents;
 
     /**
-     * This is the constructor for the Administrator class.
-     * adminUserName: The username of the administrator
-     * adminPassword: The password of the administrator
+     * Creates an administrator account with empty student and librarian lists.
      */
     public Administrator() {
         this.listOfLibrarians = new ArrayList<Librarian>();
@@ -33,8 +31,11 @@ public class Administrator {
     }
 
     /**
-     * This method is used to log in by admin.
-     * admin: The admin to be logged in
+     * Authenticates the built-in administrator account.
+     *
+     * @param username the supplied username
+     * @param password the supplied password
+     * @return true when the credentials match; otherwise false
      */
     public boolean adminLogin(String username, String password){
         if(username.equals("admin") && password.equals("admin")){
@@ -47,8 +48,13 @@ public class Administrator {
     }
 
     /**
-     * This method is used to register a new librarian.
-     * librarian: The librarian to be registered
+     * Registers a new librarian.
+     *
+     * @param librarianName the librarian name
+     * @param librarianIDNumber the librarian id number
+     * @param librarianEmail the librarian email address
+     * @param librarianUserName the librarian username
+     * @param librarianPassword the librarian password
      */
     public void createLibrarian(String librarianName, int librarianIDNumber, String librarianEmail, String librarianUserName, String librarianPassword){
         Librarian librarian = new Librarian(librarianName, librarianIDNumber, librarianEmail, librarianUserName, librarianPassword);
@@ -56,8 +62,10 @@ public class Administrator {
     }
 
     /**
-     * This method is used to remove a librarian.
-     * librarian: The librarian to be removed
+     * Removes a librarian by id number.
+     *
+     * @param librarianIDNumber the librarian id number to remove
+     * @return true when a librarian was removed; otherwise false
      */
     public boolean removeLibrarian(int librarianIDNumber){
         for (Librarian librarian : listOfLibrarians) {
@@ -70,8 +78,7 @@ public class Administrator {
     }
 
     /**
-     * This method is used to print all librarians.
-     * librarian: The librarian to be printed
+     * Prints all registered librarians.
      */
     public void printLibrarians(){
         for (Librarian librarian : listOfLibrarians) {
@@ -80,8 +87,10 @@ public class Administrator {
     }
 
     /**
-     * This method is used to search for a librarian by ID Number.
-     * librarian: The librarian to be searched
+     * Searches for a librarian by id number.
+     *
+     * @param librarianIDNumber the librarian id number to search for
+     * @return true when a librarian is found; otherwise false
      */
     public boolean searchLibrarian(int librarianIDNumber){
         for (Librarian librarian : listOfLibrarians) {
@@ -93,8 +102,11 @@ public class Administrator {
     }
 
     /**
-     * This method is used to log in by librarian.
-     * librarian: The librarian to be logged in
+     * Authenticates a registered librarian.
+     *
+     * @param username the supplied username
+     * @param password the supplied password
+     * @return true when a matching librarian is found; otherwise false
      */
     public boolean librarianLogin(String username, String password){
         for (Librarian librarian : listOfLibrarians) {
@@ -109,8 +121,11 @@ public class Administrator {
     }
 
     /**
-     * This method is used to add new book to library.
-     * book: The book to be added
+     * Adds a book through each registered librarian catalogue.
+     *
+     * @param ISBN the ISBN of the book
+     * @param name the author name
+     * @param title the book title
      */
     public void addBook(int ISBN, String name, String title){
         for (Librarian librarian : listOfLibrarians) {
@@ -124,8 +139,9 @@ public class Administrator {
     }
 
     /**
-     * This method is used to remove a book from library.
-     * book: The book to be removed
+     * Removes a book from registered librarian catalogues.
+     *
+     * @param ISBN the ISBN of the book to remove
      */
     public void removeBook(int ISBN){
         for (Librarian librarian : listOfLibrarians) {
@@ -139,8 +155,10 @@ public class Administrator {
     }
 
     /**
-     * This method is used by Librarian to search for a book by ISBN.
-     * book: The book to be searched
+     * Searches librarian catalogues by ISBN.
+     *
+     * @param ISBN the ISBN to search for
+     * @return true when a matching book is found; otherwise false
      */
     public boolean searchBookISBN(int ISBN){
         for (Librarian librarian : listOfLibrarians) {
@@ -155,8 +173,10 @@ public class Administrator {
     }
 
     /**
-     * This method is used to search for a book by title.
-     * book: The book to be searched
+     * Searches librarian catalogues by title.
+     *
+     * @param title the title to search for
+     * @return true when a matching book is found; otherwise false
      */
     public boolean searchBookTitle(String title){
         for (Librarian librarian : listOfLibrarians) {
@@ -171,8 +191,10 @@ public class Administrator {
     }
 
     /**
-     * This method is used to search for a book by author name.
-     * book: The book to be searched
+     * Searches librarian catalogues by author.
+     *
+     * @param name the author name to search for
+     * @return true when a matching book is found; otherwise false
      */
     public boolean searchBookAuthor(String name){
         for (Librarian librarian : listOfLibrarians) {
@@ -187,8 +209,7 @@ public class Administrator {
     }
 
     /**
-     * This method is used to print books from library.
-     * book: The book to be printed
+     * Prints all books from registered librarian catalogues.
      */
     public void printBooks(){
         for (Librarian librarian : listOfLibrarians) {
@@ -197,8 +218,13 @@ public class Administrator {
     }
 
     /**
-     * This method is used to create new student.
-     * student: The student to be created
+     * Registers a new student.
+     *
+     * @param name the student name
+     * @param studentId the student id
+     * @param email the student email address
+     * @param userName the student username
+     * @param password the student password
      */
     public void createStudent(String name, int studentId, String email, String userName, String password){
         Student student = new Student(name, studentId, email, userName, password);
@@ -206,8 +232,7 @@ public class Administrator {
     }
 
     /**
-     * This method is used to print all students.
-     * student: The student to be printed
+     * Prints all registered students.
      */
     public void printStudents(){
         for (Student student : listOfStudents) {
@@ -216,8 +241,10 @@ public class Administrator {
     }
 
     /**
-     * This method is used to search for a student by ID Number.
-     * student: The student to be searched
+     * Searches for a student by id number.
+     *
+     * @param studentIDNumber the student id number to search for
+     * @return true when a student is found; otherwise false
      */
     public boolean searchStudent(int studentIDNumber){
         for (Student student : listOfStudents) {
@@ -229,8 +256,10 @@ public class Administrator {
     }
 
     /**
-     * This method is used to remove a student.
-     * student: The student to be removed
+     * Removes a student by id number.
+     *
+     * @param studentIDNumber the student id number to remove
+     * @return true when a student was removed; otherwise false
      */
     public boolean removeStudent(int studentIDNumber){
         for (Student student : listOfStudents) {
@@ -244,8 +273,11 @@ public class Administrator {
 
 
     /**
-     * This method is used to log in by student.
-     * student: The student to be logged in
+     * Authenticates a registered student.
+     *
+     * @param username the supplied username
+     * @param password the supplied password
+     * @return true when a matching student is found; otherwise false
      */
     public boolean studentLogin(String username, String password){
         for (Student student : listOfStudents) {
@@ -260,8 +292,9 @@ public class Administrator {
     }
 
     /**
-     * This method is used by a student to search for a book by ISBN.
-     * book: The book to be searched
+     * Searches available librarian catalogues from each student account by ISBN.
+     *
+     * @param isbn the ISBN to search for
      */
     public void findBookByISBNFromStudentAccount(int isbn){
         for (Librarian librarian: listOfLibrarians) {
@@ -278,8 +311,9 @@ public class Administrator {
     }
 
     /**
-     * This method is used by a student to search for a book by title.
-     * book: The book to be searched
+     * Searches available librarian catalogues from each student account by title.
+     *
+     * @param title the title to search for
      */
     public void findBookByTitleFromStudentAccount(String title){
         for (Librarian librarian: listOfLibrarians) {
@@ -296,8 +330,9 @@ public class Administrator {
     }
 
     /**
-     * This method is used by a student to search for a book by author.
-     * book: The book to be searched
+     * Searches available librarian catalogues from each student account by author.
+     *
+     * @param author the author to search for
      */
     public void findBookByAuthorFromStudentAccount(String author){
         for (Librarian librarian: listOfLibrarians) {
@@ -314,7 +349,9 @@ public class Administrator {
     }
 
     /**
-     * This method is used by a student to borrow a book.
+     * Requests a book borrow action for every registered student.
+     *
+     * @param title the title of the book to borrow
      */
     public void studentBorrowBook(String title){
         for (Student student : listOfStudents) {
@@ -323,7 +360,11 @@ public class Administrator {
     }
 
     /**
-     * This method is used by a student to return a book.
+     * Requests a book return action for every registered student.
+     *
+     * @param ISBN the ISBN of the returned book
+     * @param name the author name
+     * @param title the title of the returned book
      */
     public void studentReturnBook(int ISBN, String name, String title){
         for (Student student : listOfStudents) {

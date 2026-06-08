@@ -5,7 +5,7 @@ import com.librarymanagementsystem.transactions.UserTransactions;
 /**
  * @author Adrian Adewunmi
  * @date 24/01/2022
- * This class is used to create a librarian object
+ * Represents a librarian account that can manage library book transactions.
  */
 public class Librarian extends UserTransactions {
     private final String librarianName;
@@ -15,10 +15,13 @@ public class Librarian extends UserTransactions {
     private final String librarianPassword;
 
     /**
-     * This is a constructor for the librarian class
-     * @param librarianName: The name of the librarian
-     * @param librarianIDNumber: The id number of the librarian
-     * @param librarianEmail: The email of the librarian
+     * Creates a librarian profile with login details.
+     *
+     * @param librarianName the name of the librarian
+     * @param librarianIDNumber the id number of the librarian
+     * @param librarianEmail the email address of the librarian
+     * @param librarianUserName the login username for the librarian
+     * @param librarianPassword the login password for the librarian
      */
     public Librarian(String librarianName, int librarianIDNumber, String librarianEmail, String librarianUserName, String librarianPassword) {
         this.librarianName = librarianName;
@@ -28,41 +31,51 @@ public class Librarian extends UserTransactions {
         this.librarianPassword = librarianPassword;
     }
     /**
-     * This method is used to get the librarian name
-     * @return librarianName
+     * Gets the librarian name.
+     *
+     * @return the librarian name
      */
     public String getLibrarianName() {
         return librarianName;
     }
     /**
-     * This method is used to get the librarian id number
-     * @return librarianIDNumber
+     * Gets the librarian id number.
+     *
+     * @return the librarian id number
      */
     public int getLibrarianIDNumber() {
         return librarianIDNumber;
     }
     /**
-     * This method is used to get the librarian email
-     * @return librarianEmail
+     * Gets the librarian email address.
+     *
+     * @return the librarian email address
      */
     public String getLibrarianEmail() {
         return librarianEmail;
     }
     /**
-     * This method is used to get the librarian username
-     * @return librarianUserName
+     * Gets the librarian login username.
+     *
+     * @return the librarian username
      */
     public String getLibrarianUserName() {
         return librarianUserName;
     }
     /**
-     * This method is used to get the librarian password
-     * @return librarianPassword
+     * Gets the librarian login password.
+     *
+     * @return the librarian password
      */
     public String getLibrarianPassword() {
         return librarianPassword;
     }
 
+    /**
+     * Formats the librarian details for console output.
+     *
+     * @return the librarian name, id number, and email address
+     */
     @Override
     public String toString() {
         return "Librarian Name: " + librarianName + "\n" +
